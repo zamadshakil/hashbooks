@@ -1,0 +1,159 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import Button from '../../components/ui/Button.astro';
+import Card from '../../components/ui/Card.astro';
+import caseStudiesData from '../../data/case-studies.json';
+---
+
+<PageLayout 
+  title="Real Bookkeeping Case Studies & Results | Hashbooks" 
+  description="Discover how Hashbooks helps US small businesses automate AP, resolve Accounts Receivable discrepancies, and manage Gusto payroll with QuickBooks and Xero."
+  canonicalUrl="/case-studies/"
+>
+  <section class="section case-studies-hero">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Success Stories"
+        title="Proven Bookkeeping Results"
+        subtitle="Explore our real-world case studies detailing how we clean up books, automate workflows, and maintain compliant ledgers for growing organizations."
+      />
+    </div>
+  </section>
+
+  <!-- Listing Grid -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid grid-3 case-studies-grid">
+        {caseStudiesData.map((study) => (
+          <Card 
+            title={study.title} 
+            description={study.metaDescription.replace(" | Hashbooks", "")} 
+            icon="true"
+            href={`/case-studies/${study.slug}/`}
+            class="case-study-list-card"
+          >
+            <!-- Badge as Custom Icon Slot -->
+            <div slot="icon-slot" class="client-type-label">
+              {study.clientType}
+            </div>
+            
+            <!-- Skills & Metrics row -->
+            <div class="case-card-footer">
+              <div class="case-card-metrics">
+                <span class="metric-highlight">{study.metrics[0].value}</span>
+                <span class="metric-name">{study.metrics[0].label}</span>
+              </div>
+              <div class="case-skills-row">
+                {study.skills.slice(0, 3).map((skill) => (
+                  <span class="case-skill-badge">{skill}</span>
+                ))}
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section text-center">
+    <div class="container max-width-600">
+      <h2 class="bottom-cta-title">Need Help Reconciling Your Accounts?</h2>
+      <p class="bottom-cta-desc">Whether you have complex multi-currency ledgers, months of catch-up work, or need a clean QuickBooks Online set-up, we are ready to assist.</p>
+      <Button text="Get Started With Hashbooks" href="/get-a-quote/" variant="primary" size="lg" />
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .case-studies-hero {
+    padding-bottom: 0;
+  }
+
+  .case-studies-grid {
+    margin-top: var(--space-4);
+  }
+
+  .case-study-list-card {
+    border-color: var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .client-type-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    background-color: rgba(26, 122, 61, 0.08);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.5px;
+  }
+
+  .case-card-footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .case-card-metrics {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .metric-highlight {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .metric-name {
+    font-size: var(--fs-caption);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .case-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .case-skill-badge {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-muted);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .max-width-600 {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bottom-cta-title {
+    font-size: var(--fs-h3);
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-3);
+  }
+
+  .bottom-cta-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section id="how-it-works" class="section reveal">
+  <div class="container">
+    <SectionHeading 
+      eyebrow="The Process"
+      title="Getting Started Is Simple"
+      subtitle="Three simple steps to lift the burden of bookkeeping off your shoulders."
+    />
+
+    <div class="steps-container">
+      <div class="steps-line"></div>
+      
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-number-circle">1</div>
+          <h3 class="step-title">Book a Free Call</h3>
+          <p class="step-desc">
+            Tell us about your business, transaction volume, and current accounting setup. We'll outline where you need help.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item reveal reveal-delay-2">
+          <div class="step-number-circle">2</div>
+          <h3 class="step-title">We Handle Your Books</h3>
+          <p class="step-desc">
+            With secure read-only access, our certified team handles all daily categorizations, AP/AR, and payroll reconciliations.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item reveal reveal-delay-3">
+          <div class="step-number-circle">3</div>
+          <h3 class="step-title">You Get Clarity</h3>
+          <p class="step-desc">
+            Access clean monthly financial reports and real-time dashboards so you always make decisions with accurate numbers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .steps-container {
+    position: relative;
+    margin-top: var(--space-12);
+  }
+
+  .steps-line {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-top: 2px dashed var(--color-border);
+    display: none;
+    z-index: 1;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (min-width: 768px) {
+    .steps-line {
+      display: block;
+    }
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+  }
+
+  .step-item {
+    text-align: center;
+    background-color: var(--color-white);
+    padding: var(--space-4);
+  }
+
+  .step-number-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: var(--fs-body-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    box-shadow: 0 0 0 6px var(--color-white);
+  }
+
+  .step-item:hover .step-number-circle {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+    transition: all var(--transition-fast);
+  }
+
+  .step-title {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-heading);
+  }
+
+  .step-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>

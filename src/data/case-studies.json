@@ -1,0 +1,180 @@
+[
+  {
+    "slug": "ap-automation-bill-com",
+    "title": "Accounts Payable Automation with Bill.com",
+    "clientType": "US-Based Creative Agency & Design Studio",
+    "metaTitle": "Case Study: AP Automation with Bill.com | Hashbooks",
+    "metaDescription": "Discover how Hashbooks automated accounts payable and invoice management using Bill.com for a US creative agency, reducing manual effort and errors.",
+    "projectOverview": "We partnered with a fast-growing creative design studio that was struggling with a bottleneck in their accounts payable (AP). The studio was manually tracking vendor bills in spreadsheets, losing track of approval emails, and experiencing late payments. The objective was to implement and manage Bill.com to streamline invoice ingestion, build a clear multi-tier approval workflow, schedule automated payments, and ensure real-time synchronization with their primary accounting system.",
+    "responsibilities": [
+      "Designed and implemented custom Bill.com approval and payment workflows.",
+      "Processed high-volume vendor invoices, utilizing OCR capture to verify details.",
+      "Matched incoming bills with supporting purchase orders and receipts to prevent duplicates.",
+      "Scheduled and monitored electronic vendor payments, optimizing cash outflow timing.",
+      "Performed monthly reconciliation of accounts payable balances to the general ledger.",
+      "Ensured seamless, error-free data synchronization between Bill.com and QuickBooks Online.",
+      "Maintained complete and up-to-date vendor records, W-9 collection, and payment methods."
+    ],
+    "results": [
+      "Eliminated manual bookkeeping data entry for vendor bills, saving 12+ hours monthly.",
+      "Improved payment accuracy and eradicated late fees through automated scheduling.",
+      "Established a secure, audit-ready record of all vendor communications and bill approvals.",
+      "Provided leadership with clear visibility into upcoming cash requirements via AP aging reports."
+    ],
+    "skills": [
+      "QuickBooks Online",
+      "Bill.com",
+      "Accounts Payable (AP)",
+      "Reconciliation",
+      "Vendor Management",
+      "Workflow Automation"
+    ],
+    "metrics": [
+      { "label": "Time Saved Monthly", "value": "12+ Hours" },
+      { "label": "Late Payment Fees", "value": "0%" },
+      { "label": "Data Input Accuracy", "value": "99.9%" }
+    ]
+  },
+  {
+    "slug": "multi-entity-bookkeeping",
+    "title": "Multi-Entity Bookkeeping & Financial Maintenance",
+    "clientType": "US-Based Digital Media & Content Group",
+    "metaTitle": "Case Study: Multi-Entity Bookkeeping Services | Hashbooks",
+    "metaDescription": "Learn how Hashbooks managed high-volume transactions, multi-entity bank reconciliations, and payroll for a US media corporation.",
+    "projectOverview": "We provided complete, ongoing bookkeeping maintenance for a multi-entity media corporation experiencing high daily transaction volumes across several bank accounts and merchant processors. The client needed a dedicated team to maintain day-to-day transaction recording, perform complex multi-entity bank and credit card reconciliations, categorize expenses across departments, and ensure clean financials for executive decision-making.",
+    "responsibilities": [
+      "Managed daily transaction recording and categorization across multiple business entities.",
+      "Performed complex bank reconciliations and credit card (CC) reconciliations across 10+ active accounts.",
+      "Accurately categorized operating expenses, separating marketing, production, and administrative costs.",
+      "Managed weekly payroll reconciliations and inter-company transactions.",
+      "Maintained the general ledger, ensuring GAAP-compliant classification of assets and liabilities.",
+      "Assisted with month-end closing procedures and prepared board-ready financial reports.",
+      "Investigated and resolved bookkeeping discrepancies, ensuring zero-error balances."
+    ],
+    "results": [
+      "Consistently achieved clean, fully reconciled accounts, completed within 5 business days after month-end.",
+      "Reduced monthly bookkeeping errors and classification discrepancies to zero.",
+      "Delivered reliable, GAAP-compliant financial reporting packages for quarterly board reviews.",
+      "Saved the executive team over 20 hours a month on back-office accounting administration."
+    ],
+    "skills": [
+      "QuickBooks Online",
+      "Bank Reconciliation",
+      "Credit Card (CC) Reconciliation",
+      "Financial Reporting",
+      "GAAP Compliance",
+      "Month-End Close"
+    ],
+    "metrics": [
+      { "label": "Accounts Reconciled", "value": "10+ Accounts" },
+      { "label": "Month-End Close Time", "value": "5 Days" },
+      { "label": "Error Rate achieved", "value": "0%" }
+    ]
+  },
+  {
+    "slug": "accounts-receivable-reconciliation",
+    "title": "Accounts Receivable Reconciliation & Ledger Cleanup",
+    "clientType": "UK-Based E-commerce & Wholesale Merchant",
+    "metaTitle": "Case Study: AR Reconciliation & Ledger Cleanup | Hashbooks",
+    "metaDescription": "See how Hashbooks reconciled complex accounts receivable, matched customer invoices, and recovered cash for a UK wholesale merchant.",
+    "projectOverview": "We were engaged by a UK-based wholesale merchant who had accumulated significant reconciliation differences in their Accounts Receivable (AR) ledgers. Due to manual matching errors, duplicate client profiles, and unresolved stripe payment payouts, their customer balances were highly inaccurate, causing delayed collections and cash flow strain. We performed a comprehensive audit and ledger cleanup to match payments and resolve historical discrepancies.",
+    "responsibilities": [
+      "Audited and reconciled customer ledgers spanning over 12 months of historical invoices.",
+      "Investigated outstanding invoices and followed up on payment mismatch anomalies.",
+      "Matched Stripe and bank payouts against specific wholesale invoices and customer payments.",
+      "Identified and corrected posting errors, duplicate entries, and incorrect currency exchange adjustments.",
+      "Resolved long-standing disputes between client ledger statements and customer payment records.",
+      "Prepared detailed Accounts Receivable (AR) aging reports and collection summaries for management."
+    ],
+    "results": [
+      "Cleared over £85,000 in unmatched customer transactions and resolved all reconciliation differences.",
+      "Provided the client with a 100% accurate, real-time view of outstanding customer balances.",
+      "Improved receivables collection times, directly enhancing the business's weekly operating cash flow.",
+      "Established a standardized, automated payment-matching process to prevent future ledger discrepancies."
+    ],
+    "skills": [
+      "Xero",
+      "Accounts Receivable (AR)",
+      "Ledger Cleanup",
+      "Stripe Reconciliation",
+      "Multi-Currency matching",
+      "Financial Analysis"
+    ],
+    "metrics": [
+      { "label": "Discrepancies Cleared", "value": "£85k+" },
+      { "label": "Ledger Accuracy", "value": "100%" },
+      { "label": "Collection Efficiency", "value": "+24%" }
+    ]
+  },
+  {
+    "slug": "events-organization-bookkeeping",
+    "title": "Complete Bookkeeping Support for an Events Organization",
+    "clientType": "US-Based Creative Production & Event Organization",
+    "metaTitle": "Case Study: Bookkeeping for Event & Creative Org | Hashbooks",
+    "metaDescription": "Read how Hashbooks provided full-charge bookkeeping, receipt capture with Notion, and tax-ready general ledgers for a US creative producer.",
+    "projectOverview": "We provided full-charge bookkeeping support for a high-volume events and creative production company. The client managed numerous short-term projects, vendor contracts, cash expenses, and payment processors simultaneously. They needed a clean workflow to track project expenses, reconcile Stripe and PayPal payment gates, organize receipts using Notion, and ensure their general ledger remained fully reconciled and tax-ready.",
+    "responsibilities": [
+      "Managed daily bookkeeping and ledger entries for all event operational expenses.",
+      "Performed daily bank reconciliations and payment gateway matches (Stripe, PayPal).",
+      "Organized receipt capture and expense documentation workflows using Notion and Google Drive.",
+      "Maintained the general ledger, ensuring proper categorization of venue, catering, and artist fees.",
+      "Prepared comprehensive monthly financial reports, including budget vs. actual event cost sheets.",
+      "Collaborated remotely with the event team to verify receipt details and contractor 1099 details."
+    ],
+    "results": [
+      "Reconciled over 1,200 transactions monthly, maintaining a 100% match rate across all payment gateways.",
+      "Reorganized their chart of accounts to track profitability by individual event/project.",
+      "Reduced tax-preparation prep time by 80% through organized, CPA-ready ledger handoffs.",
+      "Improved financial transparency, allowing organizers to track event margins in real-time."
+    ],
+    "skills": [
+      "QuickBooks Online",
+      "Stripe & PayPal Sync",
+      "Project Bookkeeping",
+      "Notion Integration",
+      "General Ledger",
+      "Tax Preparation Support"
+    ],
+    "metrics": [
+      { "label": "Transactions Monthly", "value": "1,200+" },
+      { "label": "Tax Prep Time Cut", "value": "80%" },
+      { "label": "Project Margin Tracking", "value": "Real-time" }
+    ]
+  },
+  {
+    "slug": "xero-gusto-payroll-trucking",
+    "title": "Xero Bookkeeping & Gusto Payroll Management",
+    "clientType": "US-Based Trucking & Logistics Company",
+    "metaTitle": "Case Study: Xero Bookkeeping & Gusto Payroll | Hashbooks",
+    "metaDescription": "Learn how Hashbooks integrated Xero and Gusto to manage daily bookkeeping and payroll compliance for a US logistics company.",
+    "projectOverview": "We took over the financial maintenance and payroll administration for a US-based trucking and logistics company. The client was managing a fleet of drivers and struggling to process payroll accurately and on time while keeping their accounting platform updated. We integrated Xero with Gusto Payroll to handle bi-weekly driver payouts, manage contractor 1099 payments, reconcile payroll entries against bank accounts, and prepare accurate financial reporting.",
+    "responsibilities": [
+      "Maintained complete, current bookkeeping records in Xero.",
+      "Processed bi-weekly employee payroll and contractor payouts through Gusto.",
+      "Calculated and reconciled payroll tax liabilities and benefits withholdings.",
+      "Reconciled Xero bank feeds against Gusto payroll disbursements.",
+      "Prepared accurate monthly financial statements and general ledger entries.",
+      "Maintained organized digital records of driver contracts, W-4s, and I-9 compliance forms.",
+      "Prepared W-2 and 1099-NEC tax forms at year-end."
+    ],
+    "results": [
+      "Achieved 100% on-time, error-free payroll runs for all company drivers and staff.",
+      "Streamlined month-end close time from 15 days down to 4 business days.",
+      "Eradicated payroll tax compliance notices and IRS penalty risks.",
+      "Provided clear, categorized financial reporting that optimized fleet operating margins."
+    ],
+    "skills": [
+      "Xero",
+      "Gusto Payroll",
+      "Payroll Reconciliation",
+      "1099 Contractor Management",
+      "Month-End Close",
+      "Financial Reporting"
+    ],
+    "metrics": [
+      { "label": "On-Time Payroll Runs", "value": "100%" },
+      { "label": "Close Time reduced", "value": "4 Days" },
+      { "label": "Compliance Penalties", "value": "$0" }
+    ]
+  }
+]

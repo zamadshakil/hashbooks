@@ -1,0 +1,420 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Button from '../components/ui/Button.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+---
+
+<PageLayout 
+  title="Get a Free Custom Quote | Hashbooks" 
+  description="Request your free custom bookkeeping quote. Tell us about your transaction volume and platform needs for a flat-rate proposal."
+  canonicalUrl="/get-a-quote/"
+>
+  <section class="section quote-form-hero">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Proposal Request"
+        title="Get Your Free Bookkeeping Proposal"
+        subtitle="Complete our 2-minute questionnaire and receive a flat-rate custom quote in 1 business day."
+      />
+    </div>
+  </section>
+
+  <!-- Interactive Form Section -->
+  <section class="section section-alt">
+    <div class="container max-width-600">
+      <div class="card quote-card">
+        <!-- Modern Steps Bar -->
+        <div class="wizard-steps-container">
+          <div class="wizard-steps">
+            <div class="wizard-step active" data-step-indicator="1">
+              <div class="step-circle">1</div>
+              <span class="step-label">Business</span>
+            </div>
+            <div class="wizard-line-container">
+              <div class="wizard-line" data-line-indicator="1"></div>
+            </div>
+            <div class="wizard-step" data-step-indicator="2">
+              <div class="step-circle">2</div>
+              <span class="step-label">Services</span>
+            </div>
+            <div class="wizard-line-container">
+              <div class="wizard-line" data-line-indicator="2"></div>
+            </div>
+            <div class="wizard-step" data-step-indicator="3">
+              <div class="step-circle">3</div>
+              <span class="step-label">Contact</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="quote-wizard-form" action="https://formspree.io/f/placeholder" method="POST">
+          <!-- Step 1: Business Profile -->
+          <div class="form-step active" data-step="1">
+            <h2 class="step-heading">Tell Us About Your Business</h2>
+            
+            <div class="form-group">
+              <label for="monthly-transactions" class="form-label">Estimated Monthly Transactions</label>
+              <select id="monthly-transactions" name="monthly_transactions" class="form-select" required>
+                <option value="" disabled selected>Select transaction volume...</option>
+                <option value="under-50">Under 50 transactions / month</option>
+                <option value="50-150">50 - 150 transactions / month</option>
+                <option value="150-500">150 - 500 transactions / month</option>
+                <option value="500-1500">500 - 1,500 transactions / month</option>
+                <option value="over-1500">Over 1,500 transactions / month</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="current-software" class="form-label">Current Accounting Software</label>
+              <select id="current-software" name="current_software" class="form-select" required>
+                <option value="" disabled selected>Select current setup...</option>
+                <option value="quickbooks">QuickBooks Online</option>
+                <option value="xero">Xero</option>
+                <option value="spreadsheets">Spreadsheets (Excel/Google Sheets)</option>
+                <option value="none">No software / starting fresh</option>
+                <option value="other">Other platform</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="business-industry" class="form-label">Business Industry</label>
+              <select id="business-industry" name="industry" class="form-select" required>
+                <option value="" disabled selected>Select industry...</option>
+                <option value="ecommerce">E-commerce / Retail</option>
+                <option value="services">Professional Services / Agency</option>
+                <option value="construction">Construction / Trades</option>
+                <option value="healthcare">Healthcare / Medical</option>
+                <option value="realestate">Real Estate / Property Management</option>
+                <option value="nonprofit">Non-Profit</option>
+                <option value="other">Other Industry</option>
+              </select>
+            </div>
+
+            <div class="step-nav-actions">
+              <button type="button" class="btn btn-primary next-step-btn">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Services Needed -->
+          <div class="form-step" data-step="2">
+            <h2 class="step-heading">Select Services Required</h2>
+            <p class="step-sub">Select all services you'd like included in your flat-rate proposal:</p>
+
+            <div class="services-checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="bookkeeping" checked />
+                <span class="checkbox-title">Monthly Bookkeeping</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="ap-ar" />
+                <span class="checkbox-title">AR/AP Management</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="payroll" />
+                <span class="checkbox-title">Payroll Processing</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="tax-support" />
+                <span class="checkbox-title">Tax Prep Support</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="reporting" />
+                <span class="checkbox-title">Financial Reporting</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="cfo" />
+                <span class="checkbox-title">CFO Advisory Services</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="catch-up" />
+                <span class="checkbox-title">QuickBooks Clean Up & Catch-Up</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="services[]" value="cloud-setup" />
+                <span class="checkbox-title">QuickBooks Set-up & Integration</span>
+              </label>
+            </div>
+
+            <div class="step-nav-actions">
+              <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
+              <button type="button" class="btn btn-primary next-step-btn">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact details -->
+          <div class="form-step" data-step="3">
+            <h2 class="step-heading">Final Step: Contact Information</h2>
+            
+            <div class="form-group">
+              <label for="quote-name" class="form-label">Full Name</label>
+              <input type="text" id="quote-name" name="name" class="form-input" placeholder="Sarah Chen" required />
+            </div>
+
+            <div class="form-group">
+              <label for="quote-email" class="form-label">Work Email</label>
+              <input type="email" id="quote-email" name="email" class="form-input" placeholder="sarah@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="quote-phone" class="form-label">Phone Number</label>
+              <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="(555) 000-0000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="quote-company" class="form-label">Company Name</label>
+              <input type="text" id="quote-company" name="company" class="form-input" placeholder="Bloom Commerce" required />
+            </div>
+
+            <div class="step-nav-actions">
+              <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
+              <Button text="Submit Request" type="submit" variant="primary" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .quote-form-hero {
+    padding-bottom: 0;
+  }
+
+  .max-width-600 {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .wizard-steps-container {
+    margin-bottom: var(--space-8);
+  }
+
+  .wizard-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .wizard-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-light);
+    border: 2px solid var(--color-border);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--fs-body-sm);
+    transition: all var(--transition-normal);
+  }
+
+  .step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+    transition: all var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .wizard-line-container {
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-border);
+    margin: 0 var(--space-2);
+    position: relative;
+    top: -10px;
+  }
+
+  .wizard-line {
+    height: 100%;
+    width: 0;
+    background-color: var(--color-secondary);
+    transition: width var(--transition-normal);
+  }
+
+  .wizard-line.completed {
+    width: 100%;
+  }
+
+  /* Wizard Step States */
+  .wizard-step.active .step-circle {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 0 0 4px rgba(11, 60, 122, 0.15);
+  }
+
+  .wizard-step.active .step-label {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .wizard-step.completed .step-circle {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  .wizard-step.completed .step-label {
+    color: var(--color-secondary);
+  }
+
+  .form-step {
+    display: none;
+  }
+  .form-step.active {
+    display: block;
+    animation: fadeIn var(--transition-normal);
+  }
+
+  .step-heading {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-heading);
+  }
+
+  .step-sub {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .step-nav-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+  }
+
+  /* Services Grid checkboxes */
+  .services-checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 576px) {
+    .services-checkbox-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .checkbox-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background-color: var(--color-white);
+    transition: all var(--transition-fast);
+  }
+  .checkbox-card:hover {
+    border-color: var(--color-secondary);
+    background-color: var(--color-bg-light);
+  }
+
+  .checkbox-card input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-secondary);
+    cursor: pointer;
+  }
+
+  .checkbox-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-text-body);
+  }
+</style>
+
+<script>
+  // Simple form wizard switcher logic
+  const steps = document.querySelectorAll('.form-step');
+  let activeStepIdx = 0;
+
+  const updateWizard = () => {
+    steps.forEach((step, idx) => {
+      if (idx === activeStepIdx) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+
+    // Update indicator steps
+    const indicatorSteps = document.querySelectorAll('.wizard-step');
+    indicatorSteps.forEach((step, idx) => {
+      if (idx < activeStepIdx) {
+        step.classList.remove('active');
+        step.classList.add('completed');
+      } else if (idx === activeStepIdx) {
+        step.classList.add('active');
+        step.classList.remove('completed');
+      } else {
+        step.classList.remove('active', 'completed');
+      }
+    });
+
+    // Update progress lines
+    const lines = document.querySelectorAll('.wizard-line');
+    lines.forEach((line, idx) => {
+      if (idx < activeStepIdx) {
+        line.classList.add('completed');
+      } else {
+        line.classList.remove('completed');
+      }
+    });
+  };
+
+  // Next triggers
+  document.querySelectorAll('.next-step-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // Validate inputs in active step first
+      const currentStepEl = steps[activeStepIdx];
+      const requiredInputs = currentStepEl.querySelectorAll('[required]');
+      let allValid = true;
+
+      requiredInputs.forEach((input) => {
+        if (input instanceof HTMLSelectElement || input instanceof HTMLInputElement) {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            allValid = false;
+          }
+        }
+      });
+
+      if (allValid && activeStepIdx < steps.length - 1) {
+        activeStepIdx++;
+        updateWizard();
+      }
+    });
+  });
+
+  // Prev triggers
+  document.querySelectorAll('.prev-step-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (activeStepIdx > 0) {
+        activeStepIdx--;
+        updateWizard();
+      }
+    });
+  });
+</script>

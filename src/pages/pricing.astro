@@ -1,0 +1,250 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Button from '../components/ui/Button.astro';
+import Accordion from '../components/ui/Accordion.astro';
+---
+
+<PageLayout 
+  title="Transparent Bookkeeping Pricing | Hashbooks" 
+  description="Hashbooks offers custom flat-rate monthly pricing tailored to your transaction volume and business complexity. No hourly rates. No hidden fees."
+  canonicalUrl="/pricing/"
+>
+  <section class="section pricing-hero-section">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Pricing Model"
+        title="Simple, Transparent Flat-Rate Pricing"
+        subtitle="No hourly bills. No hidden fees. Just an honest monthly rate tailored to your business."
+      />
+    </div>
+  </section>
+
+  <!-- Custom Pricing Explanation -->
+  <section class="section section-alt">
+    <div class="container custom-pricing-grid">
+      <!-- Left: How we calculate -->
+      <div class="pricing-factors-card card">
+        <h2 class="card-heading">How We Calculate Your Rate</h2>
+        <p class="factors-intro">
+          Unlike traditional bookkeeping firms that charge by the hour, we quote a flat monthly fee. Your rate is calculated based on three simple factors:
+        </p>
+        
+        <div class="factor-item">
+          <div class="factor-number">1</div>
+          <div class="factor-content">
+            <h3 class="factor-title">Monthly Transaction Volume</h3>
+            <p class="factor-desc">The average number of bank, credit card, and payment processor transactions you run each month.</p>
+          </div>
+        </div>
+
+        <div class="factor-item">
+          <div class="factor-number">2</div>
+          <div class="factor-content">
+            <h3 class="factor-title">Number of Bank & Credit Card Accounts</h3>
+            <p class="factor-desc">The number of separate statements we need to reconcile each month to verify every single dollar.</p>
+          </div>
+        </div>
+
+        <div class="factor-item">
+          <div class="factor-number">3</div>
+          <div class="factor-content">
+            <h3 class="factor-title">Integration & Service Complexity</h3>
+            <p class="factor-desc">Specialized features like payroll processing, multi-channel e-commerce stores, inventory, or AR/AP tracking.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Pricing Estimator Card -->
+      <div class="estimator-cta-card card text-center">
+        <div class="badge badge-success estimator-badge">Flat Monthly Rates</div>
+        <h2 class="estimator-title">Request a Custom Proposal</h2>
+        <p class="estimator-desc">
+          Because every business is unique, we build customized service agreements. Our proposals are completely free and carry no obligations.
+        </p>
+        
+        <div class="estimator-features">
+          <div class="est-feature-item">
+            <svg class="est-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Dedicated Certified Bookkeeper
+          </div>
+          <div class="est-feature-item">
+            <svg class="est-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Monthly Financial Report Package
+          </div>
+          <div class="est-feature-item">
+            <svg class="est-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Unlimited Email & Chat Support
+          </div>
+          <div class="est-feature-item">
+            <svg class="est-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Tax-Ready CPA-Ready Handoff
+          </div>
+        </div>
+
+        <Button text="Get Your Free Custom Quote" href="/get-a-quote/" size="lg" variant="primary" class="estimator-btn" />
+        <p class="est-hint">Free 15-minute consultation. Proposal ready in 1 business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing FAQs -->
+  <section class="section">
+    <div class="container max-width-800">
+      <h2 class="section-subheading text-center">Pricing FAQ</h2>
+      <div class="faq-group">
+        <Accordion 
+          question="Why do you offer custom quotes instead of fixed pricing packages?" 
+          answer="In our experience, fixed packages either overcharge businesses for services they don't use or fail to cover the complexity they actually need. Custom quoting ensures you pay only for the exact volume and complexity of your business — keeping your costs fair and aligned with your scale."
+        />
+        <Accordion 
+          question="Do you require long-term contracts?" 
+          answer="No. We earn your trust month-to-month. You can cancel or modify your bookkeeping services at any time with a 30-day notice."
+        />
+        <Accordion 
+          question="What happens if our transaction volume increases?" 
+          answer="We review account activity quarterly. If your business grows and transactions consistently increase, we will discuss adjustments to your monthly plan. We never issue surprise billing increases."
+        />
+        <Accordion 
+          question="Are setup or onboarding fees included?" 
+          answer="For active and clean bookkeeping setups, onboarding is completely free. If your historical books are messy and require historical reconciliation, we will quote a transparent, one-time Catch-Up Bookkeeping fee before starting."
+        />
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .pricing-hero-section {
+    padding-bottom: 0;
+  }
+
+  .custom-pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-4);
+  }
+
+  @media (min-width: 992px) {
+    .custom-pricing-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  .pricing-factors-card {
+    border-color: var(--color-border);
+  }
+
+  .card-heading {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-heading);
+  }
+
+  .factors-intro {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .factor-item {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  .factor-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .factor-number {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: rgba(26, 122, 61, 0.1);
+    color: var(--color-secondary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .factor-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--color-text-heading);
+  }
+
+  .factor-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+  }
+
+  /* Estimator card styling */
+  .estimator-cta-card {
+    background-color: var(--color-primary-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+  }
+
+  .estimator-badge {
+    margin-bottom: var(--space-4);
+  }
+
+  .estimator-title {
+    color: var(--color-white);
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-3);
+  }
+
+  .estimator-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-body-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .estimator-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .est-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+  }
+
+  .est-check {
+    color: var(--color-secondary-light);
+  }
+
+  .estimator-btn {
+    width: 100%;
+  }
+
+  .est-hint {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: var(--space-2);
+  }
+
+  .max-width-800 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>

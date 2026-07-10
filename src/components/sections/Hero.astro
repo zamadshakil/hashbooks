@@ -1,0 +1,205 @@
+---
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+---
+
+<section id="hero-section" class="hero-container">
+  <div class="container hero-content-grid">
+    <!-- Left: Text and CTAs -->
+    <div class="hero-text-side">
+      <Badge text="Certified QuickBooks & Xero Experts" variant="success" class="hero-badge reveal" />
+      <h1 class="hero-headline reveal reveal-delay-1">
+        Expert Bookkeeping <br />&amp; Financial Clarity.
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        Certified QuickBooks Online specialists providing monthly bookkeeping, bank reconciliation, credit card (CC) reconciliation, AR/AP management, and accurate financial reporting.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <Button text="Get Your Free Consultation" href="/get-a-quote/" variant="primary" size="lg" />
+        <Button text="See Our Services" href="/services/" variant="secondary" size="lg" />
+      </div>
+      <p class="hero-microtext reveal reveal-delay-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        No commitment required. Free 15-minute consultation.
+      </p>
+
+      <!-- Hero integrations row -->
+      <div class="hero-platforms reveal reveal-delay-4">
+        <span class="hero-platforms-label">Seamless software integration:</span>
+        <div class="hero-platforms-row">
+          <img src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="hero-platform-logo logo-qb" />
+          <img src="/images/platforms/xero.svg" alt="Xero" class="hero-platform-logo logo-xero" />
+          <img src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="hero-platform-logo logo-freshbooks" />
+          <img src="/images/platforms/zoho.svg" alt="Zoho Books" class="hero-platform-logo logo-zoho" />
+          <img src="/images/platforms/sage.svg" alt="Sage" class="hero-platform-logo logo-sage" />
+          <img src="/images/platforms/netsuite.svg" alt="NetSuite" class="hero-platform-logo logo-netsuite" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: High-End Service Workspace Image -->
+    <div class="hero-visual-side reveal reveal-delay-2">
+      <div class="mock-dashboard-wrapper pulse-glow">
+        <img src="/images/bookkeeping-workspace.png" alt="Hashbooks Professional Bookkeeping Service Workspace" class="hero-mockup-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-container {
+    position: relative;
+    background: radial-gradient(circle at 80% 20%, rgba(26, 122, 97, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
+                radial-gradient(circle at 10% 80%, rgba(27, 42, 74, 0.03) 0%, rgba(255, 255, 255, 0) 50%);
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--space-12) 0;
+  }
+
+  .hero-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-content-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .hero-text-side {
+    max-width: 650px;
+  }
+
+  .hero-badge {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    letter-spacing: -1px;
+  }
+
+  @media (min-width: 768px) {
+    .hero-headline {
+      font-size: 3.5rem;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: var(--fs-body-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 480px) {
+    .hero-actions {
+      flex-direction: row;
+    }
+  }
+
+  .hero-microtext {
+    font-size: var(--fs-caption);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Stylized mock dashboard */
+  .hero-visual-side {
+    display: none;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual-side {
+      display: flex;
+    }
+  }
+
+  .mock-dashboard-wrapper {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  .mock-dashboard-wrapper:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .hero-mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Hero Integrations Row Styling */
+  .hero-platforms {
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-6);
+  }
+
+  .hero-platforms-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-platforms-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+  }
+
+  .hero-platform-logo {
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(100%);
+    opacity: 0.65;
+    transition: all var(--transition-normal);
+  }
+
+  .hero-platform-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  /* Specific sizing to balance visual weights of diverse aspect ratios */
+  .logo-qb { height: 26px; }
+  .logo-xero { height: 26px; }
+  .logo-freshbooks { height: 26px; }
+  .logo-zoho { height: 32px; }
+  .logo-sage { height: 42px; }
+  .logo-netsuite { height: 26px; }
+</style>

@@ -1,0 +1,488 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+import { Image } from 'astro:assets';
+
+const experiences = [
+  {
+    role: "Virtual Bookkeeper",
+    client: "Architecture & Design Firm (USA)",
+    software: ["QuickBooks Online (QBO)", "Bill.com", "Google Sheets", "Microsoft Teams", "Outlook", "OneDrive"],
+    responsibilities: [
+      "Managed day-to-day bookkeeping and transaction recording.",
+      "Processed vendor bills and accounts payable through Bill.com.",
+      "Performed bank and credit card reconciliations.",
+      "Maintained organized financial records and supporting documentation.",
+      "Assisted with month-end closing and financial reporting.",
+      "Collaborated remotely with the finance team using Microsoft Teams and OneDrive."
+    ]
+  },
+  {
+    role: "Virtual Bookkeeper & Payroll Specialist",
+    client: "Trucking & Logistics Company (USA)",
+    software: ["Xero", "Gusto Payroll", "Google Sheets", "Outlook"],
+    responsibilities: [
+      "Maintained accurate bookkeeping in Xero.",
+      "Processed employee payroll through Gusto.",
+      "Reconciled bank and payroll accounts.",
+      "Managed payroll liabilities and employee records.",
+      "Prepared monthly financial reports and maintained the general ledger."
+    ]
+  },
+  {
+    role: "E-commerce Bookkeeper",
+    client: "E-commerce & Retail Merchant (USA)",
+    software: ["QuickBooks Online (QBO)", "Shopify", "Amazon Seller Central", "Stripe", "PayPal", "Chase Bank", "American Express (AMEX)"],
+    responsibilities: [
+      "Recorded and reconciled high-volume e-commerce transactions.",
+      "Matched Shopify, Amazon, Stripe, and PayPal settlements.",
+      "Reconciled bank and credit card accounts.",
+      "Managed sales, refunds, merchant fees, and payouts.",
+      "Prepared accurate monthly financial statements and reports."
+    ]
+  },
+  {
+    role: "Construction Bookkeeper",
+    client: "Construction & Contracting Company (USA)",
+    software: ["QuickBooks Online (QBO)", "Bill.com", "Dext", "Microsoft Excel"],
+    responsibilities: [
+      "Maintained complete bookkeeping for construction projects.",
+      "Prepared and monitored Work-in-Progress (WIP) reports.",
+      "Processed vendor invoices through Bill.com.",
+      "Managed receipt capture and expense documentation using Dext.",
+      "Performed job costing, bank reconciliations, and month-end reporting."
+    ]
+  },
+  {
+    role: "Bookkeeper",
+    client: "Food & Beverage Business (USA)",
+    software: ["Wave Accounting", "Slack", "Microsoft Outlook", "Google Sheets"],
+    responsibilities: [
+      "Managed daily bookkeeping and expense tracking.",
+      "Performed bank reconciliations.",
+      "Categorized income and operating expenses.",
+      "Assisted with monthly financial reporting.",
+      "Communicated with the management team through Slack and Outlook."
+    ]
+  },
+  {
+    role: "Bookkeeper",
+    client: "Event & Creative Organization",
+    software: ["QuickBooks Online (QBO)", "Stripe", "Google Sheets", "Slack", "Notion"],
+    responsibilities: [
+      "Managed daily bookkeeping operations.",
+      "Reconciled Stripe payment transactions.",
+      "Maintained customer and financial records.",
+      "Assisted with budgeting and financial reporting.",
+      "Organized financial workflows and documentation using Notion.",
+      "Collaborated remotely with team members through Slack and Google Workspace."
+    ]
+  }
+];
+
+const certificates = [
+  {
+    title: "QuickBooks Online Certified ProAdvisor (Level 1)",
+    issuer: "Intuit",
+    recipient: "M Hassan Shakeel",
+    type: "image",
+    file: "/Certificates/Certificate of Completion QBO.png"
+  },
+  {
+    title: "QuickBooks Online Certified ProAdvisor - Level 2",
+    issuer: "Intuit",
+    recipient: "M Hassan Shakeel",
+    type: "image",
+    file: "/Certificates/Certificate of Completion QBO Level 2.png"
+  },
+  {
+    title: "Xero Professional Certification",
+    issuer: "Xero",
+    recipient: "M Hassan Shakeel",
+    type: "pdf",
+    file: "/Certificates/certificate (1).pdf"
+  },
+  {
+    title: "Xero Associate Certification",
+    issuer: "Xero",
+    recipient: "M Hassan Shakeel",
+    type: "pdf",
+    file: "/Certificates/certificate.pdf"
+  }
+];
+---
+
+<PageLayout 
+  title="Our Story, Experience & Certifications | Hashbooks" 
+  description="Learn about the Hashbooks mission, our extensive professional bookkeeping experience across US industries, and our certified credentials."
+  canonicalUrl="/about/"
+>
+  <section class="section about-hero">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Our Mission"
+        title="Accurate Books. Better Business."
+        subtitle="Empowering entrepreneurs to make confident, data-driven decisions with clean financials."
+      />
+    </div>
+  </section>
+
+  <!-- Story & Vision -->
+  <section class="section section-alt">
+    <div class="container story-grid">
+      <div class="story-content">
+        <h2 class="story-title">We Exist to Keep Your Books Clean</h2>
+        <p class="story-paragraph">
+          Most business owners start their company to build something great — not to spend ten hours a month reconciling bank statement line-items. Yet, disorganized financials are the single biggest cause of tax-season dread and cash-flow anxiety.
+        </p>
+        <p class="story-paragraph">
+          Hashbooks was founded to bridge the gap. We serve as the trusted guide, providing certified bookkeeping experts who take the burden of financial administration off your shoulders entirely.
+        </p>
+        <p class="story-paragraph">
+          Our cloud-native workflows and flat-rate monthly model ensure you always have access to tax-ready numbers without complex transaction surcharges or hourly billing surprises.
+        </p>
+      </div>
+      <div class="story-visual">
+        <div class="about-tagline-box">
+          <span class="about-quote">"Your books should be a guide for the future, not just a record of the past."</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading 
+        eyebrow="Core Principles"
+        title="What We Stand For"
+      />
+
+      <div class="grid grid-4 values-grid">
+        <!-- 1 -->
+        <Card title="Obsessive Accuracy" description="Every single cent must be accounted for. We reconcile bank lines daily to ensure error-free ledgers.">
+          <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </Card>
+
+        <!-- 2 -->
+        <Card title="Full Transparency" description="Flat monthly quotes. We communicate clearly about what is and is not included. No surprises.">
+          <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </Card>
+
+        <!-- 3 -->
+        <Card title="Certified Standards" description="Every bookkeeper on our staff holds active QuickBooks ProAdvisor or Xero Advisor credentials.">
+          <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </Card>
+
+        <!-- 4 -->
+        <Card title="Bank-Level Security" description="We integrate read-only financial feeds with 256-bit encryption protocols to protect your accounts.">
+          <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Credentials -->
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading 
+        eyebrow="Trust Signals"
+        title="Certified Credentials & Certifications"
+        subtitle="Verifiable bookkeeping and payroll certifications demonstrating our platform expertise."
+      />
+
+      <div class="grid grid-4 certs-grid">
+        {certificates.map((cert) => (
+          <div class="cert-card card text-center">
+            {cert.type === "image" ? (
+              <div class="cert-img-wrapper">
+                <Image src={cert.file} alt={cert.title} width={200} height={150} class="cert-thumbnail" />
+              </div>
+            ) : (
+              <div class="cert-pdf-wrapper">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="pdf-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+            )}
+            <h3 class="cert-title">{cert.title}</h3>
+            <p class="cert-meta">Issued by {cert.issuer} to {cert.recipient}</p>
+            <Button text="View Verification" href={cert.file} variant="secondary" size="sm" class="cert-view-btn" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Work History Timeline -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading 
+        eyebrow="Our Track Record"
+        title="Professional Experience Timeline"
+        subtitle="Extensive hands-on bookkeeping, payroll, and cash flow management across diverse industries."
+      />
+
+      <div class="timeline-container">
+        {experiences.map((exp) => (
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card card">
+              <span class="timeline-client-badge">{exp.client}</span>
+              <h3 class="timeline-role">{exp.role}</h3>
+              
+              <!-- Software tags -->
+              <div class="software-tags">
+                {exp.software.map((sw) => (
+                  <span class="software-badge">{sw}</span>
+                ))}
+              </div>
+
+              <!-- Responsibilities list -->
+              <ul class="timeline-list">
+                {exp.responsibilities.map((resp) => (
+                  <li class="timeline-list-item">
+                    <svg class="timeline-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>{resp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="section section-dark text-center">
+    <div class="container about-cta-container">
+      <h2 class="about-cta-title">Let Us Handle Your Financial Records</h2>
+      <p class="about-cta-desc">Get back to scaling your business with complete peace of mind.</p>
+      <Button text="Schedule Your Onboarding Call" href="/get-a-quote/" variant="primary" size="lg" />
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .about-hero {
+    padding-bottom: 0;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .story-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .story-title {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-heading);
+  }
+
+  .story-paragraph {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    margin-bottom: var(--space-3);
+    line-height: 1.6;
+  }
+
+  .about-tagline-box {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .about-quote {
+    font-size: var(--fs-body);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .values-grid {
+    margin-top: var(--space-8);
+  }
+
+  /* Certs Grid */
+  .certs-grid {
+    margin-top: var(--space-8);
+  }
+
+  .cert-card {
+    border-color: var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: var(--space-6);
+  }
+
+  .cert-img-wrapper {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .cert-thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .cert-pdf-wrapper {
+    height: 120px;
+    width: 100%;
+    background-color: var(--color-bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .cert-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+    color: var(--color-text-heading);
+    line-height: 1.3;
+  }
+
+  .cert-meta {
+    font-size: var(--fs-caption);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .cert-view-btn {
+    width: 100%;
+  }
+
+  /* Timeline styling */
+  .timeline-container {
+    max-width: 800px;
+    margin: var(--space-8) auto 0;
+    position: relative;
+    padding-left: var(--space-6);
+    border-left: 2px solid var(--color-border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: var(--space-8);
+  }
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -33px;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-secondary);
+    border: 3px solid var(--color-white);
+    box-shadow: 0 0 0 3px rgba(26, 122, 61, 0.2);
+  }
+
+  .timeline-card {
+    border-color: var(--color-border);
+    padding: var(--space-6);
+  }
+
+  .timeline-client-badge {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    background-color: rgba(26, 122, 61, 0.08);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-role {
+    font-size: var(--fs-body);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-3);
+  }
+
+  .software-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: var(--space-4);
+  }
+
+  .software-badge {
+    font-size: 10px;
+    background-color: var(--color-bg-light);
+    color: var(--color-primary-light);
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .timeline-list-item {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    line-height: 1.5;
+    align-items: flex-start;
+  }
+
+  .timeline-check {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .about-cta-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .about-cta-title {
+    color: var(--color-white);
+  }
+  .about-cta-desc {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-2);
+  }
+</style>

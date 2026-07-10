@@ -1,0 +1,73 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<details class="accordion-item reveal">
+  <summary class="accordion-summary">
+    <span class="accordion-question">{question}</span>
+    <span class="accordion-toggle">
+      <svg class="plus-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      <svg class="minus-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </span>
+  </summary>
+  <div class="accordion-content">
+    <p>{answer}</p>
+  </div>
+</details>
+
+<style>
+  .accordion-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) 0;
+  }
+
+  .accordion-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--fs-body);
+    color: var(--color-text-heading);
+    list-style: none;
+    padding: var(--space-2) 0;
+  }
+  .accordion-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-question {
+    padding-right: var(--space-4);
+  }
+
+  .accordion-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+
+  .minus-icon {
+    display: none;
+  }
+
+  .accordion-item[open] .plus-icon {
+    display: none;
+  }
+  .accordion-item[open] .minus-icon {
+    display: block;
+  }
+
+  .accordion-content {
+    padding: var(--space-2) 0 var(--space-4);
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    line-height: 1.6;
+  }
+</style>

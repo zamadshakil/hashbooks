@@ -1,0 +1,132 @@
+---
+import navData from '../../data/navigation.json';
+
+const mainNav = navData.main;
+const ctaNav = navData.cta;
+---
+
+<div id="mobile-menu" class="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        {mainNav.map((item) => (
+          <li class="mobile-nav-item">
+            {item.children ? (
+              <details class="mobile-nav-details">
+                <summary class="mobile-nav-summary">
+                  {item.label}
+                  <svg class="summary-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <ul class="mobile-sub-list">
+                  {item.children.map((child) => (
+                    <li>
+                      <a href={child.href} class="mobile-sub-link">
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <a href={item.href} class="mobile-nav-link">
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <div class="mobile-menu-actions">
+      <a href={ctaNav.href} class="btn btn-primary btn-lg w-full">{ctaNav.label}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mobile-menu-drawer {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--color-white);
+    z-index: 99;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    overflow-y: auto;
+  }
+
+  .mobile-menu-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-inner {
+    padding: var(--space-6) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .mobile-nav-link, .mobile-nav-summary {
+    font-size: var(--fs-body-lg);
+    font-weight: 600;
+    color: var(--color-text-heading);
+    padding: var(--space-2) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-nav-summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .mobile-nav-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-chevron {
+    transition: transform var(--transition-fast);
+  }
+  .mobile-nav-details[open] .summary-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mobile-sub-list {
+    padding-left: var(--space-4);
+    margin-top: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    border-left: 2px solid var(--color-border);
+  }
+
+  .mobile-sub-link {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    padding: var(--space-2) 0;
+    display: block;
+  }
+
+  .mobile-menu-actions {
+    margin-top: var(--space-8);
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-drawer {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,234 @@
+---
+import { Image } from 'astro:assets';
+import navData from '../../data/navigation.json';
+
+const footerNav = navData.footer;
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="site-footer" class="section section-dark">
+  <div class="container footer-grid">
+    <!-- Brand Info -->
+    <div class="footer-col brand-col">
+      <a href="/" class="footer-logo">
+        <Image src="/images/logo.png" alt="Hashbooks Logo" class="footer-logo-img" width={32} height={32} loading="lazy" />
+        Hash<span>books</span>
+      </a>
+      <p class="footer-tagline">Accurate Books. Better Business.</p>
+      <p class="footer-desc">
+        Hashbooks provides certified bookkeeping and virtual CFO services to help growing businesses scale with financial clarity and peace of mind.
+      </p>
+      <div class="partner-badges">
+        <span class="badge badge-success">QuickBooks ProAdvisor</span>
+        <span class="badge badge-primary">Xero Certified</span>
+      </div>
+    </div>
+
+    <!-- Links Columns -->
+    <div class="footer-col">
+      <h3 class="footer-title">Services</h3>
+      <ul class="footer-links">
+        {footerNav.services.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-title">Company</h3>
+      <ul class="footer-links">
+        {footerNav.company.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-title">Resources</h3>
+      <ul class="footer-links">
+        {footerNav.resources.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col contact-col">
+      <h3 class="footer-title">Connect</h3>
+      <ul class="footer-contact-list">
+        <li>
+          <span class="contact-label">Email:</span>
+          <a href="mailto:contact@hashbooks.site" class="contact-val">contact@hashbooks.site</a>
+        </li>
+        <li>
+          <span class="contact-label">Phone:</span>
+          <a href="tel:+923180690265" class="contact-val">+92 318 0690265</a>
+        </li>
+        <li>
+          <span class="contact-label">Hours:</span>
+          <span class="contact-val">Mon - Fri, 9am - 5pm EST</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sub Footer -->
+  <div class="container sub-footer">
+    <div class="sub-footer-inner">
+      <p class="copyright">&copy; {currentYear} Hashbooks. All rights reserved.</p>
+      <ul class="legal-links">
+        {footerNav.legal.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--color-primary-dark);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .brand-col {
+      grid-column: span 1;
+    }
+  }
+
+  .footer-logo {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  .footer-logo span {
+    color: var(--color-secondary-light);
+  }
+
+  .footer-logo-img {
+    height: 32px;
+    width: 32px;
+    max-width: 32px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-tagline {
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-secondary-light);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-desc {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-4);
+  }
+
+  .partner-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .footer-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-4);
+    color: var(--color-white);
+  }
+
+  .footer-links li {
+    margin-bottom: var(--space-2);
+  }
+  .footer-links a {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .footer-links a:hover {
+    color: var(--color-white);
+  }
+
+  .footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .footer-contact-list li {
+    font-size: var(--fs-body-sm);
+  }
+  .contact-label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-secondary-light);
+  }
+  .contact-val {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .contact-val:hover {
+    color: var(--color-white);
+  }
+
+  /* Sub-footer */
+  .sub-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-6);
+  }
+
+  .sub-footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 768px) {
+    .sub-footer-inner {
+      flex-direction: row;
+    }
+  }
+
+  .copyright {
+    font-size: var(--fs-caption);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .legal-links {
+    display: flex;
+    gap: var(--space-4);
+  }
+  .legal-links a {
+    font-size: var(--fs-caption);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .legal-links a:hover {
+    color: var(--color-white);
+  }
+</style>

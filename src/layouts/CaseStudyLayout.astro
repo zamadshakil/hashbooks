@@ -1,0 +1,350 @@
+---
+import PageLayout from './PageLayout.astro';
+import Button from '../components/ui/Button.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  clientType: string;
+  metaTitle: string;
+  metaDescription: string;
+  projectOverview: string;
+  responsibilities: string[];
+  results: string[];
+  skills: string[];
+  metrics: { label: string; value: string }[];
+}
+
+const {
+  title,
+  clientType,
+  metaTitle,
+  metaDescription,
+  projectOverview,
+  responsibilities,
+  results,
+  skills,
+  metrics,
+} = Astro.props;
+
+const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
+---
+
+<PageLayout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl}>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-container">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></li>
+          <li class="active" aria-current="page">{title}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section case-study-hero">
+    <div class="container hero-inner">
+      <div class="hero-header">
+        <div class="badge badge-success client-badge">{clientType}</div>
+        <h1 class="case-study-title">{title}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container case-study-content-grid">
+      <!-- Left Column: Details -->
+      <div class="case-details-col">
+        <!-- Overview -->
+        <div class="content-block">
+          <h2 class="block-title">Project Overview</h2>
+          <p class="block-text">{projectOverview}</p>
+        </div>
+
+        <!-- Responsibilities -->
+        <div class="content-block">
+          <h2 class="block-title">Our Key Responsibilities</h2>
+          <ul class="styled-list">
+            {responsibilities.map((resp) => (
+              <li class="list-item">
+                <svg class="list-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>{resp}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Results -->
+        <div class="content-block">
+          <h2 class="block-title">The Results Achieved</h2>
+          <ul class="styled-list">
+            {results.map((res) => (
+              <li class="list-item">
+                <svg class="list-check text-green" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>{res}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column: Sidebar -->
+      <aside class="case-sidebar-col">
+        <!-- Metrics Widget -->
+        <div class="sidebar-card metrics-card">
+          <h3 class="sidebar-title">Key Performance Indicators</h3>
+          <div class="metrics-grid">
+            {metrics.map((metric) => (
+              <div class="metric-item">
+                <span class="metric-value">{metric.value}</span>
+                <span class="metric-label">{metric.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Skills Widget -->
+        <div class="sidebar-card skills-card">
+          <h3 class="sidebar-title">Expertise Demonstrated</h3>
+          <div class="skills-flex">
+            {skills.map((skill) => (
+              <span class="skill-badge">{skill}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="sidebar-card cta-sidebar-card">
+          <h3 class="cta-title">Want Similar Results?</h3>
+          <p class="cta-text">Book your free discovery consultation to discuss how we can streamline your back-office finance operations.</p>
+          <Button text="Schedule Free Call" href="/get-a-quote/" variant="primary" class="w-full" />
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Navigation Bottom -->
+  <section class="section bottom-nav-section text-center">
+    <div class="container">
+      <Button text="Back to All Case Studies" href="/case-studies/" variant="secondary" />
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .breadcrumbs-container {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-3) 0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-caption);
+  }
+  .breadcrumb-list a {
+    color: var(--color-text-muted);
+  }
+  .breadcrumb-list a:hover {
+    color: var(--color-primary);
+  }
+  .breadcrumb-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+  }
+  .breadcrumb-list .active {
+    font-weight: 600;
+    color: var(--color-text-heading);
+  }
+
+  /* Case study hero */
+  .case-study-hero {
+    padding: var(--space-12) 0 var(--space-6) 0;
+    background-color: var(--color-white);
+  }
+  
+  .client-badge {
+    margin-bottom: var(--space-3);
+  }
+  
+  .case-study-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+  }
+
+  /* Content Grid */
+  .case-study-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 992px) {
+    .case-study-content-grid {
+      grid-template-columns: 1.3fr 0.7fr;
+    }
+  }
+
+  .content-block {
+    background-color: var(--color-white);
+    padding: var(--space-8);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .block-title {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-4);
+    border-bottom: 2px solid rgba(26, 122, 61, 0.1);
+    padding-bottom: var(--space-2);
+  }
+
+  .block-text {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    line-height: 1.7;
+  }
+
+  .styled-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .list-item {
+    display: flex;
+    gap: var(--space-3);
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    line-height: 1.6;
+    align-items: flex-start;
+  }
+
+  .list-check {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .list-check.text-green {
+    color: var(--color-secondary);
+  }
+
+  /* Sidebar widgets */
+  .case-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .sidebar-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    border-left: 3px solid var(--color-secondary);
+    padding-left: var(--space-2);
+  }
+
+  .metrics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+  }
+  .metric-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .metric-value {
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    color: var(--color-secondary);
+  }
+
+  .metric-label {
+    font-size: var(--fs-caption);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .skill-badge {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary-light);
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-sidebar-card {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .cta-sidebar-card .sidebar-title {
+    color: var(--color-white);
+    border-left-color: var(--color-secondary-light);
+  }
+
+  .cta-title {
+    color: var(--color-white);
+    font-size: var(--fs-body);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+
+  .cta-text {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-4);
+    line-height: 1.5;
+  }
+
+  .bottom-nav-section {
+    padding-top: var(--space-4);
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+</style>

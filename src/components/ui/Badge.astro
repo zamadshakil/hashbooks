@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+  variant?: 'primary' | 'success' | 'accent';
+  class?: string;
+}
+
+const { text, variant = 'primary', class: className = '' } = Astro.props;
+---
+
+<span class={`badge badge-${variant} ${className}`}>
+  {text}
+</span>

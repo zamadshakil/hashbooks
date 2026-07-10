@@ -1,0 +1,77 @@
+---
+interface Props {
+  type: 'organization' | 'service' | 'faq' | 'breadcrumb';
+  data?: any;
+}
+
+const { type, data } = Astro.props;
+const siteUrl = 'https://hashbooks.site';
+
+function getSchema() {
+  switch (type) {
+    case 'organization':
+      return {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Hashbooks",
+        "url": siteUrl,
+        "logo": `${siteUrl}/images/logo.svg`,
+        "description": "Professional bookkeeping services for growing businesses. Expert monthly bookkeeping, tax preparation, payroll, financial reporting, and virtual CFO advisory.",
+        "email": "contact@hashbooks.site",
+        "areaServed": "US",
+        "serviceType": "Bookkeeping Services",
+        "priceRange": "$$",
+        "sameAs": []
+      };
+
+    case 'service':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": data?.title,
+        "description": data?.description,
+        "provider": {
+          "@type": "AccountingService",
+          "name": "Hashbooks",
+          "url": siteUrl
+        },
+        "url": `${siteUrl}${data?.url}`
+      };
+
+    case 'faq':
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": data?.items?.map((item: any) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      };
+
+    case 'breadcrumb':
+      return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": data?.items?.map((item: any, index: number) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": item.url ? `${siteUrl}${item.url}` : undefined
+        }))
+      };
+
+    default:
+      return null;
+  }
+}
+
+const schema = getSchema();
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

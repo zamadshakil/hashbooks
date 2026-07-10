@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  href?: string;
+  class?: string;
+}
+
+const { title, description, icon, href, class: className = '' } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={`card hover-card ${className}`}>
+    {icon && (
+      <div class="card-icon">
+        <slot name="icon-slot" />
+      </div>
+    )}
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{description}</p>
+  </a>
+) : (
+  <div class={`card ${className}`}>
+    {icon && (
+      <div class="card-icon">
+        <slot name="icon-slot" />
+      </div>
+    )}
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{description}</p>
+  </div>
+)}
+
+<style>
+  .hover-card {
+    display: block;
+    color: inherit;
+  }
+
+  .card-icon {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-heading);
+  }
+
+  .card-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+  }
+</style>

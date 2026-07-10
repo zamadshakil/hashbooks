@@ -1,0 +1,52 @@
+{
+  "main": [
+    {
+      "label": "Services",
+      "href": "/services/",
+      "children": [
+        { "label": "Monthly Bookkeeping", "href": "/services/bookkeeping/", "description": "Accurate daily transaction management" },
+        { "label": "AR/AP Management", "href": "/services/accounts-payable-receivable/", "description": "Streamline your cash flow" },
+        { "label": "Payroll Processing", "href": "/services/payroll/", "description": "Accurate, compliant payroll" },
+        { "label": "Tax Preparation", "href": "/services/tax-preparation/", "description": "Year-round tax readiness" },
+        { "label": "Financial Reporting", "href": "/services/financial-reporting/", "description": "Clear, GAAP financial reports" },
+        { "label": "CFO Advisory", "href": "/services/cfo-advisory/", "description": "Strategic financial guidance" },
+        { "label": "QuickBooks Clean Up & Catch-Up", "href": "/services/catch-up-bookkeeping/", "description": "Fix messy or outdated books" },
+        { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/", "description": "Migrate and integrate to the cloud" }
+      ]
+    },
+    { "label": "About", "href": "/about/" },
+    { "label": "Case Studies", "href": "/case-studies/" },
+    { "label": "Pricing", "href": "/pricing/" },
+    { "label": "FAQ", "href": "/faq/" },
+    { "label": "Contact", "href": "/contact/" }
+  ],
+  "cta": {
+    "label": "Get a Free Quote",
+    "href": "/get-a-quote/"
+  },
+  "footer": {
+    "services": [
+      { "label": "Monthly Bookkeeping", "href": "/services/bookkeeping/" },
+      { "label": "AR/AP Management", "href": "/services/accounts-payable-receivable/" },
+      { "label": "Payroll Processing", "href": "/services/payroll/" },
+      { "label": "Tax Preparation", "href": "/services/tax-preparation/" },
+      { "label": "Financial Reporting", "href": "/services/financial-reporting/" }
+    ],
+    "company": [
+      { "label": "About Us", "href": "/about/" },
+      { "label": "Case Studies", "href": "/case-studies/" },
+      { "label": "Pricing", "href": "/pricing/" },
+      { "label": "FAQ", "href": "/faq/" }
+    ],
+    "resources": [
+      { "label": "CFO Advisory", "href": "/services/cfo-advisory/" },
+      { "label": "QuickBooks Clean Up & Catch-Up", "href": "/services/catch-up-bookkeeping/" },
+      { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/" },
+      { "label": "Get a Quote", "href": "/get-a-quote/" }
+    ],
+    "legal": [
+      { "label": "Privacy Policy", "href": "/privacy-policy/" },
+      { "label": "Terms of Service", "href": "/terms-of-service/" }
+    ]
+  }
+}

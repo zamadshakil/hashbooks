@@ -1,0 +1,267 @@
+[
+  {
+    "slug": "bookkeeping",
+    "title": "Monthly Bookkeeping",
+    "metaTitle": "Bookkeeping Services & QuickBooks Online | Hashbooks",
+    "metaDescription": "Certified monthly bookkeeping services and QuickBooks Online management for US businesses. Get professional bank reconciliation and credit card (CC) reconciliation.",
+    "icon": "book-open",
+    "heroDescription": "Stop spending your nights wrestling with spreadsheets. Our certified team handles every transaction, bank reconciliation, and credit card (CC) reconciliation on QuickBooks Online — keeping your books 100% accurate, organized, and tax-ready.",
+    "features": [
+      "Daily transaction recording & categorization",
+      "Professional bank reconciliation",
+      "Credit card (CC) reconciliation & matching",
+      "Monthly financial statement preparation",
+      "Real-time QuickBooks Online dashboard access",
+      "Dedicated certified bookkeeper assigned to your account",
+      "End-of-month close within 5 business days"
+    ],
+    "targetClients": [
+      "US small business owners with 50-500+ monthly transactions",
+      "Founders who need accurate books for investor reporting",
+      "Growing companies ready to outsource back-office finance",
+      "Businesses currently using spreadsheets or DIY software"
+    ],
+    "process": [
+      { "step": "1", "title": "Connect Your Accounts", "description": "We securely link your bank feeds and credit cards to QuickBooks Online with read-only access." },
+      { "step": "2", "title": "We Categorize & Reconcile", "description": "We perform daily bank reconciliation and credit card (CC) reconciliation to match every transaction." },
+      { "step": "3", "title": "Review Your Reports", "description": "Receive clean, GAAP-compliant monthly financial reporting and real-time dashboard access." }
+    ],
+    "faqs": [
+      { "question": "How many transactions can you handle per month?", "answer": "We support businesses with anywhere from 50 to 5,000+ monthly transactions. Your flat-rate plan is customized based on your volume and account complexity." },
+      { "question": "Which accounting software do you use?", "answer": "We are certified specialists in QuickBooks Online and Xero. We set up, optimize, and manage your ledgers on these platforms to ensure clean data." },
+      { "question": "How quickly will my books be updated?", "answer": "We categorize transactions weekly or daily depending on your plan, with the full monthly close completed within 5 business days after month-end." },
+      { "question": "Is my financial data secure?", "answer": "Absolutely. We use bank-level 256-bit encryption and follow SOC 2 compliant processes. We connect to your bank feeds using read-only access via secure integrations like Plaid." }
+    ],
+    "relatedServices": ["accounts-payable-receivable", "financial-reporting", "tax-preparation"]
+  },
+  {
+    "slug": "accounts-payable-receivable",
+    "title": "AR/AP Management",
+    "metaTitle": "AR/AP Management Services | Accounts Payable & Receivable | Hashbooks",
+    "metaDescription": "Streamline cash flow with professional AR/AP management services. We handle client invoicing, bill payments, credit collections tracking, and vendor management.",
+    "icon": "arrow-left-right",
+    "heroDescription": "Late invoices and missed bills choke your business cash flow. Our professional AR/AP management services handle your entire billing and payment cycles, ensuring client payments flow in on time and bills go out on schedule.",
+    "features": [
+      "Custom client invoicing & automated delivery",
+      "Accounts Receivable (AR) tracking & payment collections",
+      "Accounts Payable (AP) scheduling & vendor payments",
+      "Cash flow forecasting & aging report preparation",
+      "Professional vendor relationship communication"
+    ],
+    "targetClients": [
+      "Service businesses with recurring client invoicing",
+      "Companies managing 20+ vendor relationships",
+      "Businesses experiencing cash flow unpredictability",
+      "Growing teams that need to professionalize billing"
+    ],
+    "process": [
+      { "step": "1", "title": "Audit Your Current Flow", "description": "We review your existing invoicing, billing, and collections processes to find gaps." },
+      { "step": "2", "title": "Systematize & Automate", "description": "We set up structured workflows for sending invoices, tracking payments, and scheduling bills." },
+      { "step": "3", "title": "Monitor & Optimize", "description": "Ongoing management with aging reports and cash flow insights delivered to your dashboard." }
+    ],
+    "faqs": [
+      { "question": "Will you chase overdue invoices for us?", "answer": "Yes. We send professional follow-up reminders and escalation notices for overdue accounts, helping you get paid faster without awkward conversations." },
+      { "question": "Can you handle both AP and AR together?", "answer": "Absolutely. Most clients benefit from having both managed together, giving you a complete picture of your cash flow timing." },
+      { "question": "Do you negotiate payment terms with vendors?", "answer": "We can help communicate preferred payment terms and ensure you're taking advantage of any early-payment discounts offered by your vendors." }
+    ],
+    "relatedServices": ["bookkeeping", "financial-reporting", "cfo-advisory"]
+  },
+  {
+    "slug": "payroll",
+    "title": "Payroll Processing",
+    "metaTitle": "US Payroll Processing Services for Small Business | Hashbooks",
+    "metaDescription": "Accurate, compliant payroll processing services for US teams. We handle salary calculations, federal & state tax withholdings, direct deposits, and filings.",
+    "icon": "users",
+    "heroDescription": "Payroll compliance errors trigger heavy IRS penalties. Our certified team ensures every paycheck is accurate, every federal/state tax is withheld correctly, and every filing deadline is met without fail.",
+    "features": [
+      "Bi-weekly or monthly payroll calculation and processing",
+      "Federal, state, and local tax withholding management",
+      "Direct deposit setup and administration",
+      "W-2 and 1099 year-end preparation",
+      "New hire reporting and onboarding support",
+      "PTO and benefits tracking integration"
+    ],
+    "targetClients": [
+      "Businesses with 1-100 employees",
+      "Companies hiring their first employees",
+      "Startups transitioning from contractors to full-time staff",
+      "Businesses currently handling payroll manually"
+    ],
+    "process": [
+      { "step": "1", "title": "Setup Your Payroll", "description": "We configure your payroll system with employee details, tax rates, and payment schedules." },
+      { "step": "2", "title": "We Run Every Cycle", "description": "Each pay period, we calculate earnings, deductions, and taxes — then process payments." },
+      { "step": "3", "title": "Stay Compliant", "description": "We handle all tax filings, year-end forms, and regulatory reporting automatically." }
+    ],
+    "faqs": [
+      { "question": "Which states do you process payroll for?", "answer": "We handle payroll across all 50 US states, managing the different state tax requirements and filing deadlines for each." },
+      { "question": "Can you handle contractors and employees together?", "answer": "Yes. We manage both W-2 employees and 1099 contractors, ensuring proper classification and year-end reporting for each." },
+      { "question": "What if I have a payroll emergency or late submission?", "answer": "We offer priority support for urgent payroll situations. Reach out and we'll do everything possible to process on time." }
+    ],
+    "relatedServices": ["bookkeeping", "tax-preparation", "catch-up-bookkeeping"]
+  },
+  {
+    "slug": "tax-preparation",
+    "title": "Tax Preparation Support",
+    "metaTitle": "Business Tax Preparation Support & Compliance | Hashbooks",
+    "metaDescription": "Year-round tax-ready bookkeeping services. We organize your financial statements and maximize deductions so you file with complete confidence.",
+    "icon": "file-text",
+    "heroDescription": "Tax season shouldn't be a scramble. With books that are clean year-round, you'll walk into tax season with confidence — every deduction claimed, every form ready, and zero surprises.",
+    "features": [
+      "Year-round tax-ready bookkeeping practices",
+      "Quarterly estimated tax payment calculations",
+      "Sales tax tracking and filing support",
+      "Tax document organization and preparation",
+      "CPA collaboration and handoff packages",
+      "Deduction maximization through proper categorization"
+    ],
+    "targetClients": [
+      "Businesses that dread tax season annually",
+      "Companies that suspect they're overpaying taxes",
+      "Multi-state businesses with complex tax obligations",
+      "Business owners who want to fire-and-forget tax prep"
+    ],
+    "process": [
+      { "step": "1", "title": "Clean Your Books", "description": "We ensure every transaction is properly categorized for maximum deduction capture year-round." },
+      { "step": "2", "title": "Prepare Your Package", "description": "Before tax deadlines, we compile a complete, CPA-ready package with all supporting documents." },
+      { "step": "3", "title": "File With Confidence", "description": "Your CPA receives organized, accurate financials — making filing fast, accurate, and stress-free." }
+    ],
+    "faqs": [
+      { "question": "Do you actually file tax returns?", "answer": "We prepare all the financial data and documentation your CPA needs to file. We work directly with your CPA to ensure a smooth handoff, or we can recommend trusted CPA partners." },
+      { "question": "Can you help with back taxes or amended returns?", "answer": "Yes. If your books need cleanup for prior years, we can reconstruct accurate financial records to support amended filings." },
+      { "question": "How do you maximize deductions?", "answer": "Proper transaction categorization throughout the year is key. We flag potential deductions in real-time so nothing is missed when tax season arrives." }
+    ],
+    "relatedServices": ["bookkeeping", "catch-up-bookkeeping", "financial-reporting"]
+  },
+  {
+    "slug": "financial-reporting",
+    "title": "Financial Reporting",
+    "metaTitle": "GAAP Financial Reporting & Custom Dashboards | Hashbooks",
+    "metaDescription": "Get GAAP-compliant financial reporting monthly. Accurate balance sheets, income statements (P&L), cash flow forecasting, and custom KPI dashboards.",
+    "icon": "bar-chart-3",
+    "heroDescription": "Decisions made without clear data are just guesses. We deliver monthly financial reporting packages — including Balance Sheets, P&Ls, and Cash Flow Statements — so you know exactly where your revenue and margins stand.",
+    "features": [
+      "Monthly Balance Sheet preparation",
+      "Income Statement (P&L) with trend analysis",
+      "Cash Flow Statement and forecasting",
+      "Custom KPI dashboards and metrics tracking",
+      "Budget vs. actual variance reporting",
+      "Board-ready and investor-ready report packages"
+    ],
+    "targetClients": [
+      "Businesses seeking funding or investor meetings",
+      "CEOs and founders who want data-driven decision making",
+      "Companies with boards requiring regular financial updates",
+      "Growing businesses that need to track departmental profitability"
+    ],
+    "process": [
+      { "step": "1", "title": "Define Your KPIs", "description": "We work with you to identify the metrics that matter most to your business decisions." },
+      { "step": "2", "title": "Build Your Dashboards", "description": "We create custom reports and dashboards tailored to your specific needs and goals." },
+      { "step": "3", "title": "Deliver Monthly Insights", "description": "Every month, you receive clear reports with commentary highlighting trends and action items." }
+    ],
+    "faqs": [
+      { "question": "What reports will I receive each month?", "answer": "Standard deliverables include a Balance Sheet, Income Statement (P&L), and Cash Flow Statement. We also build custom reports based on your specific KPIs and goals." },
+      { "question": "Can you create reports for my investors or board?", "answer": "Yes. We specialize in creating polished, professional report packages designed for investor presentations and board meetings." },
+      { "question": "How do you deliver reports?", "answer": "Reports are delivered via your preferred method — email, shared dashboard, or direct integration with your accounting platform." }
+    ],
+    "relatedServices": ["bookkeeping", "cfo-advisory", "accounts-payable-receivable"]
+  },
+  {
+    "slug": "cfo-advisory",
+    "title": "CFO Advisory Services",
+    "metaTitle": "Virtual CFO Advisory Services for Growing Companies | Hashbooks",
+    "metaDescription": "Get strategic financial guidance without the full-time CFO cost. Cash flow management, growth planning, margins analysis, and investor-ready reporting.",
+    "icon": "trending-up",
+    "heroDescription": "You don't need a six-figure CFO salary to get executive-level financial strategy. Our virtual CFO services give you the strategic insight and planning power your business needs to scale confidently.",
+    "features": [
+      "Strategic financial planning and modeling",
+      "Cash flow forecasting and optimization",
+      "Profitability analysis by product, service, or department",
+      "Fundraising and investor relations support",
+      "Pricing strategy and margin analysis",
+      "Monthly strategy calls with your dedicated advisor"
+    ],
+    "targetClients": [
+      "Scaling startups preparing for fundraising rounds",
+      "Businesses generating $500K-$10M+ in revenue",
+      "Companies that have outgrown basic bookkeeping needs",
+      "Founders who need a strategic finance partner"
+    ],
+    "process": [
+      { "step": "1", "title": "Assess Your Position", "description": "We perform a deep financial analysis of your current business health, margins, and growth trajectory." },
+      { "step": "2", "title": "Build Your Strategy", "description": "Together, we create financial models, forecasts, and plans aligned with your business goals." },
+      { "step": "3", "title": "Execute & Review", "description": "Monthly strategy sessions to review performance, adjust plans, and capitalize on opportunities." }
+    ],
+    "faqs": [
+      { "question": "What's the difference between bookkeeping and CFO advisory?", "answer": "Bookkeeping records what happened. CFO advisory tells you what it means and what to do next. It's the strategic layer on top of accurate books." },
+      { "question": "How often will I meet with my advisor?", "answer": "Most clients meet monthly for a strategy session, with ad-hoc availability for urgent financial decisions or opportunities." },
+      { "question": "Do I need bookkeeping services too?", "answer": "CFO advisory works best when built on clean, accurate books. We recommend pairing it with our monthly bookkeeping service for the best results." }
+    ],
+    "relatedServices": ["financial-reporting", "bookkeeping", "cloud-integration"]
+  },
+  {
+    "slug": "catch-up-bookkeeping",
+    "title": "QuickBooks Clean Up & Catch-Up",
+    "metaTitle": "QuickBooks Clean Up & Catch-Up Bookkeeping Services | Hashbooks",
+    "metaDescription": "Behind on your books? We specialize in QuickBooks set-up and clean up, historical transaction reconciliation, and catch-up bookkeeping for US businesses.",
+    "icon": "refresh-cw",
+    "heroDescription": "Months or years of messy books won't fix themselves. Whether you need a one-time QuickBooks set-up and clean up or comprehensive catch-up bookkeeping, our certified experts reconstruct your ledgers and get you 100% tax-ready.",
+    "features": [
+      "One-time QuickBooks set-up and clean up audit",
+      "Reconciliation of historical bank & credit card statements",
+      "Historical transaction recording and error correction",
+      "Chart of accounts optimization for US tax standards",
+      "CPA-ready historical financial statements",
+      "Seamless transition to ongoing monthly bookkeeping"
+    ],
+    "targetClients": [
+      "Businesses that are months or years behind on books",
+      "Companies that recently switched accounting software",
+      "Startups needing clean financials for their first audit",
+      "Businesses with books handled by a non-professional"
+    ],
+    "process": [
+      { "step": "1", "title": "Assess the Damage", "description": "We review your current state — how far behind, what's missing, and what needs fixing." },
+      { "step": "2", "title": "Rebuild & Reconcile", "description": "Our team systematically works through every period, categorizing transactions and reconciling accounts." },
+      { "step": "3", "title": "Transition to Clean", "description": "Once caught up, we transition you to ongoing monthly bookkeeping so you never fall behind again." }
+    ],
+    "faqs": [
+      { "question": "How far behind can you catch up?", "answer": "We've cleaned up books that were 3+ years behind. No matter how messy the situation, we can reconstruct accurate records from bank statements and source documents." },
+      { "question": "How long does catch-up take?", "answer": "It depends on the volume and complexity. A few months of catch-up typically takes 1-2 weeks. Multiple years may take 4-8 weeks. We'll give you a clear timeline upfront." },
+      { "question": "Will my catch-up data be accurate enough for taxes?", "answer": "Absolutely. We reconstruct your books to CPA-ready standards, ensuring every period is accurate and audit-ready." }
+    ],
+    "relatedServices": ["bookkeeping", "tax-preparation", "cloud-integration"]
+  },
+  {
+    "slug": "cloud-integration",
+    "title": "QuickBooks Set-up & Cloud Integration",
+    "metaTitle": "QuickBooks Set-up & Cloud Accounting Integration | Hashbooks",
+    "metaDescription": "Professional QuickBooks set-up and cloud accounting integration. We design your chart of accounts, migrate legacy data, and sync business apps.",
+    "icon": "cloud",
+    "heroDescription": "Setting up your books correctly from day one is critical for long-term scale. We handle your complete QuickBooks set-up, cloud integration, chart of accounts design, and app syncing to automate your financial workflow.",
+    "features": [
+      "Custom QuickBooks set-up and account creation",
+      "Chart of accounts customization for your industry",
+      "Integration with payment processors (Stripe, PayPal, Square)",
+      "Syncing with POS systems and inventory tools",
+      "Historical data migration from spreadsheets or legacy apps",
+      "Hands-on team training and onboarding tutorials"
+    ],
+    "targetClients": [
+      "Businesses still using spreadsheets for bookkeeping",
+      "Companies on desktop software wanting to move to cloud",
+      "Startups setting up their first accounting system",
+      "Businesses wanting to integrate multiple financial tools"
+    ],
+    "process": [
+      { "step": "1", "title": "Evaluate & Recommend", "description": "We assess your business needs and recommend the best cloud platform and app ecosystem for you." },
+      { "step": "2", "title": "Setup & Migrate", "description": "We configure your new system, migrate historical data, and connect all your financial tools." },
+      { "step": "3", "title": "Train & Launch", "description": "Your team gets hands-on training and documentation, then we go live with ongoing support." }
+    ],
+    "faqs": [
+      { "question": "Which cloud platform is best for my business?", "answer": "It depends on your size, industry, and needs. QuickBooks Online is great for most US small businesses. Xero excels for service businesses. We'll help you choose the perfect fit." },
+      { "question": "Will I lose any data during migration?", "answer": "No. We perform complete data verification before, during, and after migration. Your historical records are preserved and validated." },
+      { "question": "Do you provide training for my team?", "answer": "Yes. We provide live training sessions and written documentation so your team can confidently use the new system day-to-day." }
+    ],
+    "relatedServices": ["bookkeeping", "catch-up-bookkeeping", "financial-reporting"]
+  }
+]

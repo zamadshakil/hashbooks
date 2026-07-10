@@ -1,0 +1,33 @@
+---
+import StatCounter from '../ui/StatCounter.astro';
+---
+
+<section id="stats-section" class="section section-dark reveal">
+  <div class="container stats-container-grid">
+    <StatCounter value="150" label="Businesses Partnered" suffix="+" />
+    <StatCounter value="15" label="Years Accounting Experience" suffix="+" />
+    <StatCounter value="99.9" label="Reconciled Accuracy" suffix="%" />
+    <StatCounter value="50" label="Client Revenue Managed" prefix="$" suffix="M+" />
+  </div>
+</section>
+
+<style>
+  .stats-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .stats-container-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  #stats-section {
+    background-color: var(--color-primary-dark);
+    padding: var(--space-12) 0;
+  }
+</style>

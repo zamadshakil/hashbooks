@@ -1,0 +1,71 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  rating?: number;
+}
+
+const { quote, name, role, company, rating = 5 } = Astro.props;
+---
+
+<div class="card testimonial-card reveal">
+  <div class="rating-stars">
+    {Array.from({ length: rating }).map((_, i) => (
+      <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    ))}
+  </div>
+  <blockquote class="testimonial-quote">
+    "{quote}"
+  </blockquote>
+  <div class="testimonial-author">
+    <div class="author-details">
+      <cite class="author-name">{name}</cite>
+      <span class="author-meta">{role}, {company}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .rating-stars {
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+    display: flex;
+    gap: 2px;
+  }
+
+  .testimonial-quote {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+  }
+
+  .author-name {
+    display: block;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--color-text-heading);
+    font-size: var(--fs-body-sm);
+  }
+
+  .author-meta {
+    font-size: var(--fs-caption);
+    color: var(--color-text-muted);
+  }
+</style>

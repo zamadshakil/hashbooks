@@ -1,0 +1,33 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import TestimonialCard from '../ui/TestimonialCard.astro';
+import testimonialsData from '../../data/testimonials.json';
+---
+
+<section id="testimonials-section" class="section section-alt reveal">
+  <div class="container">
+    <SectionHeading 
+      eyebrow="Success Stories"
+      title="Trusted by Growing Businesses"
+      subtitle="Hear how we help entrepreneurs focus on scale by managing their numbers cleanly."
+    />
+
+    <div class="grid grid-3 testimonials-grid">
+      {testimonialsData.map((item) => (
+        <TestimonialCard 
+          quote={item.quote}
+          name={item.name}
+          role={item.role}
+          company={item.company}
+          rating={item.rating}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-grid {
+    margin-top: var(--space-8);
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Accordion from '../components/ui/Accordion.astro';
+import faqData from '../data/faq.json';
+---
+
+<PageLayout 
+  title="Frequently Asked Questions | Hashbooks Bookkeeping" 
+  description="Find answers to common questions about Hashbooks bookkeeping services, custom quote pricing, platform integrations, and data security policies."
+  canonicalUrl="/faq/"
+>
+  <section class="section faq-hero">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Help Center"
+        title="Frequently Asked Questions"
+        subtitle="Have questions about our service? Find answers to the most common inquiries below."
+      />
+    </div>
+  </section>
+
+  <!-- Categorized FAQ list -->
+  <section class="section section-alt">
+    <div class="container max-width-800">
+      {faqData.map((category) => (
+        <div class="faq-category-block">
+          <h2 class="category-title">{category.category}</h2>
+          <div class="category-accordions">
+            {category.items.map((item) => (
+              <Accordion question={item.question} answer={item.answer} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .faq-hero {
+    padding-bottom: 0;
+  }
+
+  .max-width-800 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-category-block {
+    margin-bottom: var(--space-12);
+  }
+  .faq-category-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-title {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-primary);
+    border-left: 4px solid var(--color-secondary);
+    padding-left: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .category-accordions {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

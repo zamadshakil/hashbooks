@@ -1,0 +1,59 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+---
+
+<PageLayout 
+  title="Terms of Service | Hashbooks" 
+  description="Hashbooks website and services terms of service and agreement rules."
+  canonicalUrl="/terms-of-service/"
+>
+  <section class="section">
+    <div class="container max-width-800">
+      <SectionHeading 
+        title="Terms of Service"
+        subtitle="Last updated: July 2026"
+        align="left"
+      />
+
+      <div class="legal-content">
+        <h2>1. Terms of Engagement</h2>
+        <p>
+          By accessing this website and engaging with our bookkeeping services, you agree to comply with and be bound by these terms. Bookkeeping deliverables are provided as month-to-month flat-rate engagements and may be terminated by either party with a 30-day written notice.
+        </p>
+
+        <h2>2. Bookkeeping Scope</h2>
+        <p>
+          Hashbooks performs daily or weekly transactional categorization, bank reconciliation, and monthly financial statement compilation. Our services do not constitute audit or certified public accountant (CPA) tax filings. Final tax filings remain the responsibility of the client's CPA of record.
+        </p>
+
+        <h2>3. Accuracy & Auditing</h2>
+        <p>
+          Reconciliations are performed based on banking read-only feeds and client-provided source document statements. While we guarantee a 99.8% transactional categorization accuracy rate, final compliance reviews remain the responsibility of the business owners.
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .max-width-800 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .legal-content h2 {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-heading);
+  }
+
+  .legal-content p {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-body);
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
+  }
+</style>

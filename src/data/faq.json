@@ -1,0 +1,94 @@
+[
+  {
+    "category": "General",
+    "items": [
+      {
+        "question": "What is Hashbooks?",
+        "answer": "Hashbooks is a professional bookkeeping services firm that helps US-based small businesses and startups maintain clean financial records, stay tax-compliant, and gain strategic financial clarity. We offer a full suite of services, including QuickBooks set-up and clean up, bank reconciliation, AR/AP management, and monthly financial reporting."
+      },
+      {
+        "question": "Who is Hashbooks for?",
+        "answer": "We work with small businesses, startups, e-commerce brands, construction companies, professional service agencies, healthcare practices, real estate firms, and non-profits. If you want to delegate your back-office financial administration to certified US accounting experts, we are built for you."
+      },
+      {
+        "question": "What makes Hashbooks different from other bookkeeping services?",
+        "answer": "Unlike broad national agencies, we assign a dedicated certified bookkeeper to your account who learns your transactions intimately. All of our team members are certified QuickBooks Online ProAdvisors or Xero Certified Advisors based in the US, ensuring GAAP compliance and accurate tax handoffs."
+      },
+      {
+        "question": "Do you work with businesses outside the US?",
+        "answer": "Currently, we specialize in US-based businesses and US tax requirements. We work with clients across all 50 states."
+      },
+      {
+        "question": "How do I get started with Hashbooks?",
+        "answer": "It's simple: book a free 15-minute consultation through our website. We'll discuss your current setup, estimate your transaction volume, and provide a transparent, flat-rate monthly proposal with no obligations."
+      }
+    ]
+  },
+  {
+    "category": "Services",
+    "items": [
+      {
+        "question": "What bookkeeping services do you offer?",
+        "answer": "We provide a complete suite of services including monthly bookkeeping on QuickBooks Online & Xero, bank reconciliation, credit card (CC) reconciliation, AR/AP management, QuickBooks set-up and clean up, payroll processing, tax preparation support, and detailed financial reporting."
+      },
+      {
+        "question": "Do you offer QuickBooks set-up and clean up services?",
+        "answer": "Yes. If your books are neglected or messy, we perform a complete QuickBooks clean up to reconcile historical bank statements and fix errors. If you are starting a new business, we handle your QuickBooks set-up from scratch, configuring your chart of accounts and integrating payment processors like Stripe."
+      },
+      {
+        "question": "Why is daily or monthly bank and credit card (CC) reconciliation important?",
+        "answer": "Bank reconciliation and credit card (CC) reconciliation ensure that every dollar flowing in and out of your business matches your actual bank statements. This prevents duplicate entries, catches bank errors, flags potential fraud, and ensures your financial reporting is 100% accurate and CPA-ready."
+      },
+      {
+        "question": "What does your AR/AP management service include?",
+        "answer": "Our AR/AP management service handles invoicing and collections tracking (Accounts Receivable) so you get paid faster, along with bill processing and vendor payment scheduling (Accounts Payable) to maintain excellent vendor relationships and optimize cash flow timing."
+      },
+      {
+        "question": "Can I choose only the services I need?",
+        "answer": "Absolutely. Every engagement is custom-tailored to your business. You can start with just monthly bookkeeping and add services like AR/AP management or CFO advisory as your needs grow."
+      },
+      {
+        "question": "Which accounting software do you support?",
+        "answer": "We are certified QuickBooks Online ProAdvisors and Xero Certified Partners. We also support Zoho Books, FreshBooks, Wave, Sage, Odoo, and NetSuite depending on your company's size and complexity."
+      }
+    ]
+  },
+  {
+    "category": "Pricing & Billing",
+    "items": [
+      {
+        "question": "How much does bookkeeping service cost?",
+        "answer": "Our pricing is custom-quoted as a flat monthly rate based on your business size, transaction volume, and specific needs. We do not charge hourly fees, so you always know exactly what you are paying. Request a custom quote to get a proposal in 1 business day."
+      },
+      {
+        "question": "Do you require long-term contracts?",
+        "answer": "No. We believe in earning your business every month. Our engagements are month-to-month with no long-term lock-in contracts."
+      },
+      {
+        "question": "Are there any setup fees?",
+        "answer": "Onboarding is free if your books are currently up-to-date and active. If your historical financial records are messy and require historical reconciliation, we will quote a transparent, one-time QuickBooks clean up fee before starting."
+      },
+      {
+        "question": "How do I pay for services?",
+        "answer": "We invoice monthly via email with easy online payment options including credit card and ACH bank transfer."
+      }
+    ]
+  },
+  {
+    "category": "Security & Privacy",
+    "items": [
+      {
+        "question": "Is my financial data secure with Hashbooks?",
+        "answer": "Absolutely. We use bank-level 256-bit encryption for all data transmission and storage. Our systems connect to your bank feeds using secure, read-only integrations (like Plaid), meaning we cannot move money or access credentials. Our processes follow SOC 2 compliance standards."
+      },
+      {
+        "question": "Who has access to my financial information?",
+        "answer": "Only your dedicated bookkeeper and their direct supervisor have access to your accounts. We use role-based access controls and maintain detailed audit logs."
+      },
+      {
+        "question": "Do you have a data backup policy?",
+        "answer": "Yes. All data is backed up daily with redundant cloud storage. Your financial records are protected against loss and available for recovery at any time."
+      }
+    ]
+  }
+]

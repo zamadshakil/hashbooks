@@ -1,0 +1,107 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section id="platforms-showcase" class="section reveal">
+  <div class="container">
+    <SectionHeading 
+      eyebrow="Integrations"
+      title="We Speak Your Software"
+      subtitle="We work directly on all major cloud accounting platforms and payment processors."
+    />
+
+    <div class="grid grid-4 platforms-grid">
+      <!-- QuickBooks -->
+      <Card title="QuickBooks Online" description="Fully certified ProAdvisors handling setup, cleanups, and daily books." class="platform-card qbo-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- Xero -->
+      <Card title="Xero" description="Certified advisors structuring bank feeds and matching multi-currency feeds." class="platform-card xero-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/xero.svg" alt="Xero" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- FreshBooks -->
+      <Card title="FreshBooks" description="Reconciling billing, invoice trackers, and payments for agency clients." class="platform-card freshbooks-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- Zoho Books -->
+      <Card title="Zoho Books" description="Integrating your bookkeeping inside your broader Zoho business suite." class="platform-card zoho-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/zoho.svg" alt="Zoho Books" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- Wave -->
+      <Card title="Wave Accounting" description="Affordable, clean books management for freelancers and contractors." class="platform-card wave-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/wave.svg" alt="Wave" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- Sage -->
+      <Card title="Sage Business Cloud" description="Structuring accounts for inventory-focused retail and wholesale trades." class="platform-card sage-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/sage.svg" alt="Sage" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- Odoo -->
+      <Card title="Odoo" description="Managing ledgers integrated with Odoo manufacturing, sales, and inventories." class="platform-card odoo-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/odoo.svg" alt="Odoo" class="showcase-logo" loading="lazy" />
+      </Card>
+
+      <!-- NetSuite -->
+      <Card title="Oracle NetSuite" description="Strategic ERP management for scaling companies requiring multi-entity ledgers." class="platform-card netsuite-hover" icon="true">
+        <img slot="icon-slot" src="/images/platforms/netsuite.svg" alt="NetSuite" class="showcase-logo" loading="lazy" />
+      </Card>
+    </div>
+
+    <p class="showcase-subtext text-center text-muted reveal reveal-delay-2">
+      * All logos and trademarks are the property of their respective owners. We are certified partners on these platforms.
+    </p>
+  </div>
+</section>
+
+<style>
+  .platforms-grid {
+    margin-top: var(--space-8);
+  }
+
+  .platform-card {
+    border-color: var(--color-border);
+    transition: all var(--transition-normal);
+  }
+
+  .showcase-logo {
+    height: 40px;
+    max-width: 140px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: var(--space-2);
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all var(--transition-normal);
+  }
+
+  :global(.platform-card):hover .showcase-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* Brand hovers */
+  :global(.platform-card):hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+  :global(.qbo-hover):hover { border-color: #2CA01C; }
+  :global(.xero-hover):hover { border-color: #13B5EA; }
+  :global(.freshbooks-hover):hover { border-color: #0075D2; }
+  :global(.zoho-hover):hover { border-color: #E22B2B; }
+  :global(.wave-hover):hover { border-color: #00C4CA; }
+  :global(.sage-hover):hover { border-color: #008000; }
+  :global(.odoo-hover):hover { border-color: #A24689; }
+  :global(.netsuite-hover):hover { border-color: #4A90E2; }
+
+  .showcase-subtext {
+    margin-top: var(--space-8);
+    font-size: var(--fs-caption);
+  }
+</style>

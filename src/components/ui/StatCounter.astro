@@ -1,0 +1,46 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  prefix?: string;
+  suffix?: string;
+}
+
+const { value, label, prefix = '', suffix = '' } = Astro.props;
+
+// Strip non-numeric parts for the JS counter target
+const targetValue = value.replace(/[^0-9.]/g, '');
+---
+
+<div class="stat-counter text-center reveal">
+  <div 
+    class="stat-number" 
+    data-counter 
+    data-target={targetValue} 
+    data-prefix={prefix}
+    data-suffix={suffix}
+  >
+    {prefix}{value}{suffix}
+  </div>
+  <div class="stat-label">{label}</div>
+</div>
+
+<style>
+  .stat-counter {
+    padding: var(--space-4);
+  }
+
+  .stat-number {
+    font-size: var(--fs-display);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+    color: var(--color-white);
+  }
+
+  .stat-label {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,8 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import servicesData from '../../data/services.json';
+
+const service = servicesData.find((s) => s.slug === 'catch-up-bookkeeping')!;
+---
+
+<ServiceLayout {...service} />
