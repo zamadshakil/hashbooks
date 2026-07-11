@@ -28,12 +28,24 @@ import { Image } from 'astro:assets';
       <div class="hero-platforms reveal reveal-delay-4">
         <span class="hero-platforms-label">Seamless software integration:</span>
         <div class="hero-platforms-row">
-          <img src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="hero-platform-logo logo-qb" width="26" height="26" loading="lazy" />
-          <img src="/images/platforms/xero.svg" alt="Xero" class="hero-platform-logo logo-xero" width="26" height="26" loading="lazy" />
-          <img src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="hero-platform-logo logo-freshbooks" width="26" height="26" loading="lazy" />
-          <img src="/images/platforms/zoho.svg" alt="Zoho Books" class="hero-platform-logo logo-zoho" width="32" height="32" loading="lazy" />
-          <img src="/images/platforms/sage.svg" alt="Sage" class="hero-platform-logo logo-sage" width="42" height="42" loading="lazy" />
-          <img src="/images/platforms/netsuite.svg" alt="NetSuite" class="hero-platform-logo logo-netsuite" width="26" height="26" loading="lazy" />
+          <a href="/platforms/quickbooks-online/" class="hero-platform-link" title="QuickBooks Online Bookkeeping Services">
+            <img src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="hero-platform-logo logo-qb" width="26" height="26" loading="lazy" />
+          </a>
+          <a href="/platforms/xero/" class="hero-platform-link" title="Xero Bookkeeping Services">
+            <img src="/images/platforms/xero.svg" alt="Xero" class="hero-platform-logo logo-xero" width="26" height="26" loading="lazy" />
+          </a>
+          <a href="/platforms/freshbooks/" class="hero-platform-link" title="FreshBooks Bookkeeping Services">
+            <img src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="hero-platform-logo logo-freshbooks" width="26" height="26" loading="lazy" />
+          </a>
+          <a href="/platforms/zoho-books/" class="hero-platform-link" title="Zoho Books Bookkeeping Services">
+            <img src="/images/platforms/zoho.svg" alt="Zoho Books" class="hero-platform-logo logo-zoho" width="32" height="32" loading="lazy" />
+          </a>
+          <a href="/platforms/sage-business-cloud/" class="hero-platform-link" title="Sage Business Cloud Bookkeeping Services">
+            <img src="/images/platforms/sage.svg" alt="Sage" class="hero-platform-logo logo-sage" width="42" height="42" loading="lazy" />
+          </a>
+          <a href="/platforms/oracle-netsuite/" class="hero-platform-link" title="Oracle NetSuite Bookkeeping Services">
+            <img src="/images/platforms/netsuite.svg" alt="NetSuite" class="hero-platform-logo logo-netsuite" width="26" height="26" loading="lazy" />
+          </a>
         </div>
       </div>
     </div>
@@ -93,7 +105,7 @@ import { Image } from 'astro:assets';
   .hero-subtitle {
     font-size: var(--fs-body-lg);
     color: var(--color-text-muted);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
     line-height: 1.6;
   }
 
@@ -154,9 +166,9 @@ import { Image } from 'astro:assets';
 
   /* Hero Integrations Row Styling */
   .hero-platforms {
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
     border-top: 1px solid var(--color-border);
-    padding-top: var(--space-6);
+    padding-top: var(--space-4);
   }
 
   .hero-platforms-label {
@@ -164,7 +176,7 @@ import { Image } from 'astro:assets';
     font-size: 11px;
     font-weight: 700;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -187,6 +199,17 @@ import { Image } from 'astro:assets';
     }
   }
 
+  .hero-platform-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-normal);
+  }
+
+  .hero-platform-link:hover {
+    transform: translateY(-3px);
+  }
+
   .hero-platform-logo {
     object-fit: contain;
     flex-shrink: 0;
@@ -195,10 +218,9 @@ import { Image } from 'astro:assets';
     transition: all var(--transition-normal);
   }
 
-  .hero-platform-logo:hover {
+  .hero-platform-link:hover .hero-platform-logo {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.08);
   }
 
   /* Specific sizing to balance visual weights of diverse aspect ratios */
