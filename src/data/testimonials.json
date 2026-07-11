@@ -4,47 +4,41 @@
     "name": "Muhammad Faisal",
     "role": "Director",
     "company": "Alpha Freight & Logistics",
-    "rating": 5,
-    "industry": "LOGISTICS"
+    "rating": 5
   },
   {
     "quote": "Managing Stripe settlements and Shopify inventory payouts used to be a nightmare. Hassan reconciled all historical transactions and keeps our daily e-commerce bookkeeping 100% clean.",
     "name": "Ayesha Rehman",
     "role": "Founder",
     "company": "Vogue Boutique",
-    "rating": 5,
-    "industry": "E-COMMERCE"
+    "rating": 5
   },
   {
     "quote": "His Work-in-Progress (WIP) reporting and project job-costing bookkeeping gave us the clear financial visibility we needed to bid on new contracts profitably.",
     "name": "Bilal Ahmed",
     "role": "CEO",
     "company": "Apex Builders & Developers",
-    "rating": 5,
-    "industry": "CONSTRUCTION"
+    "rating": 5
   },
   {
     "quote": "As a SaaS startup, tracking monthly recurring revenue (MRR) and international software subscriptions used to consume hours of our time. Hashbooks automated our QuickBooks sync and keeps our SaaS metrics fully reconciled.",
     "name": "Zainab Malik",
     "role": "Co-Founder & COO",
     "company": "CloudPulse Technologies",
-    "rating": 5,
-    "industry": "SAAS & TECH"
+    "rating": 5
   },
   {
     "quote": "Hassan set up our clinic's invoicing and payroll system. The monthly profit and loss statements are easy to read and give us the exact cost tracking we need to optimize our overhead and staff expenses.",
     "name": "Dr. Farhan Yousaf",
     "role": "Clinical Director",
     "company": "Yousaf Dental & Aesthetics",
-    "rating": 5,
-    "industry": "HEALTHCARE"
+    "rating": 5
   },
   {
     "quote": "Reconciling our POS sales report with daily bank deposits across multiple locations was a constant challenge. Hashbooks organized our sales tracking and bank matching. We always know our exact cash position.",
     "name": "Sara Khan",
     "role": "Operations Manager",
     "company": "Zest Cafe Group",
-    "rating": 5,
-    "industry": "RETAIL & FOOD"
+    "rating": 5
   }
 ]

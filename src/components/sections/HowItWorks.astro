@@ -132,20 +132,22 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
   .step-bg-number {
     position: absolute;
-    top: -15px;
+    top: -12px;
     right: 15px;
-    font-size: 6rem;
-    font-weight: 900;
-    color: rgba(26, 122, 61, 0.03);
+    font-size: 7.5rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(26, 122, 61, 0.08);
     line-height: 1;
     pointer-events: none;
-    transition: color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
     user-select: none;
   }
 
   .step-card:hover .step-bg-number {
-    color: rgba(26, 122, 61, 0.07);
+    -webkit-text-stroke: 1.5px rgba(26, 122, 61, 0.2);
+    transform: scale(1.05) translateY(-3px);
   }
 
   .step-card-title {

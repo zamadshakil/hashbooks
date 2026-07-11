@@ -11,55 +11,103 @@ import testimonialsData from '../../data/testimonials.json';
       title="Trusted by Growing Businesses"
       subtitle="Hear how we help entrepreneurs focus on scale by managing their numbers cleanly."
     />
+  </div>
 
-    <div class="testimonials-grid-container">
-      <div class="grid grid-3 testimonials-grid">
-        {testimonialsData.map((item) => (
+  <div class="testimonials-marquee-container">
+    <div class="testimonials-marquee-track">
+      <!-- Original Set -->
+      {testimonialsData.map((item) => (
+        <div class="marquee-item">
           <TestimonialCard 
             quote={item.quote}
             name={item.name}
             role={item.role}
             company={item.company}
-            industry={item.industry}
+            rating={item.rating}
           />
-        ))}
-      </div>
+        </div>
+      ))}
+      <!-- Duplicated Set for Seamless Loop -->
+      {testimonialsData.map((item) => (
+        <div class="marquee-item" aria-hidden="true">
+          <TestimonialCard 
+            quote={item.quote}
+            name={item.name}
+            role={item.role}
+            company={item.company}
+            rating={item.rating}
+          />
+        </div>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .testimonials-grid {
+  .testimonials-marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
     margin-top: var(--space-8);
+    padding: var(--space-4) 0;
+  }
+
+  /* Soft fade gradient masks on viewport edges */
+  .testimonials-marquee-container::before,
+  .testimonials-marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .testimonials-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-light) 0%, rgba(248, 250, 252, 0) 100%);
+  }
+
+  .testimonials-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-light) 0%, rgba(248, 250, 252, 0) 100%);
+  }
+
+  .testimonials-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+  }
+
+  .testimonials-marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-item {
+    width: 380px;
+    padding-right: var(--space-6);
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   @media (max-width: 768px) {
-    .testimonials-grid-container {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: var(--space-4) var(--space-4) var(--space-6) var(--space-4);
-      margin-left: calc(-1 * var(--space-4));
-      margin-right: calc(-1 * var(--space-4));
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+    .marquee-item {
+      width: 310px;
+      padding-right: var(--space-4);
     }
-
-    .testimonials-grid-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .testimonials-grid {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: var(--space-4);
-      margin-top: 0;
-      width: max-content;
-    }
-
-    :global(.testimonials-grid .testimonial-card) {
-      flex: 0 0 280px;
-      scroll-snap-align: start;
+    .testimonials-marquee-container::before,
+    .testimonials-marquee-container::after {
+      width: 60px;
     }
   }
 </style>
