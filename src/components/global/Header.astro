@@ -331,6 +331,7 @@ const getSlug = (href: string) => {
     menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
     menuToggle.classList.toggle('is-active');
     mobileMenu?.classList.toggle('is-open');
+    mobileMenu?.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
     document.body.classList.toggle('overflow-hidden');
   });
 </script>

@@ -53,12 +53,14 @@ const ctaNav = navData.cta;
     background-color: var(--color-white);
     z-index: 99;
     transform: translateX(100%);
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-normal), visibility var(--transition-normal);
     overflow-y: auto;
+    visibility: hidden;
   }
 
   .mobile-menu-drawer.is-open {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .mobile-menu-inner {
