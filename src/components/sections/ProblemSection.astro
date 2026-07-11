@@ -1,9 +1,8 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-import Card from '../ui/Card.astro';
 ---
 
-<section id="problem-section" class="section">
+<section id="problem-section" class="section section-dark problem-section-custom">
   <div class="container">
     <SectionHeading 
       eyebrow="The Pain Points"
@@ -13,69 +12,175 @@ import Card from '../ui/Card.astro';
 
     <div class="grid grid-3 problem-grid">
       <!-- Pain 1 -->
-      <Card 
-        title="Drowning in Receipts & Spreadsheets" 
-        description="Spending late nights reconciling transactions, chasing missing invoices, and manual data entry. Every hour on your books is an hour lost on growing your revenue."
-        icon="true"
-        class="problem-card reveal reveal-delay-1"
-      >
-        <svg slot="icon-slot" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
-      </Card>
+      <div class="custom-problem-card reveal reveal-delay-1">
+        <div class="problem-icon-wrapper">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+        </div>
+        <h3 class="problem-card-title">Drowning in Receipts & Spreadsheets</h3>
+        <p class="problem-card-desc">Spending late nights reconciling transactions, chasing missing invoices, and manual data entry. Every hour on your books is an hour lost on growing your revenue.</p>
+      </div>
 
       <!-- Pain 2 -->
-      <Card 
-        title="Dreading Tax Season Every Year" 
-        description="The annual scramble to organize receipts, figure out tax write-offs, and compile spreadsheets. Fearing late-filing IRS penalties or paying more than you actually owe."
-        icon="true"
-        class="problem-card reveal reveal-delay-2"
-      >
-        <svg slot="icon-slot" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-      </Card>
+      <div class="custom-problem-card reveal reveal-delay-2">
+        <div class="problem-icon-wrapper">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <h3 class="problem-card-title">Dreading Tax Season Every Year</h3>
+        <p class="problem-card-desc">The annual scramble to organize receipts, figure out tax write-offs, and compile spreadsheets. Fearing late-filing IRS penalties or paying more than you actually owe.</p>
+      </div>
 
       <!-- Pain 3 -->
-      <Card 
-        title="Flying Blind on Cash Flow" 
-        description="Making business decisions without knowing your exact margins or profits. Without real-time visibility, you might overcommit, miss payroll, or lose growth opportunities."
-        icon="true"
-        class="problem-card reveal reveal-delay-3"
-      >
-        <svg slot="icon-slot" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-      </Card>
+      <div class="custom-problem-card reveal reveal-delay-3">
+        <div class="problem-icon-wrapper">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <h3 class="problem-card-title">Flying Blind on Cash Flow</h3>
+        <p class="problem-card-desc">Making business decisions without knowing your exact margins or profits. Without real-time visibility, you might overcommit, miss payroll, or lose growth opportunities.</p>
+      </div>
     </div>
 
     <div class="problem-footer text-center reveal reveal-delay-2">
-      <p class="transition-text">It doesn't have to be this way.</p>
+      <div class="transition-badge">
+        <span class="transition-text">It doesn't have to be this way.</span>
+        <a href="#services-grid-section" class="transition-link">
+          Explore our solutions 
+          <svg class="chevron-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .problem-section-custom {
+    background: linear-gradient(180deg, var(--color-primary-dark) 0%, #030f26 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ambient background glow */
+  .problem-section-custom::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.03) 0%, rgba(239, 68, 68, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
   .problem-grid {
     margin-top: var(--space-8);
   }
 
-  .problem-card {
-    border-color: rgba(239, 68, 68, 0.1);
+  .custom-problem-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal), background-color var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .problem-card:hover {
-    border-color: var(--color-semantic-error);
+
+  .custom-problem-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(239, 68, 68, 0.25);
+    box-shadow: 0 20px 40px -15px rgba(239, 68, 68, 0.15);
   }
-  
-  .problem-card :global(.card-icon) {
-    color: var(--color-semantic-error);
-    background-color: rgba(239, 68, 68, 0.05);
-    padding: 10px;
-    border-radius: var(--radius-md);
+
+  .problem-icon-wrapper {
+    color: #FF5252; /* Vibrant warning red */
+    background-color: rgba(239, 68, 68, 0.12);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    transition: transform var(--transition-fast);
+  }
+
+  .custom-problem-card:hover .problem-icon-wrapper {
+    transform: scale(1.08) rotate(-3deg);
+  }
+
+  .problem-card-title {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-white);
+    line-height: 1.3;
+  }
+
+  .problem-card-desc {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+    margin: 0;
   }
 
   .problem-footer {
     margin-top: var(--space-8);
   }
 
+  .transition-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  @media (min-width: 640px) {
+    .transition-badge {
+      flex-direction: row;
+      gap: var(--space-4);
+      padding: var(--space-2) var(--space-6);
+    }
+  }
+
   .transition-text {
-    font-size: var(--fs-body-lg);
+    font-size: var(--fs-body-sm);
     font-weight: 600;
-    color: var(--color-primary);
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  .transition-link {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    color: var(--color-secondary-light);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    transition: color var(--transition-fast);
+  }
+
+  .transition-link:hover {
+    color: var(--color-white);
+  }
+
+  .chevron-right {
+    transition: transform var(--transition-fast);
+  }
+
+  .transition-link:hover .chevron-right {
+    transform: translateX(4px);
   }
 </style>
