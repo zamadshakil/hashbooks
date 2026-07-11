@@ -32,3 +32,10 @@ Thumbs.db
 /Hashbooks_Comprehensive_Research.pdf
 /Hashbooks - logo bg.jpeg
 /Hashbooks - logo.jpeg
+
+# Vercel build output
+.vercel/
+
+# Profiling traces
+*_trace.json
+trace.json
