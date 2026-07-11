@@ -1,6 +1,7 @@
 ---
 import Button from '../ui/Button.astro';
 import Badge from '../ui/Badge.astro';
+import { Image } from 'astro:assets';
 ---
 
 <section id="hero-section" class="hero-container">
@@ -40,7 +41,7 @@ import Badge from '../ui/Badge.astro';
     <!-- Right: High-End Service Workspace Image -->
     <div class="hero-visual-side reveal reveal-delay-2">
       <div class="mock-dashboard-wrapper pulse-glow">
-        <img src="/images/bookkeeping-workspace.png" alt="Hashbooks Professional Bookkeeping Service Workspace" class="hero-mockup-img" width="480" height="360" loading="eager" />
+        <Image src="/images/bookkeeping-workspace.png" alt="Hashbooks Professional Bookkeeping Service Workspace" class="hero-mockup-img" width={480} height={360} loading="eager" fetchpriority="high" decoding="async" format="webp" quality={80} />
       </div>
     </div>
   </div>

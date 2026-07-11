@@ -7,3 +7,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-XSS-Protection: 0
+
+# Immutable cache for Astro's hashed static assets (CSS, JS, images)
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

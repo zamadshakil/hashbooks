@@ -40,10 +40,19 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
     
     <slot name="head" />
     
-    <!-- Fallback font optimization -->
+    <!-- Critical inline font fallback (renders text immediately while Inter loads) -->
+    <style is:inline>
+      html { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+
+    <!-- Google Fonts — loaded async to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+
+    <!-- LCP preload hint — desktop hero image (skipped on mobile via media query) -->
+    <link rel="preload" as="image" href="/images/bookkeeping-workspace.png" media="(min-width: 1024px)" />
 
     <noscript>
       <style>
@@ -53,24 +62,6 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
         }
       </style>
     </noscript>
-
-    <!-- Meta Pixel Code -->
-    <script is:inline define:vars={{ pixelId }}>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', pixelId);
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
-    /></noscript>
-    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <slot />
@@ -78,5 +69,27 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
     <!-- Scripts -->
     <script src="../scripts/scroll-animations.js"></script>
     <script src="../scripts/stat-counter.js"></script>
+
+    <!-- Meta Pixel Code — deferred to after page load to avoid blocking FCP/LCP -->
+    <script is:inline define:vars={{ pixelId }}>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', pixelId);
+          fbq('track', 'PageView');
+        }, 0);
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </body>
 </html>
