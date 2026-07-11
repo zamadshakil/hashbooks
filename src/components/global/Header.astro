@@ -86,6 +86,8 @@ const getSlug = (href: string) => {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    margin: 0 auto;
     width: 100%;
     max-width: 100%;
     height: 70px;
@@ -102,9 +104,9 @@ const getSlug = (href: string) => {
       border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: none;
   }
 
@@ -115,7 +117,8 @@ const getSlug = (href: string) => {
   #site-header.scrolled {
     top: 0;
     left: 0;
-    transform: none;
+    right: 0;
+    margin: 0 auto;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
@@ -127,8 +130,9 @@ const getSlug = (href: string) => {
   @media (min-width: 1024px) {
     #site-header.scrolled {
       top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       width: calc(100% - 32px);
       max-width: 1200px;
       background-color: rgba(255, 255, 255, 0.85);
@@ -343,37 +347,28 @@ const getSlug = (href: string) => {
 </style>
 
 <script>
-  // Remove preload class to enable transitions only after initial render/paint
   const header = document.getElementById('site-header');
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  };
+
+  // Run immediately to set correct state on load before transitions are enabled
+  handleScroll();
+
+  // Add passive scroll listener for high performance scrolling
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Remove preload class to enable transitions only after initial render/paint
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       header?.classList.remove('preload');
     });
   });
-
-  const sentinel = document.createElement('div');
-  sentinel.style.position = 'absolute';
-  sentinel.style.top = '0';
-  sentinel.style.left = '0';
-  sentinel.style.height = '1px';
-  sentinel.style.width = '1px';
-  sentinel.style.pointerEvents = 'none';
-  document.body.prepend(sentinel);
-
-  const headerObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        header?.classList.add('scrolled');
-      } else {
-        header?.classList.remove('scrolled');
-      }
-    });
-  }, {
-    root: null,
-    threshold: 0,
-    rootMargin: '-20px 0px 0px 0px' // Triggers exactly when scrolled past 20px
-  });
-  headerObserver.observe(sentinel);
 
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
