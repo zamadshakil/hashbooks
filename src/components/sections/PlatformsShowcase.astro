@@ -14,42 +14,42 @@ import Card from '../ui/Card.astro';
     <div class="grid grid-4 platforms-grid">
       <!-- QuickBooks -->
       <Card title="QuickBooks Online" description="Fully certified ProAdvisors handling setup, cleanups, and daily books." class="platform-card qbo-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/quickbooks.svg" alt="QuickBooks" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- Xero -->
       <Card title="Xero" description="Certified advisors structuring bank feeds and matching multi-currency feeds." class="platform-card xero-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/xero.svg" alt="Xero" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/xero.svg" alt="Xero" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- FreshBooks -->
       <Card title="FreshBooks" description="Reconciling billing, invoice trackers, and payments for agency clients." class="platform-card freshbooks-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/freshbooks.svg" alt="FreshBooks" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- Zoho Books -->
       <Card title="Zoho Books" description="Integrating your bookkeeping inside your broader Zoho business suite." class="platform-card zoho-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/zoho.svg" alt="Zoho Books" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/zoho.svg" alt="Zoho Books" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- Wave -->
       <Card title="Wave Accounting" description="Affordable, clean books management for freelancers and contractors." class="platform-card wave-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/wave.svg" alt="Wave" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/wave.svg" alt="Wave" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- Sage -->
       <Card title="Sage Business Cloud" description="Structuring accounts for inventory-focused retail and wholesale trades." class="platform-card sage-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/sage.svg" alt="Sage" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/sage.svg" alt="Sage" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- Odoo -->
       <Card title="Odoo" description="Managing ledgers integrated with Odoo manufacturing, sales, and inventories." class="platform-card odoo-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/odoo.svg" alt="Odoo" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/odoo.svg" alt="Odoo" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
 
       <!-- NetSuite -->
       <Card title="Oracle NetSuite" description="Strategic ERP management for scaling companies requiring multi-entity ledgers." class="platform-card netsuite-hover" icon="true">
-        <img slot="icon-slot" src="/images/platforms/netsuite.svg" alt="NetSuite" class="showcase-logo" loading="lazy" />
+        <img slot="icon-slot" src="/images/platforms/netsuite.svg" alt="NetSuite" class="showcase-logo" loading="lazy" width="40" height="40" />
       </Card>
     </div>
 
@@ -62,6 +62,12 @@ import Card from '../ui/Card.astro';
 <style>
   .platforms-grid {
     margin-top: var(--space-8);
+  }
+
+  @media (max-width: 768px) {
+    .platforms-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .platform-card {

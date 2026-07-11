@@ -4,6 +4,7 @@ import Button from '../components/ui/Button.astro';
 import Accordion from '../components/ui/Accordion.astro';
 import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
 import servicesData from '../data/services.json';
+import { Image } from 'astro:assets';
 
 interface Props {
   slug: string;
@@ -75,7 +76,18 @@ const relatedServiceObjects = relatedServices
       </div>
       <div class="hero-illustration">
         <div class="service-image-box">
-          <img src={`/images/services/${slug}.png`} alt={title} class="service-hero-img" />
+          <Image 
+            src={`/images/services/${slug}.png`} 
+            alt={title} 
+            class="service-hero-img" 
+            width={440} 
+            height={330} 
+            format="webp" 
+            quality={80} 
+            loading="eager" 
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -181,6 +193,7 @@ const relatedServiceObjects = relatedServices
 
   .breadcrumb-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 8px;
     font-size: var(--fs-caption);
@@ -236,7 +249,16 @@ const relatedServiceObjects = relatedServices
   }
   .hero-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-4);
+  }
+  @media (max-width: 480px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+    .hero-actions :global(.btn) {
+      width: 100%;
+    }
   }
 
   .service-image-box {
