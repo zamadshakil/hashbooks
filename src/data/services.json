@@ -167,11 +167,11 @@
   },
   {
     "slug": "cfo-advisory",
-    "title": "CFO Advisory Services",
-    "metaTitle": "Virtual CFO Advisory Services for Growing Companies | Hashbooks",
-    "metaDescription": "Get strategic financial guidance without the full-time CFO cost. Cash flow management, growth planning, margins analysis, and investor-ready reporting.",
+    "title": "Virtual Fractional CFO Services",
+    "metaTitle": "Virtual Fractional CFO Services for Growing Companies | Hashbooks",
+    "metaDescription": "Get strategic financial guidance without the full-time CFO cost with our Virtual Fractional CFO services. Cash flow forecasting, growth planning, margins analysis, and investor-ready reporting.",
     "icon": "trending-up",
-    "heroDescription": "You don't need a six-figure CFO salary to get executive-level financial strategy. Our virtual CFO services give you the strategic insight and planning power your business needs to scale confidently.",
+    "heroDescription": "You don't need a six-figure CFO salary to get executive-level financial strategy. Our Virtual Fractional CFO services give you the strategic insight and planning power your business needs to scale confidently.",
     "features": [
       "Strategic financial planning and modeling",
       "Cash flow forecasting and optimization",
@@ -192,9 +192,9 @@
       { "step": "3", "title": "Execute & Review", "description": "Monthly strategy sessions to review performance, adjust plans, and capitalize on opportunities." }
     ],
     "faqs": [
-      { "question": "What's the difference between bookkeeping and CFO advisory?", "answer": "Bookkeeping records what happened. CFO advisory tells you what it means and what to do next. It's the strategic layer on top of accurate books." },
+      { "question": "What's the difference between bookkeeping and Virtual Fractional CFO?", "answer": "Bookkeeping records what happened. Virtual Fractional CFO tells you what it means and what to do next. It's the strategic layer on top of accurate books." },
       { "question": "How often will I meet with my advisor?", "answer": "Most clients meet monthly for a strategy session, with ad-hoc availability for urgent financial decisions or opportunities." },
-      { "question": "Do I need bookkeeping services too?", "answer": "CFO advisory works best when built on clean, accurate books. We recommend pairing it with our monthly bookkeeping service for the best results." }
+      { "question": "Do I need bookkeeping services too?", "answer": "Virtual Fractional CFO works best when built on clean, accurate books. We recommend pairing it with our monthly bookkeeping service for the best results." }
     ],
     "relatedServices": ["financial-reporting", "bookkeeping", "cloud-integration"]
   },

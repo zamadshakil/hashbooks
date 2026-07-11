@@ -9,7 +9,7 @@
         { "label": "Payroll Processing", "href": "/services/payroll/", "description": "Accurate, compliant payroll" },
         { "label": "Tax Preparation", "href": "/services/tax-preparation/", "description": "Year-round tax readiness" },
         { "label": "Financial Reporting", "href": "/services/financial-reporting/", "description": "Clear, GAAP financial reports" },
-        { "label": "CFO Advisory", "href": "/services/cfo-advisory/", "description": "Strategic financial guidance" },
+        { "label": "Virtual Fractional CFO", "href": "/services/cfo-advisory/", "description": "Strategic financial guidance" },
         { "label": "QuickBooks Clean Up & Catch-Up", "href": "/services/catch-up-bookkeeping/", "description": "Fix messy or outdated books" },
         { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/", "description": "Migrate and integrate to the cloud" }
       ]
@@ -39,7 +39,7 @@
       { "label": "FAQ", "href": "/faq/" }
     ],
     "resources": [
-      { "label": "CFO Advisory", "href": "/services/cfo-advisory/" },
+      { "label": "Virtual Fractional CFO", "href": "/services/cfo-advisory/" },
       { "label": "QuickBooks Clean Up & Catch-Up", "href": "/services/catch-up-bookkeeping/" },
       { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/" },
       { "label": "Get a Quote", "href": "/get-a-quote/" }
