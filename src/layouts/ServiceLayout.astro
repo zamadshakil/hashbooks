@@ -352,10 +352,15 @@ const relatedServiceObjects = relatedServices
     gap: var(--space-8);
     margin-top: var(--space-8);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+  }
+  @media (min-width: 992px) {
     .process-grid {
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
     }
   }
 
@@ -456,7 +461,12 @@ const relatedServiceObjects = relatedServices
     gap: var(--space-6);
     margin-top: var(--space-6);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
+    .related-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 992px) {
     .related-services-grid {
       grid-template-columns: repeat(3, 1fr);
     }

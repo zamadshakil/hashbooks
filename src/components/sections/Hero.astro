@@ -9,7 +9,7 @@ import Badge from '../ui/Badge.astro';
     <div class="hero-text-side">
       <Badge text="Certified QuickBooks & Xero Experts" variant="success" class="hero-badge reveal" />
       <h1 class="hero-headline reveal reveal-delay-1">
-        Professional Bookkeeping Services <br />&amp; Financial Clarity.
+        Professional Bookkeeping Services <br class="desktop-only" />&amp; Financial Clarity.
       </h1>
       <p class="hero-subtitle reveal reveal-delay-2">
         Certified QuickBooks Online specialists providing monthly bookkeeping, bank reconciliation, credit card (CC) reconciliation, AR/AP management, and accurate financial reporting.
@@ -202,4 +202,14 @@ import Badge from '../ui/Badge.astro';
   .logo-zoho { height: 32px; }
   .logo-sage { height: 42px; }
   .logo-netsuite { height: 26px; }
+
+  .desktop-only {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-only {
+      display: inline;
+    }
+  }
 </style>
