@@ -12,16 +12,18 @@ import testimonialsData from '../../data/testimonials.json';
       subtitle="Hear how we help entrepreneurs focus on scale by managing their numbers cleanly."
     />
 
-    <div class="grid grid-3 testimonials-grid">
-      {testimonialsData.map((item) => (
-        <TestimonialCard 
-          quote={item.quote}
-          name={item.name}
-          role={item.role}
-          company={item.company}
-          rating={item.rating}
-        />
-      ))}
+    <div class="testimonials-grid-container">
+      <div class="grid grid-3 testimonials-grid">
+        {testimonialsData.map((item) => (
+          <TestimonialCard 
+            quote={item.quote}
+            name={item.name}
+            role={item.role}
+            company={item.company}
+            industry={item.industry}
+          />
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -29,5 +31,35 @@ import testimonialsData from '../../data/testimonials.json';
 <style>
   .testimonials-grid {
     margin-top: var(--space-8);
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: var(--space-4) var(--space-4) var(--space-6) var(--space-4);
+      margin-left: calc(-1 * var(--space-4));
+      margin-right: calc(-1 * var(--space-4));
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .testimonials-grid-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: var(--space-4);
+      margin-top: 0;
+      width: max-content;
+    }
+
+    :global(.testimonials-grid .testimonial-card) {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+    }
   }
 </style>

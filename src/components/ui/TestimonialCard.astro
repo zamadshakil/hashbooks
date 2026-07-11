@@ -4,22 +4,27 @@ interface Props {
   name: string;
   role: string;
   company: string;
+  industry: string;
   rating?: number;
 }
 
-const { quote, name, role, company, rating = 5 } = Astro.props;
+const { quote, name, role, company, industry } = Astro.props;
 ---
 
 <div class="card testimonial-card reveal">
-  <div class="rating-stars">
-    {Array.from({ length: rating }).map((_, i) => (
-      <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-    ))}
+  <div class="card-header">
+    <div class="verified-badge">
+      <svg class="check-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Verified Client</span>
+    </div>
   </div>
+
   <blockquote class="testimonial-quote">
     "{quote}"
   </blockquote>
-  <div class="testimonial-author">
+
+  <div class="testimonial-footer">
+    <div class="industry-tag">CLIENT // {industry}</div>
     <div class="author-details">
       <cite class="author-name">{name}</cite>
       <span class="author-meta">{role}, {company}</span>
@@ -32,39 +37,80 @@ const { quote, name, role, company, rating = 5 } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: none;
+    padding: var(--space-6);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
   }
 
-  .rating-stars {
-    color: var(--color-accent);
+  .testimonial-card:nth-child(even) {
+    border-left-color: var(--color-primary);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(7, 32, 73, 0.15);
+  }
+
+  .card-header {
     margin-bottom: var(--space-4);
-    display: flex;
-    gap: 2px;
+  }
+
+  .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: rgba(23, 149, 60, 0.08);
+    color: var(--color-secondary-light);
+    padding: 4px 8px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .testimonial-quote {
-    font-size: var(--fs-body-sm);
-    color: var(--color-text-body);
-    font-style: italic;
-    line-height: 1.6;
+    font-family: 'Lora', Georgia, serif;
+    font-size: var(--fs-body);
+    color: var(--color-text-heading);
+    font-style: normal;
+    line-height: 1.65;
     margin-bottom: var(--space-6);
   }
 
-  .testimonial-author {
+  .testimonial-footer {
     display: flex;
-    align-items: center;
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--space-4);
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .industry-tag {
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1.5px dashed var(--color-border);
+    padding-bottom: var(--space-2);
   }
 
   .author-name {
     display: block;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-style: normal;
     color: var(--color-text-heading);
     font-size: var(--fs-body-sm);
+    margin-bottom: 2px;
   }
 
   .author-meta {
+    font-family: 'Inter', sans-serif;
     font-size: var(--fs-caption);
     color: var(--color-text-muted);
   }
