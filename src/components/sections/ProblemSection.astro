@@ -8,6 +8,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
       eyebrow="The Pain Points"
       title="Sound Familiar?"
       subtitle="Running a business is hard enough without the stress of manual bookkeeping."
+      light={true}
     />
 
     <div class="grid grid-3 problem-grid">
@@ -125,7 +126,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
   .problem-card-desc {
     font-size: var(--fs-body-sm);
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.75); /* Increased contrast from 0.65 to 0.75 */
     line-height: 1.6;
     margin: 0;
   }
@@ -165,7 +166,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
   .transition-link {
     font-size: var(--fs-body-sm);
     font-weight: 700;
-    color: var(--color-secondary-light);
+    color: #10B981; /* High contrast semantic green */
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
@@ -173,7 +174,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
   }
 
   .transition-link:hover {
-    color: var(--color-white);
+    color: #38ef7d; /* Brighter lime green on hover */
   }
 
   .chevron-right {
