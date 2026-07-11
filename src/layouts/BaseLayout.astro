@@ -14,6 +14,7 @@ interface Props {
 }
 
 const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.props;
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
 ---
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Meta Pixel Code -->
-    <script is:inline>
+    <script is:inline define:vars={{ pixelId }}>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -53,11 +54,11 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1035286139051346');
+      fbq('init', pixelId);
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1035286139051346&ev=PageView&noscript=1"
+      src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
     /></noscript>
     <!-- End Meta Pixel Code -->
   </head>

@@ -1,6 +1,5 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-import Card from '../ui/Card.astro';
 ---
 
 <section id="services-grid-section" class="section section-alt reveal">
@@ -11,120 +10,263 @@ import Card from '../ui/Card.astro';
       subtitle="Customized bookkeeping solutions built to give your business total financial peace of mind."
     />
 
-    <div class="grid grid-3 services-grid">
+    <div class="services-grid">
       <!-- Service 1: Bookkeeping -->
-      <Card 
-        title="Monthly Bookkeeping" 
-        description="Daily transaction recording, professional bank reconciliation, credit card (CC) reconciliation, and QuickBooks Online ledger management."
-        icon="true"
-        href="/services/bookkeeping/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-      </Card>
+      <a href="/services/bookkeeping/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">Monthly Bookkeeping</h3>
+          <p class="service-card-desc">Daily transaction recording, professional bank reconciliation, credit card (CC) reconciliation, and QuickBooks Online ledger management.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 2: AP/AR -->
-      <Card 
-        title="AR/AP Management" 
-        description="Streamline cash flow with professional invoicing, bill payments, Accounts Payable (AP) and Accounts Receivable (AR) management."
-        icon="true"
-        href="/services/accounts-payable-receivable/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-      </Card>
+      <a href="/services/accounts-payable-receivable/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">AR/AP Management</h3>
+          <p class="service-card-desc">Streamline cash flow with professional invoicing, bill payments, Accounts Payable (AP) and Accounts Receivable (AR) management.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 3: Payroll -->
-      <Card 
-        title="Payroll Processing" 
-        description="Accurate employee salary calculations, federal/state compliance, direct deposit setup, and automated tax filings."
-        icon="true"
-        href="/services/payroll/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-      </Card>
+      <a href="/services/payroll/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">Payroll Processing</h3>
+          <p class="service-card-desc">Accurate employee salary calculations, federal/state compliance, direct deposit setup, and automated tax filings.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 4: Tax Prep -->
-      <Card 
-        title="Tax Preparation Support" 
-        description="Year-round tax readiness bookkeeping, deduction maximization, and organized CPA-ready tax packages."
-        icon="true"
-        href="/services/tax-preparation/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-      </Card>
+      <a href="/services/tax-preparation/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">Tax Preparation Support</h3>
+          <p class="service-card-desc">Year-round tax readiness bookkeeping, deduction maximization, and organized CPA-ready tax packages.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 5: Reporting -->
-      <Card 
-        title="Financial Reporting" 
-        description="GAAP-compliant Balance Sheets, P&L statements, and custom cash flow forecasting dashboards delivered monthly."
-        icon="true"
-        href="/services/financial-reporting/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><line x1="2" y1="20" x2="22" y2="20"></line></svg>
-      </Card>
+      <a href="/services/financial-reporting/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">Financial Reporting</h3>
+          <p class="service-card-desc">GAAP-compliant Balance Sheets, P&L statements, and custom cash flow forecasting dashboards delivered monthly.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 6: CFO Advisory -->
-      <Card 
-        title="CFO Advisory Services" 
-        description="Virtual CFO strategic planning, margins analysis, cash flow forecasting, and fundraising/investor support."
-        icon="true"
-        href="/services/cfo-advisory/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"></path><polyline points="17 6 23 6 23 12"></polyline></svg>
-      </Card>
+      <a href="/services/cfo-advisory/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"></path><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">CFO Advisory Services</h3>
+          <p class="service-card-desc">Virtual CFO strategic planning, margins analysis, cash flow forecasting, and fundraising/investor support.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 7: Catch-Up -->
-      <Card 
-        title="QuickBooks Clean Up" 
-        description="Behind on your books? We specialize in QuickBooks set-up and clean up, rebuilding historical financial records."
-        icon="true"
-        href="/services/catch-up-bookkeeping/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
-      </Card>
+      <a href="/services/catch-up-bookkeeping/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">QuickBooks Clean Up</h3>
+          <p class="service-card-desc">Behind on your books? We specialize in QuickBooks set-up and clean up, rebuilding historical financial records.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Service 8: Cloud Setup -->
-      <Card 
-        title="QuickBooks Set-up & Integration" 
-        description="Professional QuickBooks Online set-up, third-party software sync, and custom chart of accounts customization."
-        icon="true"
-        href="/services/cloud-integration/"
-        class="service-card"
-      >
-        <svg slot="icon-slot" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-.08A7 7 0 0 0 4.75 9.07A8 8 0 0 0 8 24h10a6 6 0 0 0 0-12z"></path></svg>
-      </Card>
+      <a href="/services/cloud-integration/" class="service-grid-card">
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-.08A7 7 0 0 0 4.75 9.07A8 8 0 0 0 8 24h10a6 6 0 0 0 0-12z"></path></svg>
+        </div>
+        <div class="card-content">
+          <h3 class="service-card-title">QuickBooks Set-up & Integration</h3>
+          <p class="service-card-desc">Professional QuickBooks Online set-up, third-party software sync, and custom chart of accounts customization.</p>
+        </div>
+        <div class="card-footer">
+          <span class="learn-more">
+            Learn More
+            <svg class="arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
 <style>
   .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
     margin-top: var(--space-8);
   }
 
-  .service-card {
-    border-color: rgba(26, 122, 97, 0.1);
-  }
-  .service-card:hover {
-    border-color: var(--color-secondary);
+  @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
   }
 
-  .service-card :global(.card-icon) {
-    color: var(--color-secondary);
-    background-color: rgba(26, 122, 61, 0.05);
-    padding: 10px;
+  @media (min-width: 992px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service-grid-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .service-grid-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light));
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-grid-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(7, 32, 73, 0.08), 0 10px 10px -5px rgba(7, 32, 73, 0.03);
+    border-color: rgba(26, 122, 61, 0.25);
+  }
+
+  .service-grid-card:hover::before {
+    opacity: 1;
+  }
+
+  .icon-container {
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-md);
-    transition: all var(--transition-fast);
+    background-color: rgba(26, 122, 61, 0.05);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+    transition: all 0.3s ease;
   }
 
-  .service-card:hover :global(.card-icon) {
-    color: var(--color-white);
+  .service-grid-card:hover .icon-container {
     background-color: var(--color-secondary);
+    color: var(--color-white);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(26, 122, 61, 0.2);
+  }
+
+  .service-card-title {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-3);
+  }
+
+  .service-card-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .card-footer {
+    margin-top: auto;
+  }
+
+  .learn-more {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    color: var(--color-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+  }
+
+  .arrow-right {
+    transition: transform 0.2s ease;
+  }
+
+  .service-grid-card:hover .learn-more {
+    color: var(--color-primary-light);
+  }
+
+  .service-grid-card:hover .arrow-right {
+    transform: translateX(4px);
   }
 </style>

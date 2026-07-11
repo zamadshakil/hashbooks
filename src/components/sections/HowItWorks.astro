@@ -11,32 +11,33 @@ import SectionHeading from '../ui/SectionHeading.astro';
     />
 
     <div class="steps-container">
-      <div class="steps-line"></div>
-      
       <div class="steps-grid">
         <!-- Step 1 -->
-        <div class="step-item reveal reveal-delay-1">
-          <div class="step-number-circle">1</div>
-          <h3 class="step-title">Book a Free Call</h3>
-          <p class="step-desc">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-bg-number">01</div>
+          <div class="step-badge">1</div>
+          <h3 class="step-card-title">Book a Free Call</h3>
+          <p class="step-card-desc">
             Tell us about your business, transaction volume, and current accounting setup. We'll outline where you need help.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="step-item reveal reveal-delay-2">
-          <div class="step-number-circle">2</div>
-          <h3 class="step-title">We Handle Your Books</h3>
-          <p class="step-desc">
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-bg-number">02</div>
+          <div class="step-badge">2</div>
+          <h3 class="step-card-title">We Handle Your Books</h3>
+          <p class="step-card-desc">
             With secure read-only access, our certified team handles all daily categorizations, AP/AR, and payroll reconciliations.
           </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="step-item reveal reveal-delay-3">
-          <div class="step-number-circle">3</div>
-          <h3 class="step-title">You Get Clarity</h3>
-          <p class="step-desc">
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-bg-number">03</div>
+          <div class="step-badge">3</div>
+          <h3 class="step-card-title">You Get Clarity</h3>
+          <p class="step-card-desc">
             Access clean monthly financial reports and real-time dashboards so you always make decisions with accurate numbers.
           </p>
         </div>
@@ -47,76 +48,114 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 <style>
   .steps-container {
-    position: relative;
-    margin-top: var(--space-12);
-  }
-
-  .steps-line {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    border-top: 2px dashed var(--color-border);
-    display: none;
-    z-index: 1;
+    margin-top: var(--space-8);
   }
 
   .steps-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-8);
-    position: relative;
-    z-index: 2;
   }
 
   @media (min-width: 768px) {
-    .steps-line {
-      display: block;
-    }
     .steps-grid {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-6);
     }
   }
 
-  .step-item {
-    text-align: center;
+  .step-card {
     background-color: var(--color-white);
-    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
   }
 
-  .step-number-circle {
-    width: 48px;
-    height: 48px;
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light));
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(26, 122, 61, 0.08), 0 10px 10px -5px rgba(26, 122, 61, 0.03);
+    border-color: rgba(26, 122, 61, 0.25);
+  }
+
+  .step-card:hover::before {
+    opacity: 1;
+  }
+
+  .step-badge {
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-full);
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
     color: var(--color-white);
     font-weight: 700;
-    font-size: var(--fs-body-lg);
+    font-size: var(--fs-body);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--space-4);
-    box-shadow: 0 0 0 6px var(--color-white);
+    margin-bottom: var(--space-6);
+    box-shadow: 0 4px 10px rgba(7, 32, 73, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
   }
 
-  .step-item:hover .step-number-circle {
-    background-color: var(--color-secondary);
-    transform: scale(1.05);
-    transition: all var(--transition-fast);
+  .step-card:hover .step-badge {
+    background: linear-gradient(135deg, var(--color-secondary), #135d2e);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(26, 122, 61, 0.3);
   }
 
-  .step-title {
+  .step-bg-number {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(26, 122, 61, 0.03);
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    z-index: 1;
+    user-select: none;
+  }
+
+  .step-card:hover .step-bg-number {
+    color: rgba(26, 122, 61, 0.07);
+  }
+
+  .step-card-title {
     font-size: var(--fs-body-lg);
     font-weight: 700;
-    margin-bottom: var(--space-2);
     color: var(--color-text-heading);
+    margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 2;
   }
 
-  .step-desc {
+  .step-card-desc {
     font-size: var(--fs-body-sm);
     color: var(--color-text-muted);
     line-height: 1.6;
+    position: relative;
+    z-index: 2;
   }
 </style>

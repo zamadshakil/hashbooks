@@ -24,154 +24,186 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
   <section class="section section-alt">
     <div class="container max-width-600">
       <div class="card quote-card">
-        <!-- Modern Steps Bar -->
-        <div class="wizard-steps-container">
-          <div class="wizard-steps">
-            <div class="wizard-step active" data-step-indicator="1">
-              <div class="step-circle">1</div>
-              <span class="step-label">Business</span>
-            </div>
-            <div class="wizard-line-container">
-              <div class="wizard-line" data-line-indicator="1"></div>
-            </div>
-            <div class="wizard-step" data-step-indicator="2">
-              <div class="step-circle">2</div>
-              <span class="step-label">Services</span>
-            </div>
-            <div class="wizard-line-container">
-              <div class="wizard-line" data-line-indicator="2"></div>
-            </div>
-            <div class="wizard-step" data-step-indicator="3">
-              <div class="step-circle">3</div>
-              <span class="step-label">Contact</span>
-            </div>
+        <!-- Success View (Hidden by default) -->
+        <div id="quote-success-view" style="display: none; text-align: center; padding: var(--space-4) 0;">
+          <div style="color: var(--color-secondary); margin-bottom: var(--space-4);">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
           </div>
+          <h2 class="step-heading" style="color: var(--color-primary); font-size: var(--fs-h2); margin-bottom: var(--space-2); text-align: center;">Proposal Request Received!</h2>
+          <p style="color: var(--color-text-body); margin-bottom: var(--space-6);">Thank you for requesting a bookkeeping proposal. Our team is reviewing your volume details and will email your custom flat-rate quote in 1 business day.</p>
+          <a href="/" class="btn btn-primary" style="display: inline-block;">Return Home</a>
         </div>
 
-        <form id="quote-wizard-form" action="https://formspree.io/f/placeholder" method="POST">
-          <!-- Step 1: Business Profile -->
-          <div class="form-step active" data-step="1">
-            <h2 class="step-heading">Tell Us About Your Business</h2>
-            
-            <div class="form-group">
-              <label for="monthly-transactions" class="form-label">Estimated Monthly Transactions</label>
-              <select id="monthly-transactions" name="monthly_transactions" class="form-select" required>
-                <option value="" disabled selected>Select transaction volume...</option>
-                <option value="under-50">Under 50 transactions / month</option>
-                <option value="50-150">50 - 150 transactions / month</option>
-                <option value="150-500">150 - 500 transactions / month</option>
-                <option value="500-1500">500 - 1,500 transactions / month</option>
-                <option value="over-1500">Over 1,500 transactions / month</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="current-software" class="form-label">Current Accounting Software</label>
-              <select id="current-software" name="current_software" class="form-select" required>
-                <option value="" disabled selected>Select current setup...</option>
-                <option value="quickbooks">QuickBooks Online</option>
-                <option value="xero">Xero</option>
-                <option value="spreadsheets">Spreadsheets (Excel/Google Sheets)</option>
-                <option value="none">No software / starting fresh</option>
-                <option value="other">Other platform</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="business-industry" class="form-label">Business Industry</label>
-              <select id="business-industry" name="industry" class="form-select" required>
-                <option value="" disabled selected>Select industry...</option>
-                <option value="ecommerce">E-commerce / Retail</option>
-                <option value="services">Professional Services / Agency</option>
-                <option value="construction">Construction / Trades</option>
-                <option value="healthcare">Healthcare / Medical</option>
-                <option value="realestate">Real Estate / Property Management</option>
-                <option value="nonprofit">Non-Profit</option>
-                <option value="other">Other Industry</option>
-              </select>
-            </div>
-
-            <div class="step-nav-actions">
-              <button type="button" class="btn btn-primary next-step-btn">Continue</button>
+        <!-- Wizard Steps & Form Wrap (Hidden on success) -->
+        <div id="quote-wizard-container">
+          <!-- Modern Steps Bar -->
+          <div class="wizard-steps-container">
+            <div class="wizard-steps">
+              <div class="wizard-step active" data-step-indicator="1">
+                <div class="step-circle">1</div>
+                <span class="step-label">Business</span>
+              </div>
+              <div class="wizard-line-container">
+                <div class="wizard-line" data-line-indicator="1"></div>
+              </div>
+              <div class="wizard-step" data-step-indicator="2">
+                <div class="step-circle">2</div>
+                <span class="step-label">Services</span>
+              </div>
+              <div class="wizard-line-container">
+                <div class="wizard-line" data-line-indicator="2"></div>
+              </div>
+              <div class="wizard-step" data-step-indicator="3">
+                <div class="step-circle">3</div>
+                <span class="step-label">Contact</span>
+              </div>
             </div>
           </div>
 
-          <!-- Step 2: Services Needed -->
-          <div class="form-step" data-step="2">
-            <h2 class="step-heading">Select Services Required</h2>
-            <p class="step-sub">Select all services you'd like included in your flat-rate proposal:</p>
+          <form id="quote-wizard-form" action="https://formsubmit.co/hashbooksofficial@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="_next" value="https://hashbooks.site/get-a-quote/?success=true" />
+            <input type="hidden" name="_subject" value="New Bookkeeping Proposal Request - Hashbooks" />
 
-            <div class="services-checkbox-grid">
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="bookkeeping" checked />
-                <span class="checkbox-title">Monthly Bookkeeping</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="ap-ar" />
-                <span class="checkbox-title">AR/AP Management</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="payroll" />
-                <span class="checkbox-title">Payroll Processing</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="tax-support" />
-                <span class="checkbox-title">Tax Prep Support</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="reporting" />
-                <span class="checkbox-title">Financial Reporting</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="cfo" />
-                <span class="checkbox-title">CFO Advisory Services</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="catch-up" />
-                <span class="checkbox-title">QuickBooks Clean Up & Catch-Up</span>
-              </label>
-              <label class="checkbox-card">
-                <input type="checkbox" name="services[]" value="cloud-setup" />
-                <span class="checkbox-title">QuickBooks Set-up & Integration</span>
-              </label>
+            <!-- Step 1: Business Profile -->
+            <div class="form-step active" data-step="1">
+              <h2 class="step-heading">Tell Us About Your Business</h2>
+              
+              <div class="form-group">
+                <label for="monthly-transactions" class="form-label">Estimated Monthly Transactions</label>
+                <select id="monthly-transactions" name="monthly_transactions" class="form-select" required>
+                  <option value="" disabled selected>Select transaction volume...</option>
+                  <option value="under-50">Under 50 transactions / month</option>
+                  <option value="50-150">50 - 150 transactions / month</option>
+                  <option value="150-500">150 - 500 transactions / month</option>
+                  <option value="500-1500">500 - 1,500 transactions / month</option>
+                  <option value="over-1500">Over 1,500 transactions / month</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="current-software" class="form-label">Current Accounting Software</label>
+                <select id="current-software" name="current_software" class="form-select" required>
+                  <option value="" disabled selected>Select current setup...</option>
+                  <option value="quickbooks">QuickBooks Online</option>
+                  <option value="xero">Xero</option>
+                  <option value="spreadsheets">Spreadsheets (Excel/Google Sheets)</option>
+                  <option value="none">No software / starting fresh</option>
+                  <option value="other">Other platform</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="business-industry" class="form-label">Business Industry</label>
+                <select id="business-industry" name="industry" class="form-select" required>
+                  <option value="" disabled selected>Select industry...</option>
+                  <option value="ecommerce">E-commerce / Retail</option>
+                  <option value="services">Professional Services / Agency</option>
+                  <option value="construction">Construction / Trades</option>
+                  <option value="healthcare">Healthcare / Medical</option>
+                  <option value="realestate">Real Estate / Property Management</option>
+                  <option value="nonprofit">Non-Profit</option>
+                  <option value="other">Other Industry</option>
+                </select>
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-primary next-step-btn">Continue</button>
+              </div>
             </div>
 
-            <div class="step-nav-actions">
-              <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
-              <button type="button" class="btn btn-primary next-step-btn">Continue</button>
-            </div>
-          </div>
+            <!-- Step 2: Services Needed -->
+            <div class="form-step" data-step="2">
+              <h2 class="step-heading">Select Services Required</h2>
+              <p class="step-sub">Select all services you'd like included in your flat-rate proposal:</p>
 
-          <!-- Step 3: Contact details -->
-          <div class="form-step" data-step="3">
-            <h2 class="step-heading">Final Step: Contact Information</h2>
-            
-            <div class="form-group">
-              <label for="quote-name" class="form-label">Full Name</label>
-              <input type="text" id="quote-name" name="name" class="form-input" placeholder="Muhammad Faisal" required />
+              <div class="services-checkbox-grid">
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="bookkeeping" checked />
+                  <span class="checkbox-title">Monthly Bookkeeping</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="ap-ar" />
+                  <span class="checkbox-title">AR/AP Management</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="payroll" />
+                  <span class="checkbox-title">Payroll Processing</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="tax-support" />
+                  <span class="checkbox-title">Tax Prep Support</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="reporting" />
+                  <span class="checkbox-title">Financial Reporting</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="cfo" />
+                  <span class="checkbox-title">CFO Advisory Services</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="catch-up" />
+                  <span class="checkbox-title">QuickBooks Clean Up & Catch-Up</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="services[]" value="cloud-setup" />
+                  <span class="checkbox-title">QuickBooks Set-up & Integration</span>
+                </label>
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
+                <button type="button" class="btn btn-primary next-step-btn">Continue</button>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="quote-email" class="form-label">Work Email</label>
-              <input type="email" id="quote-email" name="email" class="form-input" placeholder="faisal@company.com" required />
-            </div>
+            <!-- Step 3: Contact details -->
+            <div class="form-step" data-step="3">
+              <h2 class="step-heading">Final Step: Contact Information</h2>
+              
+              <div class="form-group">
+                <label for="quote-name" class="form-label">Full Name</label>
+                <input type="text" id="quote-name" name="name" class="form-input" placeholder="Muhammad Faisal" required maxlength="100" />
+              </div>
 
-            <div class="form-group">
-              <label for="quote-phone" class="form-label">Phone Number</label>
-              <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="(555) 000-0000" required />
-            </div>
+              <div class="form-group">
+                <label for="quote-email" class="form-label">Work Email</label>
+                <input type="email" id="quote-email" name="email" class="form-input" placeholder="faisal@company.com" required maxlength="254" />
+              </div>
 
-            <div class="form-group">
-              <label for="quote-company" class="form-label">Company Name</label>
-              <input type="text" id="quote-company" name="company" class="form-input" placeholder="Bloom Commerce" required />
-            </div>
+              <div class="form-group">
+                <label for="quote-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="(555) 000-0000" required maxlength="25" pattern="[0-9+\-\(\)\s]{7,25}" title="Please enter a valid phone number (digits, spaces, or +-() symbols only)" />
+              </div>
 
-            <div class="step-nav-actions">
-              <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
-              <Button text="Submit Request" type="submit" variant="primary" />
+              <div class="form-group">
+                <label for="quote-company" class="form-label">Company Name</label>
+                <input type="text" id="quote-company" name="company" class="form-input" placeholder="Bloom Commerce" required maxlength="150" />
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
+                <Button text="Submit Request" type="submit" variant="primary" />
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+
+        <script is:inline>
+          if (window.location.search.includes('success=true')) {
+            const successView = document.getElementById('quote-success-view');
+            const wizardContainer = document.getElementById('quote-wizard-container');
+            if (successView && wizardContainer) {
+              successView.style.display = 'block';
+              wizardContainer.style.display = 'none';
+              // Clean up the URL query parameters
+              const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+              window.history.replaceState({ path: newUrl }, '', newUrl);
+            }
+          }
+        </script>
       </div>
     </div>
   </section>
