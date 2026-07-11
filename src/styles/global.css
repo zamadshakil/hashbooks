@@ -81,13 +81,25 @@ html {
   color: var(--color-text-body);
   background-color: var(--color-white);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   text-rendering: optimizeSpeed;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: 2.25rem;    /* 36px */
+    --fs-h1: 1.875rem;        /* 30px */
+    --fs-h2: 1.5rem;          /* 24px */
+    --fs-h3: 1.25rem;         /* 20px */
+  }
 }
 
 a {

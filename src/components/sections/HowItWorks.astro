@@ -68,12 +68,18 @@ import SectionHeading from '../ui/SectionHeading.astro';
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6) var(--space-4);
     position: relative;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-sm);
     text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .step-card {
+      padding: var(--space-8) var(--space-6);
+    }
   }
 
   .step-card::before {

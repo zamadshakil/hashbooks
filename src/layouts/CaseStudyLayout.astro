@@ -175,6 +175,7 @@ const skillLinks: Record<string, string> = {
 
   .breadcrumb-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 8px;
     font-size: var(--fs-caption);
@@ -229,11 +230,17 @@ const skillLinks: Record<string, string> = {
 
   .content-block {
     background-color: var(--color-white);
-    padding: var(--space-8);
+    padding: var(--space-4);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-6);
     box-shadow: var(--shadow-sm);
+  }
+
+  @media (min-width: 768px) {
+    .content-block {
+      padding: var(--space-8);
+    }
   }
 
   .block-title {
@@ -287,8 +294,14 @@ const skillLinks: Record<string, string> = {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: var(--space-4);
     box-shadow: var(--shadow-sm);
+  }
+
+  @media (min-width: 768px) {
+    .sidebar-card {
+      padding: var(--space-6);
+    }
   }
 
   .sidebar-title {

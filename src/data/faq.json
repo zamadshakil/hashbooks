@@ -3,8 +3,8 @@
     "category": "General",
     "items": [
       {
-        "question": "What is Hashbooks?",
-        "answer": "Hashbooks is a professional bookkeeping services firm that helps US-based small businesses and startups maintain clean financial records, stay tax-compliant, and gain strategic financial clarity. We offer a full suite of services, including QuickBooks set-up and clean up, bank reconciliation, AR/AP management, and monthly financial reporting."
+        "question": "What is HashBooks?",
+        "answer": "HashBooks is a professional bookkeeping services firm that helps small businesses and startups maintain clean financial records, stay tax-compliant, and gain strategic financial clarity. We offer a full suite of services, including QuickBooks set-up and clean up, bank reconciliation, AR/AP management, and monthly financial reporting."
       },
       {
         "question": "Who is Hashbooks for?",
@@ -16,7 +16,7 @@
       },
       {
         "question": "Do you work with businesses outside the US?",
-        "answer": "Currently, we specialize in US-based businesses and US tax requirements. We work with clients across all 50 states."
+        "answer": "Yes, we work with businesses globally. While we specialize in US tax compliance, GAAP standards, and US entities, we support international clients and businesses outside the US with their multi-currency transactions, global bookkeeping, and back-office financial needs."
       },
       {
         "question": "How do I get started with Hashbooks?",
@@ -62,7 +62,7 @@
       },
       {
         "question": "Do you require long-term contracts?",
-        "answer": "No. We believe in earning your business every month. Our engagements are month-to-month with no long-term lock-in contracts."
+        "answer": "We offer both flexible month-to-month agreements and long-term contract options. Depending on your business needs, preferences, and stability requirements, we can structure our engagement terms to best suit your organization."
       },
       {
         "question": "Are there any setup fees?",
@@ -70,7 +70,7 @@
       },
       {
         "question": "How do I pay for services?",
-        "answer": "We invoice monthly via email with easy online payment options including credit card and ACH bank transfer."
+        "answer": "We make billing simple and convenient. We send a monthly invoice via email, which you can pay securely online using a credit card, debit card, or ACH bank transfer. We also support wire transfers for international clients."
       }
     ]
   },

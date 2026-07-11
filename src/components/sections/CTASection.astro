@@ -21,7 +21,13 @@ import Button from '../ui/Button.astro';
 <style>
   #final-cta {
     background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
-    padding: var(--space-24) 0;
+    padding: var(--space-16) 0;
+  }
+
+  @media (min-width: 768px) {
+    #final-cta {
+      padding: var(--space-24) 0;
+    }
   }
 
   .final-cta-container {
