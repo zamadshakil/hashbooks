@@ -14,7 +14,6 @@ import SectionHeading from '../ui/SectionHeading.astro';
       <div class="steps-grid">
         <!-- Step 1 -->
         <div class="step-card reveal reveal-delay-1">
-          <div class="step-bg-number">01</div>
           <div class="step-badge">1</div>
           <h3 class="step-card-title">Book a Free Call</h3>
           <p class="step-card-desc">
@@ -24,7 +23,6 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
         <!-- Step 2 -->
         <div class="step-card reveal reveal-delay-2">
-          <div class="step-bg-number">02</div>
           <div class="step-badge">2</div>
           <h3 class="step-card-title">We Handle Your Books</h3>
           <p class="step-card-desc">
@@ -34,7 +32,6 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
         <!-- Step 3 -->
         <div class="step-card reveal reveal-delay-3">
-          <div class="step-bg-number">03</div>
           <div class="step-badge">3</div>
           <h3 class="step-card-title">You Get Clarity</h3>
           <p class="step-card-desc">
@@ -128,26 +125,6 @@ import SectionHeading from '../ui/SectionHeading.astro';
     background: linear-gradient(135deg, var(--color-secondary), #135d2e);
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(26, 122, 61, 0.3);
-  }
-
-  .step-bg-number {
-    position: absolute;
-    top: -12px;
-    right: 15px;
-    font-size: 7.5rem;
-    font-weight: 800;
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(26, 122, 61, 0.08);
-    line-height: 1;
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
-    user-select: none;
-  }
-
-  .step-card:hover .step-bg-number {
-    -webkit-text-stroke: 1.5px rgba(26, 122, 61, 0.2);
-    transform: scale(1.05) translateY(-3px);
   }
 
   .step-card-title {
