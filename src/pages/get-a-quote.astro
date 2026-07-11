@@ -60,11 +60,18 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
             </div>
           </div>
 
-          <form id="quote-wizard-form" action="https://formsubmit.co/hashbooksofficial@gmail.com" method="POST">
-            <!-- FormSubmit Configuration -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-            <input type="hidden" name="_next" value="https://hashbooks.site/get-a-quote/?success=true" />
-            <input type="hidden" name="_subject" value="New Bookkeeping Proposal Request - Hashbooks" />
+          <!-- Error message alert -->
+          <div id="quote-error-alert" class="alert alert-error" style="display: none; margin-bottom: var(--space-4); padding: var(--space-4); background-color: rgba(239, 68, 68, 0.1); border: 1px solid var(--color-semantic-error); border-radius: var(--radius-md); color: var(--color-semantic-error);">
+            <div style="display: flex; gap: var(--space-3); align-items: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <div>
+                <strong style="font-weight: 700;">Failed to Submit Request</strong>
+                <p id="quote-error-text" style="font-size: var(--fs-caption); margin: 0; color: var(--color-text-body);">Something went wrong. Please check your inputs and try again, or email us at contact@hashbooks.site.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="quote-wizard-form">
 
             <!-- Step 1: Business Profile -->
             <div class="form-step active" data-step="1">
@@ -185,25 +192,11 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
 
               <div class="step-nav-actions">
                 <button type="button" class="btn btn-secondary prev-step-btn">Back</button>
-                <Button text="Submit Request" type="submit" variant="primary" />
+                <Button text="Submit Request" type="submit" variant="primary" id="quote-submit-btn" />
               </div>
             </div>
           </form>
         </div>
-
-        <script is:inline>
-          if (window.location.search.includes('success=true')) {
-            const successView = document.getElementById('quote-success-view');
-            const wizardContainer = document.getElementById('quote-wizard-container');
-            if (successView && wizardContainer) {
-              successView.style.display = 'block';
-              wizardContainer.style.display = 'none';
-              // Clean up the URL query parameters
-              const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-              window.history.replaceState({ path: newUrl }, '', newUrl);
-            }
-          }
-        </script>
       </div>
     </div>
   </section>
@@ -450,4 +443,77 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
       }
     });
   });
+
+  // Form submit handler
+  const form = document.getElementById('quote-wizard-form') as HTMLFormElement | null;
+  const quoteWizardContainer = document.getElementById('quote-wizard-container');
+  const quoteSuccessView = document.getElementById('quote-success-view');
+  const quoteErrorAlert = document.getElementById('quote-error-alert');
+  const quoteErrorText = document.getElementById('quote-error-text');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (quoteErrorAlert) quoteErrorAlert.style.display = 'none';
+
+      const submitBtn = document.getElementById('quote-submit-btn') as HTMLButtonElement | null;
+      if (!submitBtn) return;
+
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent || 'Submit Request';
+      submitBtn.textContent = 'Submitting...';
+
+      const formData = new FormData(form);
+      const services = Array.from(formData.getAll('services[]'));
+
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        company: formData.get('company'),
+        transactions: formData.get('monthly_transactions'),
+        platforms: [formData.get('current_software')],
+        services: services,
+        message: `Proposed Request Details:\n- Industry/Sector: ${formData.get('industry')}`,
+        subject: 'New Bookkeeping Proposal Request - Hashbooks'
+      };
+
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          if (quoteSuccessView && quoteWizardContainer) {
+            quoteSuccessView.style.display = 'block';
+            quoteWizardContainer.style.display = 'none';
+            quoteSuccessView.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          if (quoteErrorAlert && quoteErrorText) {
+            quoteErrorText.textContent = result.error || 'Failed to submit your proposal request. Please try again.';
+            quoteErrorAlert.style.display = 'block';
+            quoteErrorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        if (quoteErrorAlert && quoteErrorText) {
+          quoteErrorText.textContent = 'A network error occurred. Please check your connection and try again.';
+          quoteErrorAlert.style.display = 'block';
+          quoteErrorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  }
 </script>

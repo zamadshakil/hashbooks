@@ -1,0 +1,266 @@
+[
+  {
+    "slug": "quickbooks-online",
+    "title": "QuickBooks Online Bookkeeping Services",
+    "metaTitle": "QuickBooks Online Bookkeeping Services | Certified ProAdvisors | Hashbooks",
+    "metaDescription": "Maximize QuickBooks Online with our certified ProAdvisors. Monthly bookkeeping, account cleanup, payment integrations, bank reconciliation, and cash flow tracking.",
+    "heroDescription": "QuickBooks Online is the industry standard for small to medium businesses. Our certified QuickBooks ProAdvisors manage your ledger, reconcile accounts, optimize your charts, and integrate payment systems to give you a pristine, tax-ready financial setup.",
+    "icon": "quickbooks",
+    "features": [
+      "Custom QuickBooks Online company setup & configuration",
+      "Comprehensive historical ledger cleanups & reconciliations",
+      "Seamless payment processor integration (Stripe, PayPal, Shopify)",
+      "Daily transaction matching & chart of accounts optimization",
+      "Regular cash flow reporting & profit-and-loss insights",
+      "Priority ProAdvisor support & secure read-only bank feeds"
+    ],
+    "targetClients": [
+      "US small to mid-sized businesses using QuickBooks",
+      "E-commerce merchants with multi-channel payment integrations",
+      "Professional service agencies needing clear project profitability",
+      "Founders who need investor-ready financial reports"
+    ],
+    "process": [
+      { "step": "1", "title": "Connect Your Feed", "description": "We securely link your bank and credit card accounts to QuickBooks Online with read-only permissions." },
+      { "step": "2", "title": "Audit & Organize", "description": "We optimize your Chart of Accounts, configure automated rules, and fix historical transaction errors." },
+      { "step": "3", "title": "Maintain & Report", "description": "We handle weekly categorizations and deliver clean, audit-ready financial statements each month." }
+    ],
+    "faqs": [
+      { "question": "Are you certified in QuickBooks Online?", "answer": "Yes, our team consists of certified QuickBooks Online ProAdvisors who undergo regular training and recertification directly from Intuit." },
+      { "question": "Can you clean up my messy QuickBooks account?", "answer": "Absolutely. We specialize in QuickBooks Clean Up & Catch-Up services, reconciling missing months or years of statements and fixing categorization errors." },
+      { "question": "Do I need to purchase my own QuickBooks subscription?", "answer": "You can purchase it directly, or we can assist you in selecting the right tier and securing wholesale pricing discounts as our client." }
+    ],
+    "relatedServices": ["bookkeeping", "catch-up-bookkeeping", "cloud-integration"]
+  },
+  {
+    "slug": "xero",
+    "title": "Xero Bookkeeping Services",
+    "metaTitle": "Certified Xero Bookkeeping Services | Certified Advisors | Hashbooks",
+    "metaDescription": "Optimize your bookkeeping on Xero with certified Xero partners. Multi-currency management, bank feeds setup, billing tracking, and custom invoice configurations.",
+    "heroDescription": "Xero offers a beautiful, intuitive cloud accounting experience. As certified Xero advisors, we manage your daily transactions, structure bank feeds, handle multi-currency conversions, and utilize Hubdoc to keep your business running smoothly.",
+    "icon": "xero",
+    "features": [
+      "Xero account setup & customized dashboard design",
+      "Hubdoc integration for automated receipt & invoice fetch",
+      "Multi-currency bank feed setup & reconciliation",
+      "Invoicing templates customization & automated reminders",
+      "Detailed accounts receivable & accounts payable tracking",
+      "Certified Xero partner support and consulting"
+    ],
+    "targetClients": [
+      "Service-based businesses and creative agencies",
+      "International startups dealing with multiple currencies",
+      "Modern entrepreneurs seeking a mobile-friendly ledger",
+      "Businesses moving away from desktop accounting software"
+    ],
+    "process": [
+      { "step": "1", "title": "Xero Setup & Sync", "description": "We build your Xero account and connect your bank feeds and payment processors." },
+      { "step": "2", "title": "Automate Hubdoc", "description": "We set up Hubdoc to fetch receipts and attach files directly to Xero transactions for audit protection." },
+      { "step": "3", "title": "Monthly Closeout", "description": "We reconcile all accounts and compile clean, executive-level reports on your Xero dashboard." }
+    ],
+    "faqs": [
+      { "question": "Why choose Xero over other accounting platforms?", "answer": "Xero is loved for its clean interface, strong multi-currency features, unlimited user access, and seamless third-party app ecosystem." },
+      { "question": "Can you migrate our historical books from QuickBooks to Xero?", "answer": "Yes, we handle complete data migrations, ensuring your historical ledger is clean, balanced, and perfectly mapped to Xero." },
+      { "question": "How does Xero handle multi-currency reconciliation?", "answer": "Xero updates exchange rates hourly, allowing us to reconcile foreign currency transactions and track realized/unrealized currency gains/losses." }
+    ],
+    "relatedServices": ["bookkeeping", "cloud-integration", "financial-reporting"]
+  },
+  {
+    "slug": "freshbooks",
+    "title": "FreshBooks Bookkeeping Services",
+    "metaTitle": "FreshBooks Bookkeeping Services | Agency Specialists | Hashbooks",
+    "metaDescription": "Get professional bookkeeping for FreshBooks. We handle client billing tracking, time tracking integrations, project cost calculations, and monthly closes.",
+    "heroDescription": "FreshBooks is the go-to accounting software for client-facing service providers and agencies. We help you manage client billing cycles, track project expenses, reconcile payments, and convert your invoicing data into compliant financial records.",
+    "icon": "freshbooks",
+    "features": [
+      "FreshBooks configuration & invoice custom branding",
+      "Time tracking & billable hours integration",
+      "Expense tracking, classification, and tax mapping",
+      "Client deposit matching & balance reconciliation",
+      "Project-level profitability and margin analysis",
+      "Monthly balance sheet and P&L generation"
+    ],
+    "targetClients": [
+      "Freelancers, consultants, and independent agencies",
+      "Contractors requiring billable time-tracking utilities",
+      "Small marketing, design, and software consultancies",
+      "Service providers who rely heavily on custom client invoices"
+    ],
+    "process": [
+      { "step": "1", "title": "FreshBooks Sync", "description": "We link bank accounts and payment processors (like FreshBooks Payments or Stripe) to your ledger." },
+      { "step": "2", "title": "Track Project Costs", "description": "We organize your expenses by client and project to ensure accurate billable tracking and margins." },
+      { "step": "3", "title": "Reconcile Ledger", "description": "We match invoices with bank deposits to ensure your accounting data is completely aligned and tax-ready." }
+    ],
+    "faqs": [
+      { "question": "Is FreshBooks suitable for a growing business?", "answer": "Yes, FreshBooks is excellent for small agencies and service firms. If you scale and need to transition to QuickBooks or Xero, we can guide the migration." },
+      { "question": "Can you track my project margins in FreshBooks?", "answer": "Yes. We set up project costing, tracking billable hours and expenses directly against specific client contracts to monitor profitability." },
+      { "question": "How do you reconcile client card payments?", "answer": "We reconcile Stripe, PayPal, or FreshBooks Payments deposits, matching gross sales and processing fees to ensure balanced reporting." }
+    ],
+    "relatedServices": ["bookkeeping", "accounts-payable-receivable", "financial-reporting"]
+  },
+  {
+    "slug": "zoho-books",
+    "title": "Zoho Books Bookkeeping Services",
+    "metaTitle": "Zoho Books Bookkeeping & Integration Services | Hashbooks",
+    "metaDescription": "Professional bookkeeping and integration on Zoho Books. We configure workflow automation, synchronize ledgers, and manage taxes on the Zoho suite.",
+    "heroDescription": "Zoho Books is a powerful cloud accounting platform built to integrate natively with the Zoho ecosystem. We help you sync your CRM, inventory systems, and business suites, maintaining a perfectly reconciled ledger inside your broader Zoho environment.",
+    "icon": "zoho",
+    "features": [
+      "Zoho Books setup and custom fields design",
+      "Integration with Zoho CRM, Projects, and Inventory",
+      "Automated workflow rules & client portal setup",
+      "Multi-currency transaction processing & matching",
+      "Detailed tax compliance and sales tax tracking",
+      "Reconciliation of Zoho checkout and gateway payments"
+    ],
+    "targetClients": [
+      "Businesses already using Zoho CRM, Zoho Desk, or Zoho One",
+      "Inventory-focused businesses needing real-time sync",
+      "Service firms managing client interactions via Zoho portals",
+      "Companies wanting high workflow automation in accounting"
+    ],
+    "process": [
+      { "step": "1", "title": "Ecosystem Audit", "description": "We evaluate your current Zoho apps to map out a seamless data flow to Zoho Books." },
+      { "step": "2", "title": "Establish Integrations", "description": "We set up automated syncing between Zoho CRM, inventory, and payment gateways." },
+      { "step": "3", "title": "Automated Reconciliation", "description": "We run regular transaction matching and close your books within 5 business days." }
+    ],
+    "faqs": [
+      { "question": "What is the advantage of Zoho Books?", "answer": "Zoho Books is incredibly customizable, supports end-to-end automation, and integrates perfectly with all other Zoho business utilities." },
+      { "question": "Can you manage sales tax inside Zoho Books?", "answer": "Yes. We set up sales tax profiles, calculate tax rates for client invoices, and generate report layouts for tax filings." },
+      { "question": "How do you handle Zoho inventory adjustments?", "answer": "We reconcile Cost of Goods Sold (COGS) and inventory asset accounts, adjusting ledgers for stock counts, purchases, and returns." }
+    ],
+    "relatedServices": ["bookkeeping", "cloud-integration", "financial-reporting"]
+  },
+  {
+    "slug": "wave-accounting",
+    "title": "Wave Accounting Bookkeeping Services",
+    "metaTitle": "Wave Accounting Bookkeeping Services | Freelancer Ledgers | Hashbooks",
+    "metaDescription": "Affordable and accurate bookkeeping for Wave Accounting. Reconcile transactions, track business expenses, and manage tax reporting for freelancers.",
+    "heroDescription": "Wave Accounting provides a simple, direct bookkeeping experience designed for solo business owners, contractors, and freelancers. We handle your transaction imports, categorize receipts, reconcile accounts, and prepare clean tax records.",
+    "icon": "wave",
+    "features": [
+      "Wave Accounting account setup & bank connections",
+      "Freelancer receipt upload & expense categorization",
+      "Client invoicing reconciliation and payment tracking",
+      "Separation of business and personal transaction records",
+      "Monthly financial report closeouts (Balance Sheet & P&L)",
+      "Year-end tax organization and Schedule C prep"
+    ],
+    "targetClients": [
+      "Freelancers, solopreneurs, and independent contractors",
+      "Consultants with direct, straightforward invoicing",
+      "Startups looking for a budget-friendly accounting platform",
+      "Sole proprietors needing simple, clean tax records"
+    ],
+    "process": [
+      { "step": "1", "title": "Set Up Wave", "description": "We establish your Wave account and securely link your business credit cards and bank accounts." },
+      { "step": "2", "title": "Reconcile and Clean", "description": "We categorize every transaction, separate personal expenses, and perform monthly reconciliation." },
+      { "step": "3", "title": "Tax Readiness", "description": "We close your books monthly and compile tidy reports that your accountant can use for tax filing." }
+    ],
+    "faqs": [
+      { "question": "Is Wave Accounting completely free?", "answer": "Wave's core accounting and invoicing software is free. They charge for payment processing and payroll. Our service fee covers the professional bookkeeper managing it for you." },
+      { "question": "How do you handle personal expenses in Wave?", "answer": "We set up clear rules, categorizing personal purchases to equity draws so they don't distort your business's true profits and tax deductions." },
+      { "question": "Can we upgrade to QuickBooks later?", "answer": "Yes. When your transactions grow or you need complex inventory tools, we can help migrate your historical data from Wave to QuickBooks Online." }
+    ],
+    "relatedServices": ["bookkeeping", "tax-preparation", "catch-up-bookkeeping"]
+  },
+  {
+    "slug": "sage-business-cloud",
+    "title": "Sage Business Cloud Bookkeeping",
+    "metaTitle": "Sage Business Cloud Bookkeeping | Retail & Inventory | Hashbooks",
+    "metaDescription": "Certified Sage bookkeeping services. Professional inventory accounting, wholesale ledgers setup, margins tracking, and monthly financial reporting.",
+    "heroDescription": "Sage Business Cloud is tailored for inventory, wholesale, manufacturing, and distribution businesses. We handle Sage ledger structuring, product Cost of Goods Sold (COGS) reconciliations, and tracking to help you monitor margins and scale inventory.",
+    "icon": "sage",
+    "features": [
+      "Sage Business Cloud setup & chart of accounts design",
+      "Detailed inventory tracking and COGS calculations",
+      "Accounts receivable aging & wholesale customer invoicing",
+      "Accounts payable scheduling and vendor purchase reconciliation",
+      "Multi-entity ledger consolidation and reporting",
+      "Sage accounting partner advisory and adjustments"
+    ],
+    "targetClients": [
+      "Wholesale and distribution companies",
+      "Inventory-heavy retail and e-commerce stores",
+      "Construction, manufacturing, and trade firms",
+      "Scaling enterprises requiring strong audit trials"
+    ],
+    "process": [
+      { "step": "1", "title": "Sage Setup", "description": "We structure your Sage account, aligning the ledger system to inventory or project requirements." },
+      { "step": "2", "title": "Inventory Audit", "description": "We build purchase order workflows and reconcile vendor invoices against inventory receipts." },
+      { "step": "3", "title": "Financial Review", "description": "We deliver exact inventory valuation, gross margin analysis, and GAAP financial statements." }
+    ],
+    "faqs": [
+      { "question": "What industries benefit most from Sage?", "answer": "Sage is excellent for inventory-centric businesses, construction, wholesale distributors, and retail companies requiring deep SKU reporting." },
+      { "question": "Can you track manufacturing costs in Sage?", "answer": "Yes. We set up raw material tracking, finished goods valuation, and allocate manufacturing overhead to calculate accurate product margins." },
+      { "question": "How do you reconcile vendor bills with warehouse arrivals?", "answer": "We cross-reference purchase orders, warehouse receiving sheets, and vendor invoices to ensure you only pay for correct inventory received." }
+    ],
+    "relatedServices": ["bookkeeping", "financial-reporting", "accounts-payable-receivable"]
+  },
+  {
+    "slug": "odoo",
+    "title": "Odoo Bookkeeping & Accounting Services",
+    "metaTitle": "Odoo Bookkeeping & Accounting Services | ERP Reconciliations | Hashbooks",
+    "metaDescription": "Optimize Odoo accounting module. We reconcile sales, inventory, manufacturing, payroll, and CRM data with professional bookkeeping.",
+    "heroDescription": "Odoo is a powerful modular ERP system. We specialize in managing the Odoo Accounting module, ensuring transactions from sales, inventory, manufacturing, and CRM integrate and reconcile with your bank accounts.",
+    "icon": "odoo",
+    "features": [
+      "Odoo Accounting module customization & setup",
+      "Syncing Odoo sales, subscription, and CRM ledgers",
+      "Inventory valuation adjustments & manufacturing COGS tracking",
+      "Reconciling multi-currency invoices & gateway payments",
+      "Custom Odoo accounting dashboard configuration",
+      "Strategic ERP bookkeeping audits & correction"
+    ],
+    "targetClients": [
+      "Mid-sized businesses utilizing Odoo ERP modules",
+      "Manufacturers tracking multi-stage work orders",
+      "Subscription and SaaS businesses managing complex billing",
+      "Retailers syncing multi-channel POS stores to Odoo"
+    ],
+    "process": [
+      { "step": "1", "title": "ERP System Mapping", "description": "We analyze your Odoo modules to align data syncing with your accounting ledger." },
+      { "step": "2", "title": "Reconcile Modules", "description": "We audit system syncs between Odoo Sales, Inventory, and Purchase modules." },
+      { "step": "3", "title": "Produce Reports", "description": "We review accounting entries, reconcile bank accounts, and deliver clean monthly financials." }
+    ],
+    "faqs": [
+      { "question": "Can you handle complex Odoo multi-company settings?", "answer": "Yes. We specialize in multi-company configurations, automating intercompany entries and generating consolidated financial statements." },
+      { "question": "How does Odoo handle inventory valuation?", "answer": "Odoo supports real-time automated inventory valuation. We reconcile these valuations with your physical inventory counts and purchase records." },
+      { "question": "Can you help fix Odoo syncing errors?", "answer": "Yes. If transactions from other modules (Sales, Inventory, Invoicing) fail to post correctly to your ledger, we audit the setup and resolve the discrepancy." }
+    ],
+    "relatedServices": ["bookkeeping", "financial-reporting", "cloud-integration"]
+  },
+  {
+    "slug": "oracle-netsuite",
+    "title": "Oracle NetSuite Bookkeeping Services",
+    "metaTitle": "Oracle NetSuite Bookkeeping & ERP Management | Hashbooks",
+    "metaDescription": "Strategic enterprise bookkeeping on Oracle NetSuite. We handle multi-entity consolidation, complex GAAP compliance, and custom reporting.",
+    "heroDescription": "Oracle NetSuite is the premier ERP for scaling enterprise businesses. We provide high-end bookkeeping, multi-entity consolidation, segment reporting, and GAAP-compliant ledger adjustments to help you manage complex financials.",
+    "icon": "netsuite",
+    "features": [
+      "NetSuite general ledger customization and management",
+      "Multi-entity consolidation & intercompany elimination entries",
+      "Segment-level reporting (by department, class, or location)",
+      "Complex revenue recognition (ASC 606 compliance)",
+      "Reconciliation of high-volume transaction sets",
+      "CPA-led support for financial audits & compliance"
+    ],
+    "targetClients": [
+      "High-growth startups and venture-backed companies",
+      "Multi-entity businesses requiring consolidated reporting",
+      "Companies preparing for external financial audits or IPOs",
+      "Enterprises needing advanced segments and divisions tracking"
+    ],
+    "process": [
+      { "step": "1", "title": "System Review", "description": "We evaluate your NetSuite customizations, segment rules, and general ledger setups." },
+      { "step": "2", "title": "Daily ledger control", "description": "We review journal entries, reconcile high-volume accounts, and verify intercompany transactions." },
+      { "step": "3", "title": "Audit-Ready Close", "description": "We compile consolidated reports, execute amortization/depreciation, and complete month-end closes." }
+    ],
+    "faqs": [
+      { "question": "Do you support ASC 606 revenue recognition?", "answer": "Yes. We reconcile deferred revenue schedules in NetSuite to ensure compliance with ASC 606 revenue recognition standards." },
+      { "question": "Can you handle intercompany eliminations?", "answer": "Absolutely. We manage multi-entity environments, post intercompany elimination entries, and generate consolidated statements." },
+      { "question": "Are your bookkeepers certified in NetSuite?", "answer": "Our team includes senior accountants and ERP specialists with years of direct NetSuite administration and accounting experience." }
+    ],
+    "relatedServices": ["financial-reporting", "cfo-advisory", "cloud-integration"]
+  }
+]

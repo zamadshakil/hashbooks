@@ -1,0 +1,15 @@
+---
+import PlatformLayout from '../../layouts/PlatformLayout.astro';
+import platformsData from '../../data/platforms.json';
+
+export function getStaticPaths() {
+  return platformsData.map((platform) => ({
+    params: { slug: platform.slug },
+    props: { platform },
+  }));
+}
+
+const { platform } = Astro.props;
+---
+
+<PlatformLayout {...platform} />
