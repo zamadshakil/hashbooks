@@ -22,7 +22,7 @@ const getSlug = (href: string) => {
 };
 ---
 
-<header id="site-header">
+<header id="site-header" class="preload">
   <div class="container header-container">
     <!-- Logo -->
     <a href="/" class="logo-link">
@@ -96,8 +96,20 @@ const getSlug = (href: string) => {
     z-index: 100;
     display: flex;
     align-items: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 
+      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: none;
+  }
+
+  #site-header.preload {
+    transition: none !important;
   }
 
   #site-header.scrolled {
@@ -331,8 +343,14 @@ const getSlug = (href: string) => {
 </style>
 
 <script>
-  // Dynamic header updates using IntersectionObserver (layout-safe, zero reflow)
+  // Remove preload class to enable transitions only after initial render/paint
   const header = document.getElementById('site-header');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      header?.classList.remove('preload');
+    });
+  });
+
   const sentinel = document.createElement('div');
   sentinel.style.position = 'absolute';
   sentinel.style.top = '0';
