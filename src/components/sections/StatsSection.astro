@@ -2,7 +2,7 @@
 import StatCounter from '../ui/StatCounter.astro';
 ---
 
-<section id="stats-section" class="section section-dark reveal">
+<section id="stats-section" class="section section-dark">
   <div class="container stats-container-grid">
     <StatCounter value="25" label="Businesses Partnered" suffix="+" />
     <StatCounter value="4" label="Years Accounting Experience" suffix="+" />
@@ -14,14 +14,14 @@ import StatCounter from '../ui/StatCounter.astro';
 <style>
   .stats-container-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-6);
     align-items: center;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 769px) {
     .stats-container-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

@@ -5,7 +5,7 @@
     "metaTitle": "Bookkeeping Services & QuickBooks Online | Hashbooks",
     "metaDescription": "Certified monthly bookkeeping services and QuickBooks Online management for US businesses. Get professional bank reconciliation and credit card (CC) reconciliation.",
     "icon": "book-open",
-    "heroDescription": "Stop spending your nights wrestling with spreadsheets. Our certified team handles every transaction, bank reconciliation, and credit card (CC) reconciliation on QuickBooks Online — keeping your books 100% accurate, organized, and tax-ready.",
+    "heroDescription": "Stop spending your nights wrestling with spreadsheets. Our certified bookkeepers handle every transaction, bank reconciliation, and credit card (CC) reconciliation on QuickBooks Online — keeping your books 100% accurate, organized, and tax-ready.",
     "features": [
       "Daily transaction recording & categorization",
       "Professional bank reconciliation",
@@ -52,7 +52,7 @@
       "Service businesses with recurring client invoicing",
       "Companies managing 20+ vendor relationships",
       "Businesses experiencing cash flow unpredictability",
-      "Growing teams that need to professionalize billing"
+      "Growing businesses that need to professionalize billing"
     ],
     "process": [
       { "step": "1", "title": "Audit Your Current Flow", "description": "We review your existing invoicing, billing, and collections processes to find gaps." },
@@ -70,9 +70,9 @@
     "slug": "payroll",
     "title": "Payroll Processing",
     "metaTitle": "US Payroll Processing Services for Small Business | Hashbooks",
-    "metaDescription": "Accurate, compliant payroll processing services for US teams. We handle salary calculations, federal & state tax withholdings, direct deposits, and filings.",
+    "metaDescription": "Accurate, compliant payroll processing services for growing businesses. We handle salary calculations, federal & state tax withholdings, direct deposits, and filings.",
     "icon": "users",
-    "heroDescription": "Payroll compliance errors trigger heavy IRS penalties. Our certified team ensures every paycheck is accurate, every federal/state tax is withheld correctly, and every filing deadline is met without fail.",
+    "heroDescription": "Payroll compliance errors trigger heavy IRS penalties. Our certified specialists ensure every paycheck is accurate, every federal/state tax is withheld correctly, and every filing deadline is met without fail.",
     "features": [
       "Bi-weekly or monthly payroll calculation and processing",
       "Federal, state, and local tax withholding management",
@@ -221,7 +221,7 @@
     ],
     "process": [
       { "step": "1", "title": "Assess the Damage", "description": "We review your current state — how far behind, what's missing, and what needs fixing." },
-      { "step": "2", "title": "Rebuild & Reconcile", "description": "Our team systematically works through every period, categorizing transactions and reconciling accounts." },
+      { "step": "2", "title": "Rebuild & Reconcile", "description": "Our experts systematically work through every period, categorizing transactions and reconciling accounts." },
       { "step": "3", "title": "Transition to Clean", "description": "Once caught up, we transition you to ongoing monthly bookkeeping so you never fall behind again." }
     ],
     "faqs": [
@@ -244,7 +244,7 @@
       "Integration with payment processors (Stripe, PayPal, Square)",
       "Syncing with POS systems and inventory tools",
       "Historical data migration from spreadsheets or legacy apps",
-      "Hands-on team training and onboarding tutorials"
+      "Hands-on staff training and onboarding tutorials"
     ],
     "targetClients": [
       "Businesses still using spreadsheets for bookkeeping",
@@ -255,12 +255,12 @@
     "process": [
       { "step": "1", "title": "Evaluate & Recommend", "description": "We assess your business needs and recommend the best cloud platform and app ecosystem for you." },
       { "step": "2", "title": "Setup & Migrate", "description": "We configure your new system, migrate historical data, and connect all your financial tools." },
-      { "step": "3", "title": "Train & Launch", "description": "Your team gets hands-on training and documentation, then we go live with ongoing support." }
+      { "step": "3", "title": "Train & Launch", "description": "Your staff gets hands-on training and documentation, then we go live with ongoing support." }
     ],
     "faqs": [
       { "question": "Which cloud platform is best for my business?", "answer": "It depends on your size, industry, and needs. QuickBooks Online is great for most US small businesses. Xero excels for service businesses. We'll help you choose the perfect fit." },
       { "question": "Will I lose any data during migration?", "answer": "No. We perform complete data verification before, during, and after migration. Your historical records are preserved and validated." },
-      { "question": "Do you provide training for my team?", "answer": "Yes. We provide live training sessions and written documentation so your team can confidently use the new system day-to-day." }
+      { "question": "Do you provide training for my staff?", "answer": "Yes. We provide live training sessions and written documentation so your staff can confidently use the new system day-to-day." }
     ],
     "relatedServices": ["bookkeeping", "catch-up-bookkeeping", "financial-reporting"]
   }

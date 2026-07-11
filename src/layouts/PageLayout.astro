@@ -24,6 +24,7 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
   noindex={noindex}
 >
   <slot name="head" slot="head" />
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <Header />
   <main id="main-content">
     <slot />
@@ -32,6 +33,22 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
 </BaseLayout>
 
 <style>
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    z-index: 200;
+    font-weight: 600;
+    font-size: var(--fs-body-sm);
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
   main {
     flex: 1 0 auto;
     /* Spacing offset for the sticky/floating navbar transition */

@@ -14,7 +14,7 @@
   --color-border: #E2E8F0;
   --color-text-body: #334155;
   --color-text-heading: #1B2A4A;
-  --color-text-muted: #64748B;
+  --color-text-muted: #556578;
 
   /* Semantic Colors */
   --color-semantic-success: #10B981;
@@ -150,4 +150,9 @@ h3 { font-size: var(--fs-h3); }
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Body scroll lock (toggled when mobile menu is open) */
+body.overflow-hidden {
+  overflow: hidden;
 }
