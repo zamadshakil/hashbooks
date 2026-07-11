@@ -23,6 +23,7 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
   ogType={ogType}
   noindex={noindex}
 >
+  <slot name="head" slot="head" />
   <Header />
   <main id="main-content">
     <slot />

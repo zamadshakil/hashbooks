@@ -1,6 +1,7 @@
 ---
 import PageLayout from './PageLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
 
 interface Props {
   slug: string;
@@ -28,9 +29,31 @@ const {
 } = Astro.props;
 
 const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Case Studies', url: '/case-studies/' },
+    { name: title, url: canonicalUrl }
+  ]
+};
+
+// Map case study skills to their corresponding service pages for internal linking
+const skillLinks: Record<string, string> = {
+  'QuickBooks Online': '/services/bookkeeping/',
+  'Xero': '/services/bookkeeping/',
+  'Accounts Payable (AP)': '/services/accounts-payable-receivable/',
+  'Accounts Receivable (AR)': '/services/accounts-payable-receivable/',
+  'Gusto Payroll': '/services/payroll/',
+  'Payroll Reconciliation': '/services/payroll/',
+  'Financial Reporting': '/services/financial-reporting/',
+  'CFO Advisory': '/services/cfo-advisory/',
+  'Ledger Cleanup': '/services/catch-up-bookkeeping/',
+  'QuickBooks Clean Up': '/services/catch-up-bookkeeping/'
+};
 ---
 
 <PageLayout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl}>
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <!-- Breadcrumbs -->
   <div class="breadcrumbs-container">
     <div class="container">
@@ -111,9 +134,14 @@ const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
         <div class="sidebar-card skills-card">
           <h3 class="sidebar-title">Expertise Demonstrated</h3>
           <div class="skills-flex">
-            {skills.map((skill) => (
-              <span class="skill-badge">{skill}</span>
-            ))}
+            {skills.map((skill) => {
+              const href = skillLinks[skill];
+              return href ? (
+                <a href={href} class="skill-badge interactive-badge" title={`Learn more about our ${skill} services`}>{skill}</a>
+              ) : (
+                <span class="skill-badge">{skill}</span>
+              );
+            })}
           </div>
         </div>
 
@@ -130,7 +158,10 @@ const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
   <!-- Navigation Bottom -->
   <section class="section bottom-nav-section text-center">
     <div class="container">
-      <Button text="Back to All Case Studies" href="/case-studies/" variant="secondary" />
+      <a href="/case-studies/" class="back-link">
+        <svg class="arrow-left" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to All Case Studies
+      </a>
     </div>
   </section>
 </PageLayout>
@@ -314,6 +345,15 @@ const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
     padding: 6px 12px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+  }
+
+  .skill-badge.interactive-badge:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
   }
 
   .cta-sidebar-card {
@@ -341,9 +381,32 @@ const canonicalUrl = `/case-studies/${Astro.props.slug}/`;
   }
 
   .bottom-nav-section {
-    padding-top: var(--space-4);
+    padding: var(--space-12) 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-white);
   }
-  
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .back-link:hover {
+    color: var(--color-accent);
+  }
+  .back-link .arrow-left {
+    transition: transform var(--transition-fast);
+  }
+  .back-link:hover .arrow-left {
+    transform: translateX(-4px);
+  }
+
   .w-full {
     width: 100%;
   }

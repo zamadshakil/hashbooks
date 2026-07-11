@@ -5,6 +5,7 @@ interface Props {
   subtitle?: string;
   align?: 'left' | 'center';
   light?: boolean;
+  as?: 'h1' | 'h2';
 }
 
 const {
@@ -13,15 +14,17 @@ const {
   subtitle,
   align = 'center',
   light = false,
+  as = 'h2',
 } = Astro.props;
 
 const alignmentClass = align === 'left' ? 'align-left' : 'align-center';
 const themeClass = light ? 'theme-light' : '';
+const Heading = as;
 ---
 
 <div class={`section-heading ${alignmentClass} ${themeClass} reveal`}>
   {eyebrow && <span class="eyebrow">{eyebrow}</span>}
-  <h2 class="title">{title}</h2>
+  <Heading class="title">{title}</Heading>
   {subtitle && <p class="subtitle">{subtitle}</p>}
 </div>
 

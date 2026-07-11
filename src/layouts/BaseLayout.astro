@@ -22,7 +22,12 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#072049" />
     
+    <!-- DNS Prefetch & Preconnect for Meta Pixel -->
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+
     <SEOHead
       title={title}
       description={description}
@@ -31,6 +36,8 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
       ogType={ogType}
       noindex={noindex}
     />
+    
+    <slot name="head" />
     
     <!-- Fallback font optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

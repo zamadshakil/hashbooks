@@ -2,6 +2,8 @@
 import PageLayout from './PageLayout.astro';
 import Button from '../components/ui/Button.astro';
 import Accordion from '../components/ui/Accordion.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+import servicesData from '../data/services.json';
 
 interface Props {
   slug: string;
@@ -28,9 +30,23 @@ const {
   relatedServices,
 } = Astro.props;
 const canonicalUrl = `/services/${slug}/`;
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/' },
+    { name: title, url: canonicalUrl }
+  ]
+};
+
+// Map related service slugs to their full data objects
+const relatedServiceObjects = relatedServices
+  .map(rSlug => servicesData.find(s => s.slug === rSlug))
+  .filter(Boolean);
 ---
 
 <PageLayout title={`${title} Services | Hashbooks`} description={description} canonicalUrl={canonicalUrl}>
+  <SchemaMarkup type="service" data={{ title, description, url: canonicalUrl }} slot="head" />
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <!-- Breadcrumb -->
   <div class="breadcrumbs-container">
     <div class="container">
@@ -122,6 +138,28 @@ const canonicalUrl = `/services/${slug}/`;
       </div>
     </div>
   </section>
+
+  <!-- Related Services -->
+  {relatedServiceObjects.length > 0 && (
+    <section class="section related-services-section">
+      <div class="container">
+        <h2 class="section-subheading text-center">Related Services</h2>
+        <div class="related-services-grid">
+          {relatedServiceObjects.map((rService: any) => (
+            <a href={`/services/${rService.slug}/`} class="related-service-card card">
+              <div>
+                <h3 class="related-service-title">
+                  {rService.title}
+                  <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </h3>
+                <p class="related-service-desc">{rService.heroDescription.substring(0, 115)}...</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Final CTA -->
   <section class="section final-service-cta text-center">
@@ -308,5 +346,60 @@ const canonicalUrl = `/services/${slug}/`;
   .cta-sub {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--space-6);
+  }
+
+  /* Related Services Section styles */
+  .related-services-section {
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-12) 0;
+  }
+  .related-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+  }
+  @media (min-width: 768px) {
+    .related-services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .related-service-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-normal);
+  }
+  .related-service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+  }
+  .related-service-title {
+    font-size: var(--fs-body);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .related-service-title .arrow-icon {
+    color: var(--color-secondary);
+    transition: transform var(--transition-fast);
+  }
+  .related-service-card:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+  .related-service-desc {
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
   }
 </style>

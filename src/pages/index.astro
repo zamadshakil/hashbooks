@@ -10,6 +10,7 @@ import StatsSection from '../components/sections/StatsSection.astro';
 import PlatformsShowcase from '../components/sections/PlatformsShowcase.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import CTASection from '../components/sections/CTASection.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
 ---
 
 <PageLayout 
@@ -17,6 +18,7 @@ import CTASection from '../components/sections/CTASection.astro';
   description="Certified monthly bookkeeping services, QuickBooks set-up and clean up, bank reconciliation, AR/AP management, and financial reporting for US small businesses."
   canonicalUrl="/"
 >
+  <SchemaMarkup type="organization" slot="head" />
   <Hero />
   <TrustBar />
   <ProblemSection />

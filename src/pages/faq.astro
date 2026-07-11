@@ -2,20 +2,26 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import Accordion from '../components/ui/Accordion.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
 import faqData from '../data/faq.json';
+
+const flattenedFaqs = faqData.flatMap((category) => category.items);
 ---
 
 <PageLayout 
-  title="Frequently Asked Questions | Hashbooks Bookkeeping" 
+  title="Bookkeeping Services FAQ | Common Questions Answered | Hashbooks" 
   description="Find answers to common questions about Hashbooks bookkeeping services, custom quote pricing, platform integrations, and data security policies."
   canonicalUrl="/faq/"
 >
+  <SchemaMarkup type="faq" data={{ items: flattenedFaqs }} slot="head" />
+
   <section class="section faq-hero">
     <div class="container text-center">
       <SectionHeading 
         eyebrow="Help Center"
         title="Frequently Asked Questions"
         subtitle="Have questions about our service? Find answers to the most common inquiries below."
+        as="h1"
       />
     </div>
   </section>
