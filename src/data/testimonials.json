@@ -19,5 +19,26 @@
     "role": "CEO",
     "company": "Apex Builders & Developers",
     "rating": 5
+  },
+  {
+    "quote": "As a SaaS startup, tracking monthly recurring revenue (MRR) and international software subscriptions used to consume hours of our time. Hashbooks automated our QuickBooks sync and keeps our SaaS metrics fully reconciled.",
+    "name": "Zainab Malik",
+    "role": "Co-Founder & COO",
+    "company": "CloudPulse Technologies",
+    "rating": 5
+  },
+  {
+    "quote": "Hassan set up our clinic's invoicing and payroll system. The monthly profit and loss statements are easy to read and give us the exact cost tracking we need to optimize our overhead and staff expenses.",
+    "name": "Dr. Farhan Yousaf",
+    "role": "Clinical Director",
+    "company": "Yousaf Dental & Aesthetics",
+    "rating": 5
+  },
+  {
+    "quote": "Reconciling our POS sales report with daily bank deposits across multiple locations was a constant challenge. Hashbooks organized our sales tracking and bank matching. We always know our exact cash position.",
+    "name": "Sara Khan",
+    "role": "Operations Manager",
+    "company": "Zest Cafe Group",
+    "rating": 5
   }
 ]
