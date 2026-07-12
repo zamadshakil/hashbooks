@@ -4,7 +4,6 @@ import { Image } from 'astro:assets';
 interface Props {
   post: {
     id: string;
-    slug: string;
     data: {
       title: string;
       description: string;
@@ -26,7 +25,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
 ---
 
 <article class="card blog-card">
-  <a href={`/blog/${post.slug}/`} class="blog-card-image-link">
+  <a href={`/blog/${post.id}/`} class="blog-card-image-link">
     <div class="blog-card-image-wrapper">
       <img 
         src={post.data.image} 
@@ -37,7 +36,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
         loading="lazy"
         decoding="async"
       />
-      <span class="badge badge-primary blog-card-category">{post.data.category}</span>
+      <span class="blog-card-category">{post.data.category}</span>
     </div>
   </a>
   <div class="blog-card-content">
@@ -47,10 +46,10 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
       <span>{post.data.readTime}</span>
     </div>
     <h3 class="blog-card-title">
-      <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+      <a href={`/blog/${post.id}/`}>{post.data.title}</a>
     </h3>
     <p class="blog-card-excerpt">{post.data.description}</p>
-    <a href={`/blog/${post.slug}/`} class="blog-card-link">
+    <a href={`/blog/${post.id}/`} class="blog-card-link">
       Read Article
       <svg class="blog-card-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
     </a>
@@ -64,6 +63,8 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     padding: 0;
     overflow: hidden;
     height: 100%;
+    border: 1px solid rgba(7, 32, 73, 0.08);
+    background-color: var(--color-white);
   }
 
   .blog-card-image-link {
@@ -86,7 +87,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   }
 
   .blog-card:hover .blog-card-img {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 
   .blog-card-category {
@@ -94,13 +95,23 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     top: var(--space-4);
     left: var(--space-4);
     z-index: 10;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(7, 32, 73, 0.04);
   }
 
   .blog-card-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: var(--space-5);
+    padding: var(--space-6);
   }
 
   .blog-card-meta {
@@ -108,7 +119,9 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     align-items: center;
     font-size: var(--fs-caption);
     color: var(--color-text-muted);
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: var(--space-2);
   }
 
@@ -120,7 +133,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     font-size: var(--fs-body-lg);
     font-weight: 700;
     line-height: 1.4;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
   }
 
   .blog-card-title a {
@@ -137,7 +150,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     font-size: var(--fs-body-sm);
     color: var(--color-text-body);
     line-height: 1.6;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
