@@ -6,6 +6,13 @@ import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
 import faqData from '../data/faq.json';
 
 const flattenedFaqs = faqData.flatMap((category) => category.items);
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'FAQ', url: '/faq/' }
+  ]
+};
 ---
 
 <PageLayout 
@@ -13,6 +20,7 @@ const flattenedFaqs = faqData.flatMap((category) => category.items);
   description="Find answers to common questions about Hashbooks bookkeeping services, custom quote pricing, platform integrations, and data security policies."
   canonicalUrl="/faq/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <SchemaMarkup type="faq" data={{ items: flattenedFaqs }} slot="head" />
 
   <section class="section faq-hero">

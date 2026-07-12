@@ -48,6 +48,7 @@ const relatedServiceObjects = relatedServices
 <PageLayout title={`${title} Services | Hashbooks`} description={description} canonicalUrl={canonicalUrl}>
   <SchemaMarkup type="service" data={{ title, description, url: canonicalUrl }} slot="head" />
   <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
+  {faqs && faqs.length > 0 && <SchemaMarkup type="faq" data={{ items: faqs }} slot="head" />}
   <!-- Breadcrumb -->
   <div class="breadcrumbs-container">
     <div class="container">
@@ -76,7 +77,7 @@ const relatedServiceObjects = relatedServices
         <p class="service-lead">{heroDescription}</p>
         <div class="hero-actions">
           <Button text="Get Started Today" href="/get-a-quote/" variant="primary" size="lg" />
-          <Button text="Speak to an Expert" href="/contact/" variant="secondary" size="lg" />
+          <Button text="Speak to an Expert" href="https://calendly.com/hashbooksofficial" variant="secondary" size="lg" target="_blank" rel="noopener noreferrer" />
         </div>
       </div>
       <div class="hero-illustration">

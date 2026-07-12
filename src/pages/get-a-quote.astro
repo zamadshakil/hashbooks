@@ -71,7 +71,9 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
             </div>
           </div>
 
-          <form id="quote-wizard-form">
+          <form id="quote-wizard-form"
+                toolname="requestBookkeepingProposal"
+                tooldescription="Submit business details (monthly transaction volume, industry, current software, and contact info) to request a customized, flat-rate bookkeeping and accounting proposal.">
 
             <!-- Step 1: Business Profile -->
             <div class="form-step active" data-step="1">
@@ -79,7 +81,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
               
               <div class="form-group">
                 <label for="monthly-transactions" class="form-label">Estimated Monthly Transactions</label>
-                <select id="monthly-transactions" name="monthly_transactions" class="form-select" required>
+                <select id="monthly-transactions" name="monthly_transactions" class="form-select" toolparamdescription="Estimated monthly transaction volume of the business" required>
                   <option value="" disabled selected>Select transaction volume...</option>
                   <option value="under-50">Under 50 transactions / month</option>
                   <option value="50-150">50 - 150 transactions / month</option>
@@ -91,7 +93,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
 
               <div class="form-group">
                 <label for="current-software" class="form-label">Current Accounting Software</label>
-                <select id="current-software" name="current_software" class="form-select" required>
+                <select id="current-software" name="current_software" class="form-select" toolparamdescription="Accounting software or platform currently used by the business (e.g., QuickBooks Online, Xero, Spreadsheets, None)" required>
                   <option value="" disabled selected>Select current setup...</option>
                   <option value="quickbooks">QuickBooks Online</option>
                   <option value="xero">Xero</option>
@@ -103,7 +105,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
 
               <div class="form-group">
                 <label for="business-industry" class="form-label">Business Industry</label>
-                <select id="business-industry" name="industry" class="form-select" required>
+                <select id="business-industry" name="industry" class="form-select" toolparamdescription="The industry sector of the business (e.g., e-commerce, services, healthcare, construction)" required>
                   <option value="" disabled selected>Select industry...</option>
                   <option value="ecommerce">E-commerce / Retail</option>
                   <option value="services">Professional Services / Agency</option>
@@ -127,35 +129,35 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
 
               <div class="services-checkbox-grid">
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="bookkeeping" checked />
+                  <input type="checkbox" name="services[]" value="bookkeeping" toolparamdescription="Include Monthly Bookkeeping services" checked />
                   <span class="checkbox-title">Monthly Bookkeeping</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="ap-ar" />
+                  <input type="checkbox" name="services[]" value="ap-ar" toolparamdescription="Include AR/AP Management services" />
                   <span class="checkbox-title">AR/AP Management</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="payroll" />
+                  <input type="checkbox" name="services[]" value="payroll" toolparamdescription="Include Payroll Processing services" />
                   <span class="checkbox-title">Payroll Processing</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="tax-support" />
+                  <input type="checkbox" name="services[]" value="tax-support" toolparamdescription="Include Tax Preparation Support services" />
                   <span class="checkbox-title">Tax Prep Support</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="reporting" />
+                  <input type="checkbox" name="services[]" value="reporting" toolparamdescription="Include Financial Reporting services" />
                   <span class="checkbox-title">Financial Reporting</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="cfo" />
+                  <input type="checkbox" name="services[]" value="cfo" toolparamdescription="Include Virtual Fractional CFO services" />
                   <span class="checkbox-title">Virtual Fractional CFO Services</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="catch-up" />
+                  <input type="checkbox" name="services[]" value="catch-up" toolparamdescription="Include QuickBooks Clean Up & Catch-Up services" />
                   <span class="checkbox-title">QuickBooks Clean Up & Catch-Up</span>
                 </label>
                 <label class="checkbox-card">
-                  <input type="checkbox" name="services[]" value="cloud-setup" />
+                  <input type="checkbox" name="services[]" value="cloud-setup" toolparamdescription="Include QuickBooks Set-up & Integration services" />
                   <span class="checkbox-title">QuickBooks Set-up & Integration</span>
                 </label>
               </div>
@@ -172,22 +174,22 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
               
               <div class="form-group">
                 <label for="quote-name" class="form-label">Full Name</label>
-                <input type="text" id="quote-name" name="name" class="form-input" placeholder="Muhammad Faisal" required maxlength="100" />
+                <input type="text" id="quote-name" name="name" class="form-input" placeholder="Muhammad Faisal" toolparamdescription="Full name of the contact person requesting the proposal" required maxlength="100" />
               </div>
 
               <div class="form-group">
                 <label for="quote-email" class="form-label">Work Email</label>
-                <input type="email" id="quote-email" name="email" class="form-input" placeholder="faisal@company.com" required maxlength="254" />
+                <input type="email" id="quote-email" name="email" class="form-input" placeholder="faisal@company.com" toolparamdescription="Work email address of the contact person" required maxlength="254" />
               </div>
 
               <div class="form-group">
                 <label for="quote-phone" class="form-label">Phone Number</label>
-                <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="(555) 000-0000" required maxlength="25" pattern="[0-9+\-\(\)\s]{7,25}" title="Please enter a valid phone number (digits, spaces, or +-() symbols only)" />
+                <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="(555) 000-0000" toolparamdescription="Phone number of the contact person" required maxlength="25" pattern="[0-9+\-\(\)\s]{7,25}" title="Please enter a valid phone number (digits, spaces, or +-() symbols only)" />
               </div>
 
               <div class="form-group">
                 <label for="quote-company" class="form-label">Company Name</label>
-                <input type="text" id="quote-company" name="company" class="form-input" placeholder="Bloom Commerce" required maxlength="150" />
+                <input type="text" id="quote-company" name="company" class="form-input" placeholder="Bloom Commerce" toolparamdescription="Legal or trading name of the company/business" required maxlength="150" />
               </div>
 
               <div class="step-nav-actions">

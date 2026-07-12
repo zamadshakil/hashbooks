@@ -4,6 +4,14 @@ import SectionHeading from '../../components/ui/SectionHeading.astro';
 import Button from '../../components/ui/Button.astro';
 import Card from '../../components/ui/Card.astro';
 import caseStudiesData from '../../data/case-studies.json';
+import SchemaMarkup from '../../components/seo/SchemaMarkup.astro';
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Case Studies', url: '/case-studies/' }
+  ]
+};
 ---
 
 <PageLayout 
@@ -11,6 +19,7 @@ import caseStudiesData from '../../data/case-studies.json';
   description="Discover how Hashbooks helps US small businesses automate AP, resolve Accounts Receivable discrepancies, and manage Gusto payroll with QuickBooks and Xero."
   canonicalUrl="/case-studies/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <section class="section case-studies-hero">
     <div class="container text-center">
       <SectionHeading 

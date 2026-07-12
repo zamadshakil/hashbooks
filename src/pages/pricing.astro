@@ -3,6 +3,33 @@ import PageLayout from '../layouts/PageLayout.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import Button from '../components/ui/Button.astro';
 import Accordion from '../components/ui/Accordion.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Pricing', url: '/pricing/' }
+  ]
+};
+
+const pricingFaqs = [
+  {
+    question: "Why do you offer custom quotes instead of fixed pricing packages?",
+    answer: "In our experience, fixed packages either overcharge businesses for services they don't use or fail to cover the complexity they actually need. Custom quoting ensures you pay only for the exact volume and complexity of your business — keeping your costs fair and aligned with your scale."
+  },
+  {
+    question: "Do you require long-term contracts?",
+    answer: "We offer both flexible month-to-month terms and long-term contract options. We can customize the contract structure to align with your business planning and preference."
+  },
+  {
+    question: "What happens if our transaction volume increases?",
+    answer: "We review account activity quarterly. If your business grows and transactions consistently increase, we will discuss adjustments to your monthly plan. We never issue surprise billing increases."
+  },
+  {
+    question: "Are setup or onboarding fees included?",
+    answer: "For active and clean bookkeeping setups, onboarding is completely free. If your historical books are messy and require historical reconciliation, we will quote a transparent, one-time Catch-Up Bookkeeping fee before starting."
+  }
+];
 ---
 
 <PageLayout 
@@ -10,6 +37,8 @@ import Accordion from '../components/ui/Accordion.astro';
   description="Hashbooks offers custom flat-rate monthly pricing tailored to your transaction volume and business complexity. No hourly rates. No hidden fees."
   canonicalUrl="/pricing/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
+  <SchemaMarkup type="faq" data={{ items: pricingFaqs }} slot="head" />
   <section class="section pricing-hero-section">
     <div class="container text-center">
       <SectionHeading 
@@ -84,7 +113,12 @@ import Accordion from '../components/ui/Accordion.astro';
         </div>
 
         <Button text="Get Your Free Custom Quote" href="/get-a-quote/" size="lg" variant="primary" class="estimator-btn" />
-        <p class="est-hint">Free 15-minute consultation. Proposal ready in 1 business day.</p>
+        <div style="margin-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); align-items: center;">
+          <p class="est-hint" style="margin: 0;">Proposal ready in 1 business day.</p>
+          <a href="https://calendly.com/hashbooksofficial" target="_blank" rel="noopener noreferrer" style="font-size: var(--fs-body-sm); font-weight: 700; color: var(--color-secondary); display: inline-flex; align-items: center; gap: 4px; text-decoration: none;">
+            Book a Free 15-Min Discovery Call &rarr;
+          </a>
+        </div>
       </div>
     </div>
   </section>
