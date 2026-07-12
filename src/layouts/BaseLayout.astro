@@ -3,6 +3,8 @@ import '../styles/global.css';
 import '../styles/components.css';
 import '../styles/animations.css';
 import SEOHead from '../components/seo/SEOHead.astro';
+import { getImage } from 'astro:assets';
+import heroWorkspaceImg from '../assets/bookkeeping-workspace.png';
 
 interface Props {
   title: string;
@@ -15,6 +17,15 @@ interface Props {
 
 const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.props;
 const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
+
+// Pre-resolve the optimized LCP hero image path for layout header preloading
+const optimizedHeroImage = await getImage({
+  src: heroWorkspaceImg,
+  format: 'webp',
+  width: 480,
+  height: 360,
+  quality: 80
+});
 ---
 
 <!DOCTYPE html>
@@ -52,7 +63,7 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
 
     <!-- LCP preload hint — desktop hero image (skipped on mobile via media query) -->
-    <link rel="preload" as="image" href="/images/bookkeeping-workspace.png" media="(min-width: 1024px)" />
+    <link rel="preload" as="image" href={optimizedHeroImage.src} media="(min-width: 1024px)" />
 
     <noscript>
       <style>
@@ -70,10 +81,20 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
     <script src="../scripts/scroll-animations.js"></script>
     <script src="../scripts/stat-counter.js"></script>
 
-    <!-- Meta Pixel Code — deferred to idle time to avoid blocking page interactive state -->
+    <!-- Meta Pixel Code — lazy loaded on first user interaction to ensure flawless mobile LCP/TBT scores -->
     <script is:inline define:vars={{ pixelId }}>
-      window.addEventListener('load', function() {
-        const initPixel = function() {
+      (function() {
+        let initialized = false;
+        
+        function initPixel() {
+          if (initialized) return;
+          initialized = true;
+          
+          // Remove all listeners immediately
+          triggerEvents.forEach(function(event) {
+            window.removeEventListener(event, initPixel, { passive: true });
+          });
+          
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -84,13 +105,20 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', pixelId);
           fbq('track', 'PageView');
-        };
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(function() { setTimeout(initPixel, 500); });
-        } else {
-          setTimeout(initPixel, 1000);
         }
-      });
+        
+        const triggerEvents = ['click', 'mousedown', 'mousemove', 'touchstart', 'scroll', 'keydown'];
+        
+        // Register interaction listeners
+        triggerEvents.forEach(function(event) {
+          window.addEventListener(event, initPixel, { passive: true });
+        });
+        
+        // Fallback: load after 4 seconds if no interaction has occurred
+        window.addEventListener('load', function() {
+          setTimeout(initPixel, 4000);
+        });
+      })();
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}

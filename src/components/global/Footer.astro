@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import navData from '../../data/navigation.json';
+import logoImg from '../../assets/logo.png';
 
 const footerNav = navData.footer;
 const currentYear = new Date().getFullYear();
@@ -11,7 +12,7 @@ const currentYear = new Date().getFullYear();
     <!-- Brand Info -->
     <div class="footer-col brand-col">
       <a href="/" class="footer-logo">
-        <Image src="/images/logo.png" alt="Hashbooks Logo" class="footer-logo-img" width={32} height={32} loading="lazy" />
+        <Image src={logoImg} alt="Hashbooks Logo" class="footer-logo-img" width={32} height={32} loading="lazy" />
         Hash<span>Books</span>
       </a>
       <p class="footer-tagline">Accurate Books. Better Business.</p>

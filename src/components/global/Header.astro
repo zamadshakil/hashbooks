@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import navData from '../../data/navigation.json';
 import MobileMenu from './MobileMenu.astro';
+import logoImg from '../../assets/logo.png';
 
 const mainNav = navData.main;
 const ctaNav = navData.cta;
@@ -26,7 +27,7 @@ const getSlug = (href: string) => {
   <div class="container header-container">
     <!-- Logo -->
     <a href="/" class="logo-link">
-      <Image src="/images/logo.png" alt="Hashbooks Logo" class="logo-img" width={40} height={40} loading="eager" format="webp" quality={80} />
+      <Image src={logoImg} alt="Hashbooks Logo" class="logo-img" width={40} height={40} loading="eager" format="webp" quality={80} />
       <span class="logo-text">Hash<span class="text-green">Books</span></span>
     </a>
 
