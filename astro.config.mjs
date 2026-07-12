@@ -6,5 +6,8 @@ export default defineConfig({
   site: 'https://hashbooks.site',
   integrations: [sitemap()],
   adapter: vercel(),
-  prefetch: true
+  prefetch: true,
+  build: {
+    inlineStylesheets: 'always'
+  }
 });
