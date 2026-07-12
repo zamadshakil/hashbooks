@@ -20,7 +20,7 @@ const {
     <p class="blog-cta-desc">{description}</p>
   </div>
   <div class="blog-cta-actions">
-    <Button text={buttonText} href="/get-a-quote/" variant="primary" />
+    <a href="/get-a-quote/" class="blog-cta-btn">{buttonText}</a>
   </div>
 </div>
 
@@ -32,11 +32,12 @@ const {
     color: var(--color-white);
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
     align-items: center;
     text-align: center;
     margin: var(--space-8) 0;
     box-shadow: 0 10px 30px -10px rgba(7, 32, 73, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   @media (min-width: 768px) {
@@ -45,6 +46,7 @@ const {
       text-align: left;
       justify-content: space-between;
       padding: var(--space-8);
+      gap: var(--space-8);
     }
   }
 
@@ -53,20 +55,45 @@ const {
   }
 
   .blog-cta-title {
-    font-size: var(--fs-body-lg);
+    font-size: var(--fs-h3);
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-2);
+    line-height: 1.3;
   }
 
   .blog-cta-desc {
     font-size: var(--fs-body-sm);
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   .blog-cta-actions {
     flex-shrink: 0;
+  }
+
+  .blog-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--fs-body-sm);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 14px rgba(15, 112, 42, 0.35);
+    border: 1.5px solid var(--color-secondary);
+  }
+
+  .blog-cta-btn:hover {
+    background-color: var(--color-secondary-light);
+    border-color: var(--color-secondary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 112, 42, 0.45);
+    color: var(--color-white);
   }
 </style>
