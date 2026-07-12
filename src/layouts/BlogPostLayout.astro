@@ -1,0 +1,361 @@
+---
+import PageLayout from './PageLayout.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+import TableOfContents from '../components/sections/TableOfContents.astro';
+import BlogCTA from '../components/sections/BlogCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  category: string;
+  image: string;
+  readTime: string;
+  headings: { depth: number; slug: string; text: string }[];
+  slug: string;
+}
+
+const { title, description, date, author, category, image, readTime, headings, slug } = Astro.props;
+
+const canonicalUrl = `/blog/${slug}/`;
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: title, url: canonicalUrl }
+  ]
+};
+
+const schemaData = {
+  title,
+  description,
+  image,
+  datePublished: date.toISOString(),
+  author,
+  url: canonicalUrl
+};
+---
+
+<PageLayout title={`${title} | Hashbooks Blog`} description={description} canonicalUrl={canonicalUrl} ogImage={image} ogType="article">
+  <SchemaMarkup type="article" data={schemaData} slot="head" />
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-container">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li>
+            <a href="/">
+              <svg class="home-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Home
+            </a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li><a href="/blog/">Blog</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li class="active" aria-current="page">{title}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <article class="blog-post-section">
+    <div class="container">
+      <!-- Article Header -->
+      <header class="post-header">
+        <span class="badge badge-primary post-category">{category}</span>
+        <h1 class="post-title">{title}</h1>
+        
+        <div class="post-meta">
+          <div class="meta-author">
+            <span class="meta-author-by">By</span>
+            <span class="meta-author-name">{author}</span>
+          </div>
+          <span class="meta-divider">•</span>
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          <span class="meta-divider">•</span>
+          <span>{readTime}</span>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="post-featured-image-wrapper">
+        <img src={image} alt={title} class="post-featured-image" />
+      </div>
+
+      <!-- Layout Grid -->
+      <div class="post-layout-grid">
+        <!-- Sidebar: Table of Contents -->
+        <aside class="post-sidebar">
+          <TableOfContents headings={headings} />
+        </aside>
+
+        <!-- Main Article Content -->
+        <div class="post-content-container">
+          <div class="post-body markdown-content">
+            <slot />
+          </div>
+
+          <!-- Post Footer -->
+          <footer class="post-footer">
+            <BlogCTA />
+            
+            <div class="back-to-blog">
+              <a href="/blog/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Blog
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </article>
+</PageLayout>
+
+<style>
+  .breadcrumbs-container {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-3) 0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--fs-caption);
+    font-weight: 500;
+  }
+
+  .breadcrumb-list a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-list a:hover {
+    color: var(--color-accent);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-muted);
+    margin: 0 var(--space-2);
+  }
+
+  .breadcrumb-list .active {
+    color: var(--color-text-body);
+    font-weight: 600;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 600px) {
+    .breadcrumb-list .active {
+      display: none;
+    }
+  }
+
+  .blog-post-section {
+    padding: var(--space-8) 0;
+    background-color: var(--color-white);
+  }
+
+  .post-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-6);
+  }
+
+  .post-category {
+    margin-bottom: var(--space-3);
+  }
+
+  .post-title {
+    font-size: var(--fs-h1);
+    color: var(--color-text-heading);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: var(--space-4);
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .meta-author-name {
+    color: var(--color-text-heading);
+    font-weight: 600;
+  }
+
+  .meta-divider {
+    margin: 0 var(--space-3);
+  }
+
+  .post-featured-image-wrapper {
+    max-width: 900px;
+    margin: 0 auto var(--space-8);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .post-featured-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 992px) {
+    .post-layout-grid {
+      grid-template-columns: 280px 1fr;
+    }
+  }
+
+  .post-sidebar {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    .post-sidebar {
+      display: block;
+    }
+  }
+
+  .post-content-container {
+    min-width: 0;
+  }
+
+  .post-body {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-text-body);
+  }
+
+  /* Markdown Content Styling */
+  .markdown-content :global(h2) {
+    font-size: var(--fs-h2);
+    color: var(--color-text-heading);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    font-weight: 700;
+    scroll-margin-top: 120px;
+  }
+
+  .markdown-content :global(h3) {
+    font-size: var(--fs-body-lg);
+    color: var(--color-text-heading);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    font-weight: 700;
+    scroll-margin-top: 120px;
+  }
+
+  .markdown-content :global(p) {
+    margin-bottom: var(--space-4);
+  }
+
+  .markdown-content :global(ul), .markdown-content :global(ol) {
+    margin-bottom: var(--space-5);
+    padding-left: var(--space-5);
+  }
+
+  .markdown-content :global(li) {
+    margin-bottom: var(--space-2);
+  }
+
+  .markdown-content :global(blockquote) {
+    border-left: 4px solid var(--color-accent);
+    padding-left: var(--space-4);
+    font-style: italic;
+    margin: var(--space-6) 0;
+    color: var(--color-text-muted);
+  }
+
+  .markdown-content :global(img) {
+    border-radius: var(--radius-lg);
+    margin: var(--space-6) auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  .markdown-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-6);
+    font-size: var(--fs-body-sm);
+  }
+
+  .markdown-content :global(th), .markdown-content :global(td) {
+    border: 1px solid var(--color-border);
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+  }
+
+  .markdown-content :global(th) {
+    background-color: var(--color-bg-light);
+    font-weight: 700;
+    color: var(--color-text-heading);
+  }
+
+  .markdown-content :global(tr:nth-child(even)) {
+    background-color: rgba(7, 32, 73, 0.01);
+  }
+
+  .markdown-content :global(strong) {
+    color: var(--color-text-heading);
+    font-weight: 700;
+  }
+
+  .post-footer {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .back-to-blog {
+    margin-top: var(--space-6);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--color-accent);
+  }
+</style>

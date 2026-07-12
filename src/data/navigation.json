@@ -17,6 +17,7 @@
     { "label": "About", "href": "/about/" },
     { "label": "Case Studies", "href": "/case-studies/" },
     { "label": "Pricing", "href": "/pricing/" },
+    { "label": "Blog", "href": "/blog/" },
     { "label": "FAQ", "href": "/faq/" },
     { "label": "Contact", "href": "/contact/" }
   ],
@@ -39,10 +40,10 @@
       { "label": "FAQ", "href": "/faq/" }
     ],
     "resources": [
+      { "label": "Blog", "href": "/blog/" },
       { "label": "Virtual Fractional CFO", "href": "/services/cfo-advisory/" },
       { "label": "QuickBooks Clean Up & Catch-Up", "href": "/services/catch-up-bookkeeping/" },
-      { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/" },
-      { "label": "Get a Quote", "href": "/get-a-quote/" }
+      { "label": "QuickBooks Set-up & Integration", "href": "/services/cloud-integration/" }
     ],
     "legal": [
       { "label": "Privacy Policy", "href": "/privacy-policy/" },

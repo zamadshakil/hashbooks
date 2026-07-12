@@ -1,0 +1,72 @@
+---
+import Button from '../ui/Button.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+}
+
+const { 
+  title = "Ready to Delegate Your Bookkeeping?", 
+  description = "Get a custom, flat-rate bookkeeping proposal customized for your business in 24 hours.", 
+  buttonText = "Get My Free Proposal" 
+} = Astro.props;
+---
+
+<div class="blog-cta-banner">
+  <div class="blog-cta-content">
+    <h4 class="blog-cta-title">{title}</h4>
+    <p class="blog-cta-desc">{description}</p>
+  </div>
+  <div class="blog-cta-actions">
+    <Button text={buttonText} href="/get-a-quote/" variant="primary" />
+  </div>
+</div>
+
+<style>
+  .blog-cta-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0b3c7a 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+    text-align: center;
+    margin: var(--space-8) 0;
+    box-shadow: 0 10px 30px -10px rgba(7, 32, 73, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    .blog-cta-banner {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      padding: var(--space-8);
+    }
+  }
+
+  .blog-cta-content {
+    flex: 1;
+  }
+
+  .blog-cta-title {
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .blog-cta-desc {
+    font-size: var(--fs-body-sm);
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .blog-cta-actions {
+    flex-shrink: 0;
+  }
+</style>

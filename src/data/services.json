@@ -30,7 +30,7 @@
       { "question": "How many transactions can you handle per month?", "answer": "We support businesses with anywhere from 50 to 5,000+ monthly transactions. Your flat-rate plan is customized based on your volume and account complexity." },
       { "question": "Which accounting software do you use?", "answer": "We are certified specialists in QuickBooks Online and Xero. We set up, optimize, and manage your ledgers on these platforms to ensure clean data." },
       { "question": "How quickly will my books be updated?", "answer": "We categorize transactions weekly or daily depending on your plan, with the full monthly close completed within 5 business days after month-end." },
-      { "question": "Is my financial data secure?", "answer": "Absolutely. We use bank-level 256-bit encryption and follow SOC 2 compliant processes. We connect to your bank feeds using read-only access via secure integrations like Plaid." }
+      { "question": "Is my financial data secure?", "answer": "Absolutely. We use bank-level 256-bit encryption and follow SOC 2 aligned security practices. We connect to your bank feeds using read-only access via secure integrations like Plaid." }
     ],
     "relatedServices": ["accounts-payable-receivable", "financial-reporting", "tax-preparation"]
   },

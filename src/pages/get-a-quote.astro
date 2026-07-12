@@ -93,10 +93,16 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
 
               <div class="form-group">
                 <label for="current-software" class="form-label">Current Accounting Software</label>
-                <select id="current-software" name="current_software" class="form-select" toolparamdescription="Accounting software or platform currently used by the business (e.g., QuickBooks Online, Xero, Spreadsheets, None)" required>
+                <select id="current-software" name="current_software" class="form-select" toolparamdescription="Accounting software or platform currently used by the business (e.g., QuickBooks Online, Xero, FreshBooks, Zoho Books, Wave Accounting, Sage, Odoo, NetSuite, Spreadsheets, None)" required>
                   <option value="" disabled selected>Select current setup...</option>
                   <option value="quickbooks">QuickBooks Online</option>
                   <option value="xero">Xero</option>
+                  <option value="freshbooks">FreshBooks</option>
+                  <option value="zoho">Zoho Books</option>
+                  <option value="wave">Wave Accounting</option>
+                  <option value="sage">Sage Business Cloud</option>
+                  <option value="odoo">Odoo ERP</option>
+                  <option value="netsuite">Oracle NetSuite</option>
                   <option value="spreadsheets">Spreadsheets (Excel/Google Sheets)</option>
                   <option value="none">No software / starting fresh</option>
                   <option value="other">Other platform</option>

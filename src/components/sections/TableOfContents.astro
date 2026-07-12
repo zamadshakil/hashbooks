@@ -1,0 +1,85 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+
+// Only display H2 and H3 headings
+const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+
+if (filteredHeadings.length === 0) return null;
+---
+
+<nav class="toc" aria-label="Table of Contents">
+  <div class="toc-title">Table of Contents</div>
+  <ul class="toc-list">
+    {filteredHeadings.map(heading => (
+      <li class={`toc-item depth-${heading.depth}`}>
+        <a href={`#${heading.slug}`} class="toc-link">
+          {heading.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    background-color: var(--color-bg-light);
+    border: 1px solid rgba(7, 32, 73, 0.06);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    position: sticky;
+    top: 110px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+  }
+
+  .toc-title {
+    font-size: var(--fs-body-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1.5px solid var(--color-border);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .toc-item {
+    font-size: var(--fs-body-sm);
+    line-height: 1.4;
+  }
+
+  .toc-item.depth-3 {
+    padding-left: var(--space-3);
+    font-size: var(--fs-caption);
+  }
+
+  .toc-link {
+    color: var(--color-text-body);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    display: block;
+  }
+
+  .toc-link:hover {
+    color: var(--color-accent);
+  }
+</style>

@@ -8,11 +8,11 @@
       },
       {
         "question": "Who is Hashbooks for?",
-        "answer": "We work with small businesses, startups, e-commerce brands, construction companies, professional service agencies, healthcare practices, real estate firms, and non-profits. If you want to delegate your back-office financial administration to certified US accounting experts, we are built for you."
+        "answer": "We work with small businesses, startups, e-commerce brands, construction companies, professional service agencies, healthcare practices, real estate firms, and non-profits. If you want to delegate your back-office financial administration to experts specialized in US accounting standards, we are built for you."
       },
       {
         "question": "What makes Hashbooks different from other bookkeeping services?",
-        "answer": "Unlike broad national agencies, we assign a dedicated certified bookkeeper to your account who learns your transactions intimately. All of our bookkeepers are certified QuickBooks Online ProAdvisors or Xero Certified Advisors based in the US, ensuring GAAP compliance and accurate tax handoffs."
+        "answer": "Unlike broad national agencies, we assign a dedicated certified bookkeeper to your account who learns your transactions intimately. All of our bookkeepers are certified QuickBooks Online ProAdvisors or Xero Certified Advisors specialized in US accounting standards, ensuring GAAP compliance and accurate tax handoffs."
       },
       {
         "question": "Do you work with businesses outside the US?",
@@ -79,7 +79,7 @@
     "items": [
       {
         "question": "Is my financial data secure with Hashbooks?",
-        "answer": "Absolutely. We use bank-level 256-bit encryption for all data transmission and storage. Our systems connect to your bank feeds using secure, read-only integrations (like Plaid), meaning we cannot move money or access credentials. Our processes follow SOC 2 compliance standards."
+        "answer": "Absolutely. We use bank-level 256-bit encryption for all data transmission and storage. Our systems connect to your bank feeds using secure, read-only integrations (like Plaid), meaning we cannot move money or access credentials. Our processes follow SOC 2 aligned security practices."
       },
       {
         "question": "Who has access to my financial information?",

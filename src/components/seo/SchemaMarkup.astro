@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'organization' | 'service' | 'faq' | 'breadcrumb';
+  type: 'organization' | 'service' | 'faq' | 'breadcrumb' | 'article';
   data?: any;
 }
 
@@ -70,6 +70,33 @@ function getSchema() {
           "name": item.name,
           "item": item.url ? `${siteUrl}${item.url}` : undefined
         }))
+      };
+
+    case 'article':
+      return {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": data?.title,
+        "description": data?.description,
+        "image": data?.image ? (data.image.startsWith('http') ? data.image : `${siteUrl}${data.image}`) : undefined,
+        "datePublished": data?.datePublished,
+        "dateModified": data?.dateModified || data?.datePublished,
+        "author": {
+          "@type": "Person",
+          "name": data?.author || "M Hassan Shakeel"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hashbooks",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/images/logo.png`
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `${siteUrl}${data?.url}`
+        }
       };
 
     default:

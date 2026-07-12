@@ -1,0 +1,36 @@
+# Hashbooks Bookkeeping Services
+
+> Professional, flat-rate bookkeeping services, QuickBooks Online set-up, catch-up/cleanup, AR/AP management, and financial reporting for US small businesses.
+
+## Interactive Inquiries
+- [Request Free Proposal](/get-a-quote/): Submit business profile, monthly transaction volume, and software used for a flat-rate custom proposal in 1 business day.
+- [Contact Hashbooks](/contact/): Send inquiries or ask general questions, with responses within 2 business hours.
+
+## Core Services
+- [Monthly Bookkeeping](/services/bookkeeping/): Reconcile bank and credit card accounts daily, categorize transactions, and close books within 5 business days.
+- [AR/AP Management](/services/accounts-payable-receivable/): Streamline billing cycles, track customer payments (AR), and manage vendor bills (AP).
+- [Payroll Processing](/services/payroll/): Setup and run compliant, accurate payroll for employees and contractors.
+- [Tax Preparation](/services/tax-preparation/): Reconcile and organize records year-round for tax readiness and file support.
+- [Financial Reporting](/services/financial-reporting/): Access clean, GAAP-compliant balance sheets, profit-and-loss statements, and cash flow reports.
+- [Virtual CFO Advisory](/services/cfo-advisory/): Receive strategic financial guidance, cash flow forecasting, and margin optimization.
+- [QuickBooks Cleanup & Catch-Up](/services/catch-up-bookkeeping/): Fix historical ledger discrepancies and reconcile past-due months or years of statements.
+- [Cloud QuickBooks Setup](/services/cloud-integration/): Migrate, set up, and integrate QuickBooks Online with payment systems (Stripe, Shopify, etc.).
+
+## Supported Platforms & Integrations
+- [QuickBooks Online](/platforms/quickbooks-online/): Lead accounting ledger integration for US SMBs and multi-channel sellers.
+- [Xero](/platforms/xero/): Mobile-friendly cloud accounting and multi-currency bookkeeping.
+- [FreshBooks](/platforms/freshbooks/): Billing and project costing for professional service agencies.
+- [Zoho Books](/platforms/zoho-books/): CRM, Projects, and inventory ledger synchronization.
+- [Wave Accounting](/platforms/wave-accounting/): Simplified bookkeeping and Schedule C tax prep for freelancers and solopreneurs.
+- [Sage Business Cloud](/platforms/sage-business-cloud/): SKU-level inventory, wholesale distribution, and margin tracking.
+- [Odoo ERP Accounting](/platforms/odoo/): Modular ERP reconciliation across manufacturing, CRM, and sales.
+- [Oracle NetSuite](/platforms/oracle-netsuite/): ASC 606 revenue recognition and multi-entity consolidation for high-growth enterprises.
+
+## Company & Resources
+- [About Us](/about/): Learn about the team, our mission, and our values.
+- [Pricing Options](/pricing/): Request custom flat-rate pricing based on transaction volume, accounts, and complexity.
+- [Blog](/blog/): Read our latest articles on bookkeeping guides, tax strategies, and software tutorials.
+- [Frequently Asked Questions](/faq/): Read common questions on onboarding, security, and processes.
+- [Case Studies](/case-studies/): Real-world examples of how we optimize books for various industries.
+- [Privacy Policy](/privacy-policy/): Learn how we secure your financial data.
+- [Terms of Service](/terms-of-service/): Terms governing our bookkeeping engagements.

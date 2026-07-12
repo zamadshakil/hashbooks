@@ -1,0 +1,169 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import BlogCard from '../../components/sections/BlogCard.astro';
+import SchemaMarkup from '../../components/seo/SchemaMarkup.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Sort by date descending
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const categories = ["All", "Bookkeeping", "Tax & Compliance", "Accounting Software", "Business Strategy"];
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' }
+  ]
+};
+---
+
+<PageLayout 
+  title="Hashbooks Blog | Financial Insights & Bookkeeping Guides" 
+  description="Expert bookkeeping advice, accounting guides, tax-saving tips, and software tutorials to help you scale your small business."
+  canonicalUrl="/blog/"
+>
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
+
+  <section class="section blog-hero-section">
+    <div class="container text-center">
+      <SectionHeading 
+        eyebrow="Resources & Insights"
+        title="The Hashbooks Blog"
+        subtitle="Practical financial guidance, tax strategies, and software tips designed for small business owners and startup founders."
+        as="h1"
+      />
+    </div>
+  </section>
+
+  <!-- Filter & Listing Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <!-- Category Tabs -->
+      <div class="category-filters-wrapper">
+        <div class="category-filters">
+          {categories.map((category, idx) => (
+            <button 
+              class={`filter-btn ${idx === 0 ? 'active' : ''}`} 
+              data-category={category.toLowerCase().replace('& ', '').replace(' ', '-')}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid" id="blog-posts-grid">
+        {sortedPosts.map(post => (
+          <div class="blog-grid-item" data-post-category={post.data.category.toLowerCase().replace('& ', '').replace(' ', '-')}>
+            <BlogCard post={post} />
+          </div>
+        ))}
+      </div>
+      
+      {sortedPosts.length === 0 && (
+        <div class="no-posts text-center">
+          <p>No articles published yet. Check back soon!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  // Simple client-side filtering logic
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const blogItems = document.querySelectorAll('.blog-grid-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Toggle active class
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const selectedCategory = button.getAttribute('data-category');
+
+      blogItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-post-category');
+        if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .blog-hero-section {
+    padding-bottom: var(--space-4);
+  }
+
+  .category-filters-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-8);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+
+  .category-filters {
+    display: flex;
+    gap: var(--space-2);
+    background-color: var(--color-white);
+    padding: var(--space-2);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  .filter-btn {
+    border: none;
+    background: none;
+    padding: 8px 18px;
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover {
+    color: var(--color-primary);
+  }
+
+  .filter-btn.active {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .no-posts {
+    padding: var(--space-8) 0;
+    color: var(--color-text-muted);
+  }
+</style>
