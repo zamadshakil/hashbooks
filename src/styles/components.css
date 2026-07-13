@@ -544,13 +544,21 @@ select.form-select option:disabled {
 }
 
 /* Table of Contents */
-.toc-sidebar {
-  position: sticky !important;
-  top: 110px !important;
-  align-self: start !important;
-  max-height: calc(100vh - 150px) !important;
-  overflow-y: auto !important;
-  display: block !important;
+@media (min-width: 992px) {
+  .toc-sidebar {
+    position: sticky !important;
+    top: 110px !important;
+    align-self: start !important;
+    max-height: calc(100vh - 150px) !important;
+    overflow-y: auto !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .toc-sidebar {
+    display: none !important;
+  }
 }
 
 .toc-container {
