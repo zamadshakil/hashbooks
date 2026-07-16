@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'organization' | 'service' | 'faq' | 'breadcrumb' | 'article';
+  type: 'organization' | 'service' | 'faq' | 'breadcrumb' | 'article' | 'techArticle';
   data?: any;
 }
 
@@ -85,6 +85,28 @@ function getSchema() {
           "@type": "Person",
           "name": data?.author || "M Hassan Shakeel"
         },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hashbooks",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/images/logo.png`
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `${siteUrl}${data?.url}`
+        }
+      };
+
+    case 'techArticle':
+      return {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": data?.title,
+        "description": data?.description,
+        "image": data?.image ? (data.image.startsWith('http') ? data.image : `${siteUrl}${data.image}`) : undefined,
+        "dependencies": data?.skills?.join(', '),
         "publisher": {
           "@type": "Organization",
           "name": "Hashbooks",

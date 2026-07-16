@@ -2,6 +2,14 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import Button from '../components/ui/Button.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Get a Quote', url: '/get-a-quote/' }
+  ]
+};
 ---
 
 <PageLayout 
@@ -9,6 +17,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
   description="Request your free custom bookkeeping quote. Tell us about your transaction volume and platform needs for a flat-rate proposal."
   canonicalUrl="/get-a-quote/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <section class="section quote-form-hero">
     <div class="container text-center">
       <SectionHeading 

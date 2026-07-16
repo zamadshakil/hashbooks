@@ -1,6 +1,14 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Terms of Service', url: '/terms-of-service/' }
+  ]
+};
 ---
 
 <PageLayout 
@@ -8,6 +16,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
   description="Hashbooks website and services terms of service and agreement rules."
   canonicalUrl="/terms-of-service/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <section class="section">
     <div class="container max-width-800">
       <SectionHeading 

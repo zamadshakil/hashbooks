@@ -53,6 +53,7 @@ const skillLinks: Record<string, string> = {
 ---
 
 <PageLayout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl}>
+  <SchemaMarkup type="techArticle" data={{ title, description: metaDescription, url: canonicalUrl, skills }} slot="head" />
   <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <!-- Breadcrumbs -->
   <div class="breadcrumbs-container">

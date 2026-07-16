@@ -1,6 +1,14 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
+import SchemaMarkup from '../components/seo/SchemaMarkup.astro';
+
+const breadcrumbData = {
+  items: [
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy', url: '/privacy-policy/' }
+  ]
+};
 ---
 
 <PageLayout 
@@ -8,6 +16,7 @@ import SectionHeading from '../components/ui/SectionHeading.astro';
   description="Hashbooks' privacy policies and guidelines regarding how we collect, store, and secure your financial bookkeeping information."
   canonicalUrl="/privacy-policy/"
 >
+  <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
   <section class="section">
     <div class="container max-width-800">
       <SectionHeading 
