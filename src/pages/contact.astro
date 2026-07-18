@@ -217,6 +217,24 @@ const breadcrumbData = {
             <p class="info-card-desc">Office location.</p>
           </div>
         </div>
+
+        <!-- Card 5: Social Media -->
+        <div class="card info-mini-card">
+          <div class="info-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          </div>
+          <div class="info-content">
+            <h3 class="info-card-title">Social Media</h3>
+            <div class="contact-social-links">
+              <a href="https://web.facebook.com/profile.php?id=61591687396646" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Facebook">Facebook</a>
+              <span class="social-separator">&bull;</span>
+              <a href="https://www.instagram.com/hashbooksofficial/" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Instagram">Instagram</a>
+              <span class="social-separator">&bull;</span>
+              <a href="https://www.linkedin.com/company/135165670" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="LinkedIn">LinkedIn</a>
+            </div>
+            <p class="info-card-desc">Connect with us on our official profiles.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -326,6 +344,32 @@ const breadcrumbData = {
     font-size: var(--fs-caption);
     color: var(--color-text-muted);
     margin-top: 4px;
+  }
+
+  .contact-social-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: 4px;
+  }
+
+  .contact-social-link {
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-secondary);
+    display: inline-block;
+  }
+
+  .contact-social-link:hover {
+    color: var(--color-secondary-light);
+    text-decoration: underline;
+  }
+
+  .social-separator {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    font-size: var(--fs-caption);
   }
 
   .highlight-card {
