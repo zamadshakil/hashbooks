@@ -11,11 +11,14 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
+  publishedTime?: string;
+  author?: string;
   noindex?: boolean;
 }
 
-const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.props;
+const { title, description, canonicalUrl, ogImage, ogImageAlt, ogType, publishedTime, author, noindex } = Astro.props;
 const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '1035286139051346';
 
 // Pre-resolve the optimized LCP hero image path for layout header preloading
@@ -36,13 +39,25 @@ const optimizedHeroImage = await getImage({
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="theme-color" content="#072049" />
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XMVTK47BB"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8XMVTK47BB');
+    </script>
 
     <SEOHead
       title={title}
       description={description}
       canonicalUrl={canonicalUrl}
       ogImage={ogImage}
+      ogImageAlt={ogImageAlt}
       ogType={ogType}
+      publishedTime={publishedTime}
+      author={author}
       noindex={noindex}
     />
     

@@ -4,7 +4,10 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
+  publishedTime?: string;
+  author?: string;
   noindex?: boolean;
 }
 
@@ -12,14 +15,19 @@ const {
   title,
   description,
   canonicalUrl,
-  ogImage = '/images/og-image.jpg',
+  ogImage = '/images/og-image.png',
+  ogImageAlt = 'Hashbooks - Certified Bookkeeping & Virtual CFO Services',
   ogType = 'website',
+  publishedTime,
+  author,
   noindex = false,
 } = Astro.props;
 
 const siteUrl = 'https://hashbooks.site';
-const fullCanonical = canonicalUrl ? `${siteUrl}${canonicalUrl}` : `${siteUrl}${Astro.url.pathname}`;
-const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const fullCanonical = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : `${siteUrl}${Astro.url.pathname}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`;
+const isPng = fullOgImage.toLowerCase().endsWith('.png');
+const mimeType = isPng ? 'image/png' : 'image/jpeg';
 ---
 
 <!-- Primary Meta Tags -->
@@ -35,14 +43,20 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={fullOgImage} />
+<meta property="og:image:secure_url" content={fullOgImage} />
+<meta property="og:image:type" content={mimeType} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
 <meta property="og:site_name" content="Hashbooks" />
 <meta property="og:locale" content="en_US" />
+{ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{ogType === 'article' && author && <meta property="article:author" content={author} />}
 
-<!-- Twitter -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={fullCanonical} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullOgImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />

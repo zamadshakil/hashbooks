@@ -8,11 +8,14 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
+  publishedTime?: string;
+  author?: string;
   noindex?: boolean;
 }
 
-const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.props;
+const { title, description, canonicalUrl, ogImage, ogImageAlt, ogType, publishedTime, author, noindex } = Astro.props;
 ---
 
 <BaseLayout
@@ -20,7 +23,10 @@ const { title, description, canonicalUrl, ogImage, ogType, noindex } = Astro.pro
   description={description}
   canonicalUrl={canonicalUrl}
   ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
   ogType={ogType}
+  publishedTime={publishedTime}
+  author={author}
   noindex={noindex}
 >
   <slot name="head" slot="head" />

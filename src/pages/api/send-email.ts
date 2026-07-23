@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const mailBody = {
       sender: { name: 'Hashbooks Website', email: 'contact@hashbooks.site' },
-      to: [{ email: 'hashbooksofficial@gmail.com', name: 'Hashbooks Team' }],
+      to: [{ email: 'contact@hashbooks.site', name: 'Hashbooks Team' }],
       replyTo: { email, name },
       subject: subject || 'New Form Submission from Hashbooks Website',
       htmlContent: `

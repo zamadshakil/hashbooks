@@ -1,0 +1,195 @@
+---
+---
+
+<div id="cookie-consent-banner" class="cookie-consent-banner hidden" role="region" aria-label="Cookie and Privacy Consent">
+  <div class="cookie-consent-container">
+    <div class="cookie-consent-content">
+      <div class="cookie-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+          <path d="M8.5 8.5v.01"/>
+          <path d="M16 15.5v.01"/>
+          <path d="M12 12v.01"/>
+          <path d="M11 17v.01"/>
+          <path d="M7 14v.01"/>
+        </svg>
+      </div>
+      <div class="cookie-text">
+        <p class="cookie-title">We value your privacy</p>
+        <p class="cookie-desc">
+          We use cookies and analytics to enhance your browsing experience, analyze site traffic, and deliver personalized content. Read our <a href="/privacy-policy/" class="cookie-link">Privacy Policy</a> to learn more.
+        </p>
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button id="btn-decline-cookies" class="cookie-btn cookie-btn-secondary">Essential Only</button>
+      <button id="btn-accept-cookies" class="cookie-btn cookie-btn-primary">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    z-index: 9999;
+    background: rgba(7, 32, 73, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 1.25rem 1.5rem;
+    color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  }
+
+  .cookie-consent-banner.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .cookie-consent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 640px) {
+    .cookie-consent-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .cookie-consent-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .cookie-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(30, 136, 229, 0.15);
+    color: #40a9ff;
+    flex-shrink: 0;
+  }
+
+  .cookie-text {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .cookie-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+  }
+
+  .cookie-desc {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .cookie-link {
+    color: #40a9ff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .cookie-link:hover {
+    color: #69c0ff;
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 640px) {
+    .cookie-actions {
+      width: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  .cookie-btn {
+    padding: 0.55rem 1.15rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .cookie-btn-primary {
+    background: #0070f3;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+  }
+
+  .cookie-btn-primary:hover {
+    background: #005bb5;
+    box-shadow: 0 6px 16px rgba(0, 112, 243, 0.4);
+  }
+
+  .cookie-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .cookie-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const CONSENT_KEY = 'hashbooks_cookie_consent';
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('btn-accept-cookies');
+    const declineBtn = document.getElementById('btn-decline-cookies');
+
+    if (!banner || !acceptBtn || !declineBtn) return;
+
+    // Check if consent has already been recorded
+    const existingConsent = localStorage.getItem(CONSENT_KEY);
+    if (!existingConsent) {
+      setTimeout(function() {
+        banner.classList.remove('hidden');
+      }, 1000);
+    }
+
+    acceptBtn.addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      banner.classList.add('hidden');
+    });
+
+    declineBtn.addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'declined');
+      banner.classList.add('hidden');
+    });
+  })();
+</script>

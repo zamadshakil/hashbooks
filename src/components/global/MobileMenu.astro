@@ -38,7 +38,7 @@ const ctaNav = navData.cta;
     </nav>
     
     <div class="mobile-menu-actions">
-      <a href={ctaNav.href} class="btn btn-primary btn-lg w-full">{ctaNav.label}</a>
+      <a href={ctaNav.href} class="btn btn-primary btn-lg w-full" target={ctaNav.href.startsWith('http') ? '_blank' : undefined} rel={ctaNav.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{ctaNav.label}</a>
       <div class="mobile-social-links">
         <a href="https://web.facebook.com/profile.php?id=61591687396646" target="_blank" rel="noopener noreferrer" class="mobile-social-link" aria-label="Facebook">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>

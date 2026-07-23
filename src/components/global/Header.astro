@@ -69,7 +69,7 @@ const getSlug = (href: string) => {
 
     <!-- Desktop CTA & Hamburger -->
     <div class="header-actions">
-      <a href={ctaNav.href} class="btn btn-primary header-cta">{ctaNav.label}</a>
+      <a href={ctaNav.href} class="btn btn-primary header-cta" target={ctaNav.href.startsWith('http') ? '_blank' : undefined} rel={ctaNav.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{ctaNav.label}</a>
       <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>

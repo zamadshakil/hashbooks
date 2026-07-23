@@ -43,7 +43,7 @@ const schemaData = {
 };
 ---
 
-<PageLayout title={`${title} | Hashbooks Blog`} description={description} canonicalUrl={canonicalUrl} ogImage={image} ogType="article">
+<PageLayout title={`${title} | Hashbooks Blog`} description={description} canonicalUrl={canonicalUrl} ogImage={image} ogImageAlt={title} ogType="article" publishedTime={date.toISOString()} author={author}>
   <SchemaMarkup type="article" data={schemaData} slot="head" />
   <SchemaMarkup type="breadcrumb" data={breadcrumbData} slot="head" />
 
