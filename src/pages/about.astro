@@ -269,7 +269,11 @@ const breadcrumbData = {
     <div class="container about-cta-container">
       <h2 class="about-cta-title">Let Us Handle Your Financial Records</h2>
       <p class="about-cta-desc">Get back to scaling your business with complete peace of mind.</p>
-      <Button text="Get Your Free Quote" href="/get-a-quote/" variant="primary" size="lg" />
+      <div class="about-cta-buttons">
+        <Button text="Get Your Free Quote" href="/get-a-quote/" variant="primary" size="lg" />
+        <a href="https://www.upwork.com/freelancers/~01bb0db4f7ec9f3be3?mp_source=share" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Hire on Upwork</a>
+        <a href="https://www.fiverr.com/s/5r6GElE" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">Order on Fiverr</a>
+      </div>
     </div>
   </section>
 </PageLayout>
@@ -508,5 +512,14 @@ const breadcrumbData = {
   .about-cta-desc {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--space-2);
+  }
+
+  .about-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--space-4);
   }
 </style>
