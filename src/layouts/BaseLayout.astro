@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/components.css';
 import '../styles/animations.css';
 import SEOHead from '../components/seo/SEOHead.astro';
+import CookieConsent from '../components/global/CookieConsent.astro';
 import { getImage } from 'astro:assets';
 import heroWorkspaceImg from '../assets/bookkeeping-workspace.jpg';
 
@@ -140,5 +141,7 @@ const optimizedHeroImage = await getImage({
       src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <CookieConsent />
   </body>
 </html>
